@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat May 16 16:43:38 2015
+Quartus II 32-bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Revision Name : chave
+Top-level Entity Name : chave
+Family : Cyclone IV E
+Total logic elements : 0
+    Total combinational functions : 0
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

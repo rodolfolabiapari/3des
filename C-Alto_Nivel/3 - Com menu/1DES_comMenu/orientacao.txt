@@ -1,0 +1,7 @@
+
+						ALGORITMO DES DE CRIPTOGRAFIA
+					  ----------- --- -- --------------
+
+Ação inválida!!!
+	Escolha (E)ncriptar ou (D)escifrar.
+

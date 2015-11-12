@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+d\\psf\Home\Documents\Nuvem\MEGA\Pesquisas\Criptografia em Hardware\Códigos\VHD\Memórias RAM e ROM\ROM\Teste SBox 1
+Esbox1
+Z0 w1431310500
+Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 d\\psf\Home\Documents\Nuvem\MEGA\Pesquisas\Criptografia em Hardware\Códigos\VHD\Memórias RAM e ROM\ROM\Teste model SBox 1
+Z5 8//psf/Home/Documents/Nuvem/MEGA/Pesquisas/Criptografia em Hardware/Códigos/VHD/Memórias RAM e ROM/ROM/Teste model SBox 1/sbox1.vhd
+Z6 F//psf/Home/Documents/Nuvem/MEGA/Pesquisas/Criptografia em Hardware/Códigos/VHD/Memórias RAM e ROM/ROM/Teste model SBox 1/sbox1.vhd
+l0
+L5
+VLn7h3N=i>zESz<7E9bD`^2
+Z7 OV;C;10.1d;51
+32
+Z8 !s108 1431728992.832000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|//psf/Home/Documents/Nuvem/MEGA/Pesquisas/Criptografia em Hardware/Códigos/VHD/Memórias RAM e ROM/ROM/Teste model SBox 1/sbox1.vhd|
+Z10 !s107 //psf/Home/Documents/Nuvem/MEGA/Pesquisas/Criptografia em Hardware/Códigos/VHD/Memórias RAM e ROM/ROM/Teste model SBox 1/sbox1.vhd|
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+!s100 g>SM4B]PF0XHzBFOE=JP=3
+!i10b 1
+Asbox1_behav
+R1
+R2
+R3
+DEx4 work 5 sbox1 0 22 Ln7h3N=i>zESz<7E9bD`^2
+l127
+L14
+V21e]VdiV>eOb^VNhX<nel3
+!s100 Q:CM]`47J[Eh6aJ`IGE=f1
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!i10b 1
+Esbox1_tb
+Z13 w1431435637
+Z14 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+R2
+R3
+R4
+Z15 8//psf/Home/Documents/Nuvem/MEGA/Pesquisas/Criptografia em Hardware/Códigos/VHD/Memórias RAM e ROM/ROM/Teste model SBox 1/sbox1_tb.vhd
+Z16 F//psf/Home/Documents/Nuvem/MEGA/Pesquisas/Criptografia em Hardware/Códigos/VHD/Memórias RAM e ROM/ROM/Teste model SBox 1/sbox1_tb.vhd
+l0
+L6
+V7Pcf_h]RE`QQ9zYKg=W7G0
+!s100 44`5g[V3J:z=il>HeAgEG3
+R7
+32
+!i10b 1
+Z17 !s108 1431728993.253000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|//psf/Home/Documents/Nuvem/MEGA/Pesquisas/Criptografia em Hardware/Códigos/VHD/Memórias RAM e ROM/ROM/Teste model SBox 1/sbox1_tb.vhd|
+Z19 !s107 //psf/Home/Documents/Nuvem/MEGA/Pesquisas/Criptografia em Hardware/Códigos/VHD/Memórias RAM e ROM/ROM/Teste model SBox 1/sbox1_tb.vhd|
+R11
+R12
+Asinais
+R14
+R2
+R3
+Z20 DEx4 work 8 sbox1_tb 0 22 7Pcf_h]RE`QQ9zYKg=W7G0
+l25
+L10
+Z21 VL]3<ODC[>TNl>l6M;nXoQ2
+Z22 !s100 ;M=7<3Y8A_cd6`j[_Y__31
+R7
+32
+!i10b 1
+R17
+R18
+R19
+R11
+R12

@@ -1,0 +1,13 @@
+vendor_name = ModelSim
+source_file = 1, //psf/Home/Documents/Nuvem/MEGA/Pesquisas/Criptografia em Hardware/Códigos/VHD/Memórias RAM e ROM/RAM/Projeto/chave.vhd
+source_file = 1, //psf/Home/Documents/Nuvem/MEGA/Pesquisas/Criptografia em Hardware/Códigos/VHD/Memórias RAM e ROM/RAM/Projeto/db/chave.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, //psf/Home/Documents/Nuvem/MEGA/Pesquisas/Criptografia em Hardware/Códigos/VHD/Memórias RAM e ROM/RAM/Projeto/ram.vhd
+design_name = chave
+instance = comp, \output~output\, output~output, chave, 1
+instance = comp, \input~input\, input~input, chave, 1
+instance = comp, \clock~input\, clock~input, chave, 1
+instance = comp, \reset~input\, reset~input, chave, 1

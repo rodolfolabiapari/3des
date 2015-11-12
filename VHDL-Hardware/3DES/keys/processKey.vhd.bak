@@ -1,0 +1,77 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity processKey is
+	port(
+		clk         : IN std_logic;
+		reset       : IN std_logic;
+		bus64In 	: IN std_logic_vector(0 TO 63);
+		done        : OUT std_logic;
+		bus48Out    : OUT std_logic_vector(0 TO 47)
+	);
+end processKey;
+
+architecture processKey_behav of processKey is
+	component permutedChoice1
+		port(
+		bus64In 	: IN std_logic_vector(0 TO 63);
+		bus56Out    : OUT std_logic_vector(0 TO 55)
+		);
+	end component;
+
+	type state_type is (pc1, rotacao1_1, pronto);
+	signal state   : state_type;
+
+
+	signal c0, d0 : std_logic_vector(0 TO 27);
+	signal sig_result_pc1 : std_logic_vector(0 TO 55);
+
+	signal comparacao, inicio : std_logic_vector (0 TO 55);
+	signal Cc, Dc : std_logic_vector(0 TO 27);
+begin
+
+	mapPc1: permutedChoice1 port map(
+		bus64In 	 => bus64In,
+		bus56Out     => sig_result_pc1
+	);
+
+
+
+	-- Logic to advance to the next state
+	process (clk, reset)
+	begin
+		if reset = '1' then
+			done <= '0';
+			state <= pc1;
+
+		elsif (rising_edge(clk)) then
+			case state is
+				when pc1=>
+					c0 <= sig_result_pc1(0 TO 27);
+					d0 <= sig_result_pc1(28 TO 55);
+
+					state <= pc1;
+
+				when rotacao1_1=>
+
+					--c0r <= c0 (26 TO 0) & c0 (27);
+					--d0r <= d0 (26 TO 0) & d0 (27);
+
+					state <= pronto;
+
+				when pronto=>
+					done <= '1';
+
+					state <= pronto;
+
+			end case;
+		end if;
+	end process;
+
+	inicio <= <= x"133457799BBCDFF1";
+	comparacao <= "11110000110011001010101011110101010101100110011110001111";
+	Cc <= "1111000011001100101010101111";
+	Dc <= "0101010101100110011110001111";
+
+end processKey_behav;

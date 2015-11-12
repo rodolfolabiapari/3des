@@ -1,0 +1,76 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+-- USE IEEE.STD_LOGIC_arith.all;
+USE IEEE.Numeric_std.all;
+
+-- Entrada sem a utilizacao de PORTs
+ENTITY sbox1_tb IS
+END sbox1_tb;
+
+-- Sinais de estimulo
+ARCHITECTURE sinais OF sbox1_tb IS
+	SIGNAL sig_clock :  std_logic;
+	SIGNAL sig_address16 : std_logic_vector(3 DOWNTO 0);
+	SIGNAL sig_address4 : std_logic_vector(1 DOWNTO 0);
+	SIGNAL sig_data_out : std_logic_vector(3 DOWNTO 0);
+
+
+-- Importação de componente para testes
+COMPONENT sbox1 port (
+	clock 	: IN std_logic;
+	address16 	: IN std_logic_vector(3 DOWNTO 0);
+	address4 	: IN std_logic_vector(1 DOWNTO 0);
+	data_out : OUT std_logic_vector(3 DOWNTO 0));
+END COMPONENT;
+BEGIN
+	-- Mapeamento de portas
+	UUT_entity_rom1: sbox1 PORT MAP(
+		clock => sig_clock,
+		address16 => sig_address16,
+		address4 => sig_address4,
+		data_out => sig_data_out
+	);
+
+	-- Controle de Clock
+	P_clock: PROCESS IS
+	BEGIN
+		-- Ocilações a cada 10 ns
+		--sig_clock <= '0'; WAIT FOR 10 ns;
+		--sig_clock <= '1'; WAIT FOR 10 ns;
+	END PROCESS;
+	
+	-- Processo responsavel pela variação no dado de entrada do sbox1
+	P_sbox1: PROCESS
+	BEGIN
+		-- Espera até que aconteça uma borda de subida do clock
+		WAIT UNTIL rising_edge(sig_clock);
+		-- Inicializa os parâmetros
+		sig_address16 <= "0000";
+		sig_address4 <= "00";
+		
+		-- Realiza um loop até que o valor de sig_address4 seja atingido 
+		WHILE sig_address4 /= "11" 
+		LOOP
+			
+			-- Realiza um loop até que o valor de sig_address16 seja atingido
+			WHILE sig_address16 /= "1111" 
+			LOOP
+			
+				-- Espera até que aconteça outra borda de subida do clock
+				WAIT UNTIL rising_edge(sig_clock);
+			
+						
+				-- Ocilações a cada 10 ns
+				sig_clock <= '0'; WAIT FOR 10 ns;
+				sig_clock <= '1'; WAIT FOR 10 ns;
+			
+				-- Incrementa o valor de estímulo para testar todos os valores das colunas da tabela
+				sig_address16 <= std_logic_vector(unsigned(sig_address16) + 1);
+			end loop;
+			
+			-- Incrementa o valor de estímulo para testar todos os valors das linhas da tabela
+			sig_address4 <= std_logic_vector(unsigned(sig_address4) + 1);
+		
+		end loop;
+	END PROCESS;
+END ARCHITECTURE sinais;

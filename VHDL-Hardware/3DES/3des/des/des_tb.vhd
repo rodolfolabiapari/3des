@@ -1,0 +1,70 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.all;
+use IEEE.STD_LOGIC_arith.all;
+use IEEE.std_logic_textio.all;
+use IEEE.numeric_bit.all;
+use IEEE.numeric_std.all;
+use IEEE.std_logic_signed.all;
+use IEEE.std_logic_unsigned.all;
+use IEEE.math_real.all;
+use IEEE.math_complex.all;
+
+ENTITY des_tb IS
+END des_tb;
+
+ARCHITECTURE des_tb_behav OF des_tb IS
+
+	-- Importação de componente
+	COMPONENT des port (
+		clk          : IN std_logic;
+		reset        : In std_logic;
+		text64       : IN std_logic_vector(0 TO 63);
+		key          : IN std_logic_vector(0 TO 63);
+		done         : OUT std_logic;
+		textOut64    : OUT std_logic_vector(0 TO 63)
+		);
+	END COMPONENT;
+
+	signal sig_clk          : std_logic;
+	signal sig_reset        : std_logic;
+	signal sig_text64       : std_logic_vector(0 TO 63);
+	signal sig_key          : std_logic_vector(0 TO 63);
+	signal sig_done         : std_logic;
+	signal sig_textOut64    : std_logic_vector(0 TO 63);
+BEGIN
+	-- Mapeamento de portas
+	UUT_des_box: des PORT MAP(
+		clk       => sig_clk      ,
+		reset     => sig_reset    ,
+		text64    => sig_text64   ,
+		key       => sig_key      ,
+		done      => sig_done     ,
+		textOut64 => sig_textOut64
+	);
+
+	processClk: Process 
+	BEGIN
+		sig_clk <= '0';
+		wait for 1 ns;
+		sig_clk <= '1';
+		wait for 1 ns;
+	END PROCESS;
+
+	-- Processo responsavel pela variação no dado de entrada
+	signal_dadoA: PROCESS
+	BEGIN
+		--0123456789ABCDEF
+		--key-133457799BBCDFF1
+
+		--sig_bus64In <= x"133457799BBCDFF1";
+		sig_text64 <= x"3031323334353637";
+		sig_key <= x"133457799BBCDFF1";
+		sig_reset <= '1';
+		wait for 2 ns;
+		sig_reset <= '0';
+		wait for 60000 ns;
+
+	END PROCESS;
+
+END ARCHITECTURE des_tb_behav;
