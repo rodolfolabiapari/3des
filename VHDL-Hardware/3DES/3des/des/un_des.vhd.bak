@@ -587,7 +587,7 @@ begin
 
 
 				when op_ip_final =>
-					sig_ip_ipIn_Finale <= r0 & l0;
+					sig_ip_ipIn_Finale <= rg & lg;
 					textOut64 <= sig_ip_ipOut_Finale;
 
 					state <= pronto;
@@ -595,7 +595,7 @@ begin
 
 				when pronto=>
 					done <= '1';
-					textOut64 <= sig_ip_ipOut_Finale;
+
 					state <= pronto;
 			end case;
 		end if;

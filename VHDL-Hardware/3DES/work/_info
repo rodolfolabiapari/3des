@@ -1,0 +1,1333 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/altera/projetos/ldd/InterfaceDES/VHD/Display
+Edes
+Z0 w1444222148
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 d//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES
+Z5 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/des.vhd
+Z6 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/des.vhd
+l0
+L5
+V[IW>A5f]zBAKNTBaC[P4]0
+!s100 LHZi^92iZ8hNBH[V3PZE10
+Z7 OV;C;10.3d;59
+32
+Z8 !s110 1447341007
+!i10b 1
+Z9 !s108 1447341007.182000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/des.vhd|
+Z11 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/des.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1
+Ades_behav
+R1
+R2
+R3
+DEx4 work 3 des 0 22 [IW>A5f]zBAKNTBaC[P4]0
+l139
+L16
+VkM@_CEOYJQgSk[M91LMTi2
+!s100 zlKXcj5I=iaJE9=AZD;aV2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edes_tb
+Z14 w1438640329
+Z15 DPx4 ieee 12 math_complex 0 22 5i:;_e<WQ2;?b7>BdkGQL0
+Z16 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+Z17 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z18 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+Z19 DPx4 ieee 11 numeric_bit 0 22 d<O?S;AIQfOzoHU3FDK]23
+Z20 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z21 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R1
+R2
+R3
+R4
+Z22 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/des_tb.vhd
+Z23 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/des_tb.vhd
+l0
+L13
+V]ac5;iL8YXW<DXbHJdIXE1
+!s100 >>KKW4=D<0n6]GBZl><nU2
+R7
+32
+R8
+!i10b 1
+Z24 !s108 1447341007.792000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/des_tb.vhd|
+Z26 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/des_tb.vhd|
+!i113 1
+R12
+R13
+Ades_tb_behav
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+DEx4 work 6 des_tb 0 22 ]ac5;iL8YXW<DXbHJdIXE1
+l35
+L16
+VaD`GcWWj18?0fa9P^DG^03
+!s100 [0QIaXJRdGi12m=EjleXI2
+R7
+32
+R8
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R12
+R13
+Eexpansion
+Z27 w1436244364
+R1
+R2
+R3
+R4
+Z28 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/e.vhd
+Z29 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/e.vhd
+l0
+L5
+V7KZQ?S:_a66S7RmA<kolJ1
+!s100 UZ:bfI1AfK5?SE;gnXl9d3
+R7
+32
+Z30 !s110 1447341002
+!i10b 1
+Z31 !s108 1447341002.073000
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/e.vhd|
+Z33 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/e.vhd|
+!i113 1
+R12
+R13
+Aexpansion_behav
+R1
+R2
+R3
+DEx4 work 9 expansion 0 22 7KZQ?S:_a66S7RmA<kolJ1
+l15
+L12
+Vc^>l;8RZkjk1F0Ub]PgEL1
+!s100 jjlS22h958T_djVElCWe80
+R7
+32
+R30
+!i10b 1
+R31
+R32
+R33
+!i113 1
+R12
+R13
+Ef
+Z34 w1437973654
+R1
+R2
+R3
+R4
+Z35 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f.vhd
+Z36 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f.vhd
+l0
+L5
+V@RzYdbTFb>EMQggD@d`l50
+!s100 fRB3K[`5[0O;fPNG[Rm7i1
+R7
+32
+R30
+!i10b 1
+Z37 !s108 1447341002.698000
+Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f.vhd|
+Z39 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f.vhd|
+!i113 1
+R12
+R13
+Af_behav
+R1
+R2
+R3
+DEx4 work 1 f 0 22 @RzYdbTFb>EMQggD@d`l50
+l55
+L16
+VJzKW0JXA?aWVX<2=P1JDG1
+!s100 3aWJNFPlF]zfI3hDm41om3
+R7
+32
+R30
+!i10b 1
+R37
+R38
+R39
+!i113 1
+R12
+R13
+Ef_tb
+Z40 w1436241458
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+R4
+Z41 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f_tb.vhd
+Z42 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f_tb.vhd
+l0
+L13
+V^1T1gSPQ?^VQUfP;U=c3?3
+!s100 AYl:<XDgH]T^SO0A@^5HU3
+R7
+32
+Z43 !s110 1447341005
+!i10b 1
+Z44 !s108 1447341005.854000
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f_tb.vhd|
+Z46 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f_tb.vhd|
+!i113 1
+R12
+R13
+Af_tb_behav
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+DEx4 work 4 f_tb 0 22 ^1T1gSPQ?^VQUfP;U=c3?3
+l35
+L16
+V@SzRRC>SbjmRJHb7;zTfB1
+!s100 zOP>m@Y5:Y6C`Q0m718842
+R7
+32
+R43
+!i10b 1
+R44
+R45
+R46
+!i113 1
+R12
+R13
+Einitialpermutation
+Z47 w1438051707
+R1
+R2
+R3
+R4
+Z48 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip.vhd
+Z49 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip.vhd
+l0
+L5
+VMV`lZSDhf^J[BW4_DVaDK1
+!s100 9[__ZkEP8;DZ2IX339kFU1
+R7
+32
+Z50 !s110 1447341008
+!i10b 1
+Z51 !s108 1447341008.385000
+Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip.vhd|
+Z53 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip.vhd|
+!i113 1
+R12
+R13
+Ainitialpermutation_behav
+R1
+R2
+R3
+DEx4 work 18 initialpermutation 0 22 MV`lZSDhf^J[BW4_DVaDK1
+l15
+L12
+VnRN0IMDgh8h1claT9?g>@3
+!s100 mjPU`Vz[;eE=XmO[>A;Mb3
+R7
+32
+R50
+!i10b 1
+R51
+R52
+R53
+!i113 1
+R12
+R13
+Einitialpermutationfinale
+Z54 w1438639661
+R1
+R2
+R3
+R4
+Z55 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip_finale.vhd
+Z56 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip_finale.vhd
+l0
+L5
+V7Yg7bYXDClGH8K:Jm`b:J0
+!s100 R28Z?Lkik>[z8QW`z9bVh1
+R7
+32
+Z57 !s110 1447341009
+!i10b 1
+Z58 !s108 1447341008.979000
+Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip_finale.vhd|
+Z60 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip_finale.vhd|
+!i113 1
+R12
+R13
+Ainitialpermutationfinale_behav
+R1
+R2
+R3
+DEx4 work 24 initialpermutationfinale 0 22 7Yg7bYXDClGH8K:Jm`b:J0
+l15
+L12
+V]42RB]<RFJm<=TV^DW]<21
+!s100 Cg[83S54G1CAaTY880?lK3
+R7
+32
+R57
+!i10b 1
+R58
+R59
+R60
+!i113 1
+R12
+R13
+Ep_box
+Z61 w1438627886
+R1
+R2
+R3
+R4
+Z62 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/p_box.vhd
+Z63 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/p_box.vhd
+l0
+L5
+V5UBfUng3j:A8KD7k86BR01
+!s100 1SDTc66Y>Yn4[TSag]j:H2
+R7
+32
+Z64 !s110 1447341003
+!i10b 1
+Z65 !s108 1447341003.229000
+Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/p_box.vhd|
+Z67 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/p_box.vhd|
+!i113 1
+R12
+R13
+Ap_box_behav
+R1
+R2
+R3
+DEx4 work 5 p_box 0 22 5UBfUng3j:A8KD7k86BR01
+l15
+L12
+VHLY=BIFG]f?JAekoPhf1C1
+!s100 zUaDC<LGE<bY2ojjRHf3i1
+R7
+32
+R64
+!i10b 1
+R65
+R66
+R67
+!i113 1
+R12
+R13
+Epc1_tb
+Z68 w1436147233
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+R4
+Z69 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1_tb.vhd
+Z70 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1_tb.vhd
+l0
+L13
+VYKb?_RP@iP6Cl:Eol;hM73
+!s100 TYiCZ8P3oTAdnW6XS=9ie0
+R7
+32
+R43
+!i10b 1
+Z71 !s108 1447341005.245000
+Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1_tb.vhd|
+Z73 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1_tb.vhd|
+!i113 1
+R12
+R13
+Apc1_behav
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+DEx4 work 6 pc1_tb 0 22 YKb?_RP@iP6Cl:Eol;hM73
+l27
+L16
+V`O0`><BaVlH7U:@S[NVSB2
+!s100 CB6HVRKRf^:6T;SUgVH010
+R7
+32
+R43
+!i10b 1
+R71
+R72
+R73
+!i113 1
+R12
+R13
+Epermutedchoice1
+Z74 w1436187578
+R1
+R2
+R3
+R4
+Z75 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1.vhd
+Z76 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1.vhd
+l0
+L5
+VN^D;ZLmPKfGM[ab>DCEC;0
+!s100 8<P6c8J^N0ZbE4bKJb_Io1
+R7
+32
+Z77 !s110 1447341000
+!i10b 1
+Z78 !s108 1447341000.245000
+Z79 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1.vhd|
+Z80 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1.vhd|
+!i113 1
+R12
+R13
+Apermutedchoice1_behav
+R1
+R2
+R3
+DEx4 work 15 permutedchoice1 0 22 N^D;ZLmPKfGM[ab>DCEC;0
+l15
+L12
+VX8T;[oPVFzO389i?^ddYG2
+!s100 ?:ZQ]<PSdVj_iH[L>CRXf1
+R7
+32
+R77
+!i10b 1
+R78
+R79
+R80
+!i113 1
+R12
+R13
+Epermutedchoice2
+Z81 w1438059236
+R1
+R2
+R3
+R4
+Z82 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc2.vhd
+Z83 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc2.vhd
+l0
+L5
+VVnlA8QYU@;lOLlkaj:@5^0
+!s100 Ek`U:G2>4ZjNYaN3eM[SI2
+R7
+32
+R77
+!i10b 1
+Z84 !s108 1447341000.839000
+Z85 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc2.vhd|
+Z86 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc2.vhd|
+!i113 1
+R12
+R13
+Apermutedchoice2_behav
+R1
+R2
+R3
+DEx4 work 15 permutedchoice2 0 22 VnlA8QYU@;lOLlkaj:@5^0
+l15
+L12
+V]?dia>3SD^;>N2R5fV]BT3
+!s100 D?`1fCKU=0a0mFGVY1_Qf2
+R7
+32
+R77
+!i10b 1
+R84
+R85
+R86
+!i113 1
+R12
+R13
+Eprocesskey
+Z87 w1438042268
+R1
+R2
+R3
+R4
+Z88 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey.vhd
+Z89 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey.vhd
+l0
+L5
+VkBbB]`=bR2?;Ac_zjR0Wk3
+!s100 ThU?gD`0?VUV1<ZQcbC;X2
+R7
+32
+Z90 !s110 1447341001
+!i10b 1
+Z91 !s108 1447341001.479000
+Z92 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey.vhd|
+Z93 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey.vhd|
+!i113 1
+R12
+R13
+Aprocesskey_behav
+R1
+R2
+R3
+DEx4 work 10 processkey 0 22 kBbB]`=bR2?;Ac_zjR0Wk3
+l126
+L30
+VIizc_eOHK9Y@2gVSZN^_]3
+!s100 @L^Q3TC;K@YJnSFGcYL8T2
+R7
+32
+R90
+!i10b 1
+R91
+R92
+R93
+!i113 1
+R12
+R13
+Eprocesskey_tb
+Z94 w1436186749
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+R4
+Z95 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey_tb.vhd
+Z96 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey_tb.vhd
+l0
+L13
+VWT26C3VjgRVY7gRVnW4;42
+!s100 C8AYlM5Y]iZmXkk]kIzm@3
+R7
+32
+Z97 !s110 1447341004
+!i10b 1
+Z98 !s108 1447341004.557000
+Z99 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey_tb.vhd|
+Z100 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey_tb.vhd|
+!i113 1
+R12
+R13
+Aprocesskey_tb_behav
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+DEx4 work 13 processkey_tb 0 22 WT26C3VjgRVY7gRVnW4;42
+l33
+L16
+V1jzWl]2GDMRVoJ6ZgY:012
+!s100 0bOZF5C?9l94cYI9OoK:V1
+R7
+32
+R97
+!i10b 1
+R98
+R99
+R100
+!i113 1
+R12
+R13
+Esbox
+Z101 w1438228529
+R1
+R2
+R3
+R4
+Z102 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox.vhd
+Z103 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox.vhd
+l0
+L5
+Vc3OIMG6daQGS5Xb_LZY3;3
+!s100 GdO@bF`aK0OzDn1okhO?G2
+R7
+32
+Z104 !s110 1447340995
+!i10b 1
+Z105 !s108 1447340995.042000
+Z106 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox.vhd|
+Z107 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox.vhd|
+!i113 1
+R12
+R13
+Asbox_behav
+R1
+R2
+R3
+DEx4 work 4 sbox 0 22 c3OIMG6daQGS5Xb_LZY3;3
+l138
+L15
+VcIj4NdIfRKTfd_?>ka:l^2
+!s100 ofnNUzN2VC4;;<:JOXGUH0
+R7
+32
+R104
+!i10b 1
+R105
+R106
+R107
+!i113 1
+R12
+R13
+Esbox1
+Z108 w1436149113
+R1
+R2
+R3
+R4
+Z109 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1.vhd
+Z110 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1.vhd
+l0
+L5
+V6FbM3ee7KDRIWDF_ac2D_0
+!s100 P[ln<VA=Nf6RO7o551lDL2
+R7
+32
+R104
+!i10b 1
+Z111 !s108 1447340995.682000
+Z112 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1.vhd|
+Z113 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1.vhd|
+!i113 1
+R12
+R13
+Asbox1_behav
+R1
+R2
+R3
+DEx4 work 5 sbox1 0 22 6FbM3ee7KDRIWDF_ac2D_0
+l134
+L15
+VOLh?^7gA4eR?MI?YJAZR41
+!s100 LdADz`@cEz:1fcB@^O`ZZ1
+R7
+32
+R104
+!i10b 1
+R111
+R112
+R113
+!i113 1
+R12
+R13
+Esbox1_tb
+w1435975580
+R21
+R2
+R3
+R4
+8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1_tb.vhd
+F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1_tb.vhd
+l0
+L5
+VHzK1JATOg1I@:V7d5ON913
+!s100 2G8`jf9J[Q`a7g;=_VKM20
+R7
+32
+R64
+!i10b 1
+!s108 1447341003.776000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1_tb.vhd|
+!s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1_tb.vhd|
+!i113 1
+R12
+R13
+Esbox2
+Z114 w1436149083
+R1
+R2
+R3
+R4
+Z115 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox2.vhd
+Z116 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox2.vhd
+l0
+L5
+V86KNo:NJZ?0=@<eednSBE2
+!s100 E;Yi6EZAJ8lQcO7Ae;GeX2
+R7
+32
+Z117 !s110 1447340996
+!i10b 1
+Z118 !s108 1447340996.292000
+Z119 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox2.vhd|
+Z120 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox2.vhd|
+!i113 1
+R12
+R13
+Asbox2_behav
+R1
+R2
+R3
+DEx4 work 5 sbox2 0 22 86KNo:NJZ?0=@<eednSBE2
+l147
+L15
+VCkVKZE7>V^81<lmY7^GY?3
+!s100 ]S8VKKY]CYZRQjUF_^@313
+R7
+32
+R117
+!i10b 1
+R118
+R119
+R120
+!i113 1
+R12
+R13
+Esbox3
+Z121 w1436149091
+R1
+R2
+R3
+R4
+Z122 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox3.vhd
+Z123 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox3.vhd
+l0
+L5
+Vj@3PJzLK>3PQ^?;d?`d>`2
+!s100 FiC3N5G;V]jFY<9>a^NJm2
+R7
+32
+R117
+!i10b 1
+Z124 !s108 1447340996.854000
+Z125 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox3.vhd|
+Z126 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox3.vhd|
+!i113 1
+R12
+R13
+Asbox3_behav
+R1
+R2
+R3
+DEx4 work 5 sbox3 0 22 j@3PJzLK>3PQ^?;d?`d>`2
+l148
+L15
+VCP5e3DbLRW@QW@HA@4R2A2
+!s100 7=Y70^?KRPE>Y7a2>cT9O0
+R7
+32
+R117
+!i10b 1
+R124
+R125
+R126
+!i113 1
+R12
+R13
+Esbox4
+Z127 w1436241584
+R1
+R2
+R3
+R4
+Z128 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox4.vhd
+Z129 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox4.vhd
+l0
+L5
+V`TimUJ9hn85;3Xc@WXZQW3
+!s100 o=C=cFzS>>4bgK0Z5PFdh3
+R7
+32
+Z130 !s110 1447340997
+!i10b 1
+Z131 !s108 1447340997.432000
+Z132 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox4.vhd|
+Z133 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox4.vhd|
+!i113 1
+R12
+R13
+Asbox4_behav
+R1
+R2
+R3
+DEx4 work 5 sbox4 0 22 `TimUJ9hn85;3Xc@WXZQW3
+l144
+L15
+V1O^3zRLgP1clj]6F8POdU1
+!s100 Y1XZcA`<9XQ>B2MgoIzT23
+R7
+32
+R130
+!i10b 1
+R131
+R132
+R133
+!i113 1
+R12
+R13
+Esbox5
+Z134 w1436149048
+R1
+R2
+R3
+R4
+Z135 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox5.vhd
+Z136 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox5.vhd
+l0
+L5
+V8<3AgjF<@NJSDLmmi9;<A1
+!s100 UnO4Gm5M8keg2d?EY0K2e0
+R7
+32
+Z137 !s110 1447340998
+!i10b 1
+Z138 !s108 1447340997.979000
+Z139 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox5.vhd|
+Z140 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox5.vhd|
+!i113 1
+R12
+R13
+Asbox5_behav
+R1
+R2
+R3
+DEx4 work 5 sbox5 0 22 8<3AgjF<@NJSDLmmi9;<A1
+l145
+L15
+Vo9oOcT1=?=6Ao2[HCidkl1
+!s100 M1SzRF3j4kcH=IiFL[gZX3
+R7
+32
+R137
+!i10b 1
+R138
+R139
+R140
+!i113 1
+R12
+R13
+Esbox6
+Z141 w1438630293
+R1
+R2
+R3
+R4
+Z142 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox6.vhd
+Z143 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox6.vhd
+l0
+L5
+VZYlFG7S?4<l<JV_:>C``C0
+!s100 MQmO>NOT9F?n`[Dh1920^3
+R7
+32
+R137
+!i10b 1
+Z144 !s108 1447340998.542000
+Z145 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox6.vhd|
+Z146 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox6.vhd|
+!i113 1
+R12
+R13
+Asbox6_behav
+R1
+R2
+R3
+DEx4 work 5 sbox6 0 22 ZYlFG7S?4<l<JV_:>C``C0
+l148
+L15
+V8FJ<]5Mh`QTVag2mh<2FY3
+!s100 aR^dIgXbo4o<]?@aUlkSE3
+R7
+32
+R137
+!i10b 1
+R144
+R145
+R146
+!i113 1
+R12
+R13
+Esbox7
+Z147 w1436149075
+R1
+R2
+R3
+R4
+Z148 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox7.vhd
+Z149 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox7.vhd
+l0
+L5
+V5nHH=TJXI76QAZTTCZLF@1
+!s100 VJ9@c<E>EOFbSULWW<gc:1
+R7
+32
+Z150 !s110 1447340999
+!i10b 1
+Z151 !s108 1447340999.089000
+Z152 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox7.vhd|
+Z153 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox7.vhd|
+!i113 1
+R12
+R13
+Asbox7_behav
+R1
+R2
+R3
+DEx4 work 5 sbox7 0 22 5nHH=TJXI76QAZTTCZLF@1
+l150
+L15
+V]Ua@5JR?EgJHClCDZf^Ge1
+!s100 aZ5oQk`?37haUbK6jgPVb2
+R7
+32
+R150
+!i10b 1
+R151
+R152
+R153
+!i113 1
+R12
+R13
+Esbox8
+Z154 w1444249478
+R1
+R2
+R3
+R4
+Z155 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox8.vhd
+Z156 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox8.vhd
+l0
+L5
+Va@Ab4PJIRhW;<F:21bCHE1
+!s100 0z_4cVQUBW104ezXYXci=3
+R7
+32
+R150
+!i10b 1
+Z157 !s108 1447340999.620000
+Z158 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox8.vhd|
+Z159 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox8.vhd|
+!i113 1
+R12
+R13
+Asbox8_behav
+R1
+R2
+R3
+DEx4 work 5 sbox8 0 22 a@Ab4PJIRhW;<F:21bCHE1
+l148
+L15
+V@Qim524U2YO=YC?XE@KH=3
+!s100 UEaB:jM_Jk_MgYaQ^8PlP0
+R7
+32
+R150
+!i10b 1
+R157
+R158
+R159
+!i113 1
+R12
+R13
+Esbox_tb
+Z160 w1436147760
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+R4
+Z161 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox_tb.vhd
+Z162 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox_tb.vhd
+l0
+L13
+VC`O_Q6]VeKlf^;5WEhe4`2
+!s100 a5IV:[LmUQg6PoP7=]XTG2
+R7
+32
+R97
+!i10b 1
+Z163 !s108 1447341003.964000
+Z164 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox_tb.vhd|
+Z165 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox_tb.vhd|
+!i113 1
+R12
+R13
+Asinais
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+DEx4 work 7 sbox_tb 0 22 C`O_Q6]VeKlf^;5WEhe4`2
+l33
+L16
+V=0VJ5eOKMeBk^CGDm29@X1
+!s100 QC]D8P[MzgVcNdWR>2GgM3
+R7
+32
+R97
+!i10b 1
+R163
+R164
+R165
+!i113 1
+R12
+R13
+Et_un_des
+Z166 w1447374769
+R1
+R2
+R3
+R4
+Z167 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des.vhd
+Z168 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des.vhd
+l0
+L5
+VD>K[1ObXZXO^A^kceTI6^0
+!s100 0cQiDeXlh@FClZiJQ^`IH3
+R7
+32
+Z169 !s110 1447374777
+!i10b 1
+Z170 !s108 1447374777.335000
+Z171 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des.vhd|
+Z172 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des.vhd|
+!i113 1
+R12
+R13
+At_un_des_behav
+R1
+R2
+R3
+DEx4 work 8 t_un_des 0 22 D>K[1ObXZXO^A^kceTI6^0
+l44
+L16
+VPXZF1cO8KgW6g3c<_`dUN1
+!s100 bQJ@KfYle`5mGLWXAddTN1
+R7
+32
+R169
+!i10b 1
+R170
+R171
+R172
+!i113 1
+R12
+R13
+Et_un_des_tb
+Z173 w1447373553
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+R4
+Z174 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des_tb.vhd
+Z175 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des_tb.vhd
+l0
+L13
+VLS2b]H65HcZ^]hD;AW;2T3
+!s100 >^><23Czf@Am0N<kWd?CK1
+R7
+32
+Z176 !s110 1447373988
+!i10b 1
+Z177 !s108 1447373988.601000
+Z178 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des_tb.vhd|
+Z179 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des_tb.vhd|
+!i113 1
+R12
+R13
+At_un_des_tb_behav
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+DEx4 work 11 t_un_des_tb 0 22 LS2b]H65HcZ^]hD;AW;2T3
+l35
+L16
+VYD24[2>d[OT8OGaH[IO360
+!s100 56<WWB46N`5WAQaBJ:?2K1
+R7
+32
+R176
+!i10b 1
+R177
+R178
+R179
+!i113 1
+R12
+R13
+Etdes
+Z180 w1447372904
+R1
+R2
+R3
+R4
+Z181 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes.vhd
+Z182 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes.vhd
+l0
+L5
+VP>8QEZY_NI<;>Qfkb7f>h2
+!s100 h9]g]9nYNH9Q`I<E___G>0
+R7
+32
+Z183 !s110 1447373100
+!i10b 1
+Z184 !s108 1447373100.148000
+Z185 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes.vhd|
+Z186 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes.vhd|
+!i113 1
+R12
+R13
+Atdes_behav
+R1
+R2
+R3
+DEx4 work 4 tdes 0 22 P>8QEZY_NI<;>Qfkb7f>h2
+l44
+L16
+Ve<YdkaoBAoABFYM8m5NbC3
+!s100 T25AE0Q0E0n1XR:=Z]ROO1
+R7
+32
+R183
+!i10b 1
+R184
+R185
+R186
+!i113 1
+R12
+R13
+Etdes_tb
+Z187 w1444143854
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+R4
+Z188 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes_tb.vhd
+Z189 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes_tb.vhd
+l0
+L13
+VfZ6G__]@XKAzc4G52LYXQ3
+!s100 GK;3dBffo>i>GBbAR_;V=1
+R7
+32
+Z190 !s110 1447341006
+!i10b 1
+Z191 !s108 1447341006.573000
+Z192 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes_tb.vhd|
+Z193 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes_tb.vhd|
+!i113 1
+R12
+R13
+Atdes_tb_behav
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+DEx4 work 7 tdes_tb 0 22 fZ6G__]@XKAzc4G52LYXQ3
+l35
+L16
+VN:eOX`SBZ3YVzaeP`jdJ62
+!s100 2jR4FjGin^EZmBmF=8RIC3
+R7
+32
+R190
+!i10b 1
+R191
+R192
+R193
+!i113 1
+R12
+R13
+Eun_des
+Z194 w1447375546
+R1
+R2
+R3
+R4
+Z195 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des.vhd
+Z196 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des.vhd
+l0
+L5
+VGRY_YDd44okY38Pla898]2
+!s100 mIFnOek`UGNEQ2=LkWc7=0
+R7
+32
+Z197 !s110 1447375560
+!i10b 1
+Z198 !s108 1447375560.007000
+Z199 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des.vhd|
+Z200 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des.vhd|
+!i113 1
+R12
+R13
+Aun_des_behav
+R1
+R2
+R3
+Z201 DEx4 work 6 un_des 0 22 GRY_YDd44okY38Pla898]2
+l140
+L16
+V1]O1:CzL10cQcCZck1bCb0
+!s100 Ha9HG]kdgLRCHCm02R2CA2
+R7
+32
+R197
+!i10b 1
+R198
+R199
+R200
+!i113 1
+R12
+R13
+Eun_des_tb
+Z202 w1447341501
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+R4
+Z203 8//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des_tb.vhd
+Z204 F//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des_tb.vhd
+l0
+L13
+VOJ8ankKkg<k7kBokWXd4<2
+!s100 7Fg>[hooUg?T?EA`<KMac3
+R7
+32
+Z205 !s110 1447341507
+!i10b 1
+Z206 !s108 1447341507.144000
+Z207 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des_tb.vhd|
+Z208 !s107 //VBOXSVR/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des_tb.vhd|
+!i113 1
+R12
+R13
+Aun_des_tb_behav
+R15
+R16
+R17
+R18
+R19
+R20
+R21
+R1
+R2
+R3
+DEx4 work 9 un_des_tb 0 22 OJ8ankKkg<k7kBokWXd4<2
+l35
+L16
+V=FRz4R0i?_lKEMdOC]6b33
+!s100 Qk]<>o]C=aNeoBWmXaiO52
+R7
+32
+R205
+!i10b 1
+R206
+R207
+R208
+!i113 1
+R12
+R13
