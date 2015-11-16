@@ -2,27 +2,27 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity ram is
+entity ramChave is
 	generic(
-		bits_endereco	: integer := 9; -- 65536 endereços
-		bits_dado		: integer := 16
+		blocos	: integer := 3; -- 3 blocos para a chave
+		bits_dado		: integer := 64
 	);
 
 	port (
 		clock   : in	std_logic;
 		escrita	: in	std_logic;
-		endereco : in	std_logic_vector(bits_endereco - 1 DOWNTO 0);
+		endereco : in	std_logic_vector(blocos - 1 DOWNTO 0);
 		datain	: in	std_logic_vector(bits_dado - 1 DOWNTO 0);
 		dataout : out std_logic_vector(bits_dado - 1 DOWNTO 0)
 	);
-end entity ram;
+end entity ramChave;
 
-architecture ram_arch of ram is
+architecture ramChave_arch of ramChave is
 
-	 type ram_type is array (0 to (2 ** bits_endereco) - 1) of std_logic_vector(bits_dado - 1 DOWNTO 0);
+	 type ram_type is array (0 to (blocos) - 1) of std_logic_vector(bits_dado - 1 DOWNTO 0);
 	 signal ram : ram_type;
 
-	 signal endereco_leitura : std_logic_vector(bits_endereco - 1 DOWNTO 0);
+	 signal endereco_leitura : std_logic_vector(blocos - 1 DOWNTO 0);
 
 begin
 
@@ -39,4 +39,4 @@ begin
 
 	dataout <= ram(to_integer(unsigned(endereco_leitura)));
 
-end architecture ram_arch;
+end architecture ramChave_arch;

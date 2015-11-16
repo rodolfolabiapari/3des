@@ -2,10 +2,10 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity ram is
+entity ramTexto is
 	generic(
-		bits_endereco	: integer := 9; -- 65536 endereços
-		bits_dado		: integer := 16
+		bits_endereco	: integer := 20; --8388608 = 2^20 endereços * 8 caracteres cada. 
+		bits_dado		: integer := 64
 	);
 
 	port (
@@ -15,9 +15,9 @@ entity ram is
 		datain	: in	std_logic_vector(bits_dado - 1 DOWNTO 0);
 		dataout : out std_logic_vector(bits_dado - 1 DOWNTO 0)
 	);
-end entity ram;
+end entity ramTexto;
 
-architecture ram_arch of ram is
+architecture ramTexto_arch of ramTexto is
 
 	 type ram_type is array (0 to (2 ** bits_endereco) - 1) of std_logic_vector(bits_dado - 1 DOWNTO 0);
 	 signal ram : ram_type;
@@ -39,4 +39,4 @@ begin
 
 	dataout <= ram(to_integer(unsigned(endereco_leitura)));
 
-end architecture ram_arch;
+end architecture ramTexto_arch;
