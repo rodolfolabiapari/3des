@@ -5,6 +5,7 @@ use IEEE.numeric_std.all;
 entity interface_3des is
 	port(
 		clock          : IN std_logic;
+		flags          : in std_logic_vector (0 to 7);
 		reset          : In std_logic;
 		done           : OUT std_logic
 	);
@@ -111,7 +112,6 @@ begin
 			if (clock'event and clock = '1') then
 				case estado is
 					when state_reset =>
-
 						if (reset = '0') then
 							estado <= des1Carrega;
 						end if;
