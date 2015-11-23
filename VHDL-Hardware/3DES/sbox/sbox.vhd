@@ -6,8 +6,8 @@ entity sbox is
 	port(
 		clk 		: IN std_logic;
 		reset 	    : IN std_logic;
-		bus48In 	: IN std_logic_vector(0 TO 47);
-		bus32Out    : OUT std_logic_vector(0 TO 31);
+		bus48In 	: IN std_logic_vector(47 downto 0); 
+		bus32Out    : OUT std_logic_vector(31 downto 0);
 		done 		: OUT std_logic
 	);
 end sbox;
@@ -24,104 +24,104 @@ architecture sbox_behav of sbox is
 		port(
 			clk 	: IN std_logic;
 			reset : IN std_logic;
-			busIn6 	: IN std_logic_vector(0 TO 5);
+			busIn6 	: IN std_logic_vector(5 downto 0);
 			done : OUT std_logic;
-			busOut4 : OUT std_logic_vector(0 TO 3)
+			busOut4 : OUT std_logic_vector(3 downto 0)
 		);
 	end component;
 	signal sig_1_done : std_logic;
-	signal sig_1_busOut4 : std_logic_vector (0 TO 3);
+	signal sig_1_busOut4 : std_logic_vector (3 downto 0);
 	
 	-- SBOX 2
 	component sbox2
 		port(
 			clk 	: IN std_logic;
 			reset : IN std_logic;
-			busIn6 	: IN std_logic_vector(0 TO 5);
+			busIn6 	: IN std_logic_vector(5 downto 0);
 			done : OUT std_logic;
-			busOut4 : OUT std_logic_vector(0 TO 3)
+			busOut4 : OUT std_logic_vector(3 downto 0)
 		);
 	end component;
 	signal sig_2_done : std_logic;
-	signal sig_2_busOut4 : std_logic_vector (0 TO 3);
+	signal sig_2_busOut4 : std_logic_vector (3 downto 0);
 	
 	-- SBOX 3
 	component sbox3
 		port(
 			clk 	: IN std_logic;
 			reset : IN std_logic;
-			busIn6 	: IN std_logic_vector(0 TO 5);
+			busIn6 	: IN std_logic_vector(5 downto 0);
 			done : OUT std_logic;
-			busOut4 : OUT std_logic_vector(0 TO 3)
+			busOut4 : OUT std_logic_vector(3 downto 0)
 		);
 	end component;
 	signal sig_3_done : std_logic;
-	signal sig_3_busOut4 : std_logic_vector (0 TO 3);
+	signal sig_3_busOut4 : std_logic_vector (3 downto 0);
 	
 	-- SBOX 4
 	component sbox4
 		port(
 			clk 	: IN std_logic;
 			reset : IN std_logic;
-			busIn6 	: IN std_logic_vector(0 TO 5);
+			busIn6 	: IN std_logic_vector(5 downto 0);
 			done : OUT std_logic;
-			busOut4 : OUT std_logic_vector(0 TO 3)
+			busOut4 : OUT std_logic_vector(3 downto 0)
 		);
 	end component;
 	signal sig_4_done : std_logic;
-	signal sig_4_busOut4 : std_logic_vector (0 TO 3);
+	signal sig_4_busOut4 : std_logic_vector (3 downto 0);
 	
 	-- SBOX 5
 	component sbox5
 		port(
 			clk 	: IN std_logic;
 			reset : IN std_logic;
-			busIn6 	: IN std_logic_vector(0 TO 5);
+			busIn6 	: IN std_logic_vector(5 downto 0);
 			done : OUT std_logic;
-			busOut4 : OUT std_logic_vector(0 TO 3)
+			busOut4 : OUT std_logic_vector(3 downto 0)
 		);
 	end component;
 	signal sig_5_done : std_logic;
-	signal sig_5_busOut4 : std_logic_vector (0 TO 3);
+	signal sig_5_busOut4 : std_logic_vector (3 downto 0);
 	
 	-- SBOX 6
 	component sbox6
 		port(
 			clk 	: IN std_logic;
 			reset : IN std_logic;
-			busIn6 	: IN std_logic_vector(0 TO 5);
+			busIn6 	: IN std_logic_vector(5 downto 0);
 			done : OUT std_logic;
-			busOut4 : OUT std_logic_vector(0 TO 3)
+			busOut4 : OUT std_logic_vector(3 downto 0)
 		);
 	end component;
 	signal sig_6_done : std_logic;
-	signal sig_6_busOut4 : std_logic_vector (0 TO 3);
+	signal sig_6_busOut4 : std_logic_vector (3 downto 0);
 	
 	-- SBOX 7
 	component sbox7
 		port(
 			clk 	: IN std_logic;
 			reset : IN std_logic;
-			busIn6 	: IN std_logic_vector(0 TO 5);
+			busIn6 	: IN std_logic_vector(5 downto 0);
 			done : OUT std_logic;
-			busOut4 : OUT std_logic_vector(0 TO 3)
+			busOut4 : OUT std_logic_vector(3 downto 0)
 		);
 	end component;
 	signal sig_7_done : std_logic;
-	signal sig_7_busOut4 : std_logic_vector (0 TO 3);
+	signal sig_7_busOut4 : std_logic_vector (3 downto 0);
 	
 	-- SBOX 8
 	component sbox8
 		port(
 			clk 	: IN std_logic;
 			reset : IN std_logic;
-			busIn6 	: IN std_logic_vector(0 TO 5);
+			busIn6 	: IN std_logic_vector(5 downto 0);
 			done : OUT std_logic;
-			busOut4 : OUT std_logic_vector(0 TO 3)
+			busOut4 : OUT std_logic_vector(3 downto 0)
 		);
 	end component;
 	signal sig_8_done : std_logic;
-	signal sig_8_busOut4 : std_logic_vector (0 TO 3);
+	signal sig_8_busOut4 : std_logic_vector (3 downto 0);
 
 
 	-- Build an enumerated type for the state machine
@@ -132,8 +132,8 @@ architecture sbox_behav of sbox is
 	
 	signal sig_reset : std_logic;
 
-	signal sig_bus48 : std_logic_vector(0 TO 47);
-	signal sig_bus32 : std_logic_vector(0 TO 31);
+	signal sig_bus48 : std_logic_vector(47 downto 0);
+	signal sig_bus32 : std_logic_vector(31 downto 0);
 	
 begin
 	sig_bus48 <= bus48In;
@@ -141,7 +141,7 @@ begin
 	mapSbox1: sbox1 port map(
 		clk      => clk,
 		reset    => sig_reset,
-		busIn6 	 => bus48In (0 TO 5),
+		busIn6 	 => bus48In (5 downto 0),
 		done     => sig_1_done,
 		busOut4  => sig_1_busOut4
 	);
@@ -149,7 +149,7 @@ begin
 	mapSbox2: sbox2 port map(
 		clk      => clk,
 		reset    => sig_reset,
-		busIn6 	 => bus48In (6 TO 11),
+		busIn6 	 => bus48In (11 downto 6),
 		done     => sig_2_done,
 		busOut4  => sig_2_busOut4
 	);
@@ -157,7 +157,7 @@ begin
 	mapSbox3: sbox3 port map(
 		clk      => clk,
 		reset    => sig_reset,
-		busIn6 	 => bus48In (12 TO 17),
+		busIn6 	 => bus48In (12 downto 12),
 		done     => sig_3_done,
 		busOut4  => sig_3_busOut4
 	);
@@ -165,7 +165,7 @@ begin
 	mapSbox4: sbox4 port map(
 		clk      => clk,
 		reset    => sig_reset,
-		busIn6 	 => bus48In (18 TO 23),
+		busIn6 	 => bus48In (23 downto 18),
 		done     => sig_4_done,
 		busOut4  => sig_4_busOut4
 	);
@@ -173,7 +173,7 @@ begin
 	mapSbox5: sbox5 port map(
 		clk      => clk,
 		reset    => sig_reset,
-		busIn6 	 => bus48In (24 TO 29),
+		busIn6 	 => bus48In (29 downto 24),
 		done     => sig_5_done,
 		busOut4  => sig_5_busOut4
 	);
@@ -181,7 +181,7 @@ begin
 	mapSbox6: sbox6 port map(
 		clk      => clk,
 		reset    => sig_reset,
-		busIn6 	 => bus48In (30 TO 35),
+		busIn6 	 => bus48In (35 downto 30),
 		done     => sig_6_done,
 		busOut4  => sig_6_busOut4
 	);
@@ -189,7 +189,7 @@ begin
 	mapSbox7: sbox7 port map(
 		clk      => clk,
 		reset    => sig_reset,
-		busIn6 	 => bus48In (36 TO 41),
+		busIn6 	 => bus48In (41 downto 36),
 		done     => sig_7_done,
 		busOut4  => sig_7_busOut4
 	);
@@ -197,7 +197,7 @@ begin
 	mapSbox8: sbox8 port map(
 		clk      => clk,
 		reset    => sig_reset,
-		busIn6 	 => bus48In (42 TO 47),
+		busIn6 	 => bus48In (47 downto 42),
 		done     => sig_8_done,
 		busOut4  => sig_8_busOut4
 	);
@@ -234,14 +234,14 @@ begin
 					    sig_8_done = '1')
 					then
 
-						sig_bus32 (0 TO 3)   <= sig_1_busOut4;
-						sig_bus32 (4 TO 7)   <= sig_2_busOut4;
-						sig_bus32 (8 TO 11)  <= sig_3_busOut4;
-						sig_bus32 (12 TO 15) <= sig_4_busOut4;
-						sig_bus32 (16 TO 19) <= sig_5_busOut4;
-						sig_bus32 (20 TO 23) <= sig_6_busOut4;
-						sig_bus32 (24 TO 27) <= sig_7_busOut4;
-						sig_bus32 (28 TO 31) <= sig_8_busOut4;
+						sig_bus32 (3 downto 0)   <= sig_1_busOut4;
+						sig_bus32 (7 downto 4)   <= sig_2_busOut4;
+						sig_bus32 (11 downto 8)  <= sig_3_busOut4;
+						sig_bus32 (15 downto 12) <= sig_4_busOut4;
+						sig_bus32 (19 downto 16) <= sig_5_busOut4;
+						sig_bus32 (23 downto 20) <= sig_6_busOut4;
+						sig_bus32 (27 downto 24) <= sig_7_busOut4;
+						sig_bus32 (31 downto 28) <= sig_8_busOut4;
 
 						state <= pronto;
 					end if;

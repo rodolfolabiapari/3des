@@ -133,7 +133,6 @@ begin
 			if (clock'event and clock = '1') then
 				case estado is
 					when state_reset =>
-
 						if (reset = '0' and inStable = '1') then
 							estado <= carregando_funcao;
 							controle_recebido <= '0';
