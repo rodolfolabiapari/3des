@@ -1,0 +1,511 @@
+
+
+
+
+
+\frame{
+    \Huge \color{blue} \bf  \centering Introdução
+}
+\begin{frame}{Introdução}
+	\begin{itemize}
+		\item Flynn \cite{flynn} definiu em 1972 um sistema de \textbf{categorização} de \textbf{arquiteturas} de \textbf{sistema de computadores} denominando a Taxonomia de Flynn (Figura~\ref{fig:taxonomia}:
+	\end{itemize}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.9\textwidth]{img/tobias/taxonomia.png}
+		\caption{Taxonomia de Flynn.}
+		\label{fig:taxonomia}
+	\end{figure}
+
+	\begin{itemize}
+		\item Os tópicos abordados nesta apresentação serão:
+		\begin{itemize}
+			\item Single Instruction - Simple Data(SISD);
+			\item Single Instruction - Multiple Data(SIMD);
+			\item Multiple Instruction - Multiple Data(MIMD);
+			\item Memória Compartilhada;
+			\item Memória Distribuída;
+			\item ccNUMA;
+			\item Cluster;
+			\item Multiple Instruction - Simple Data(MISD);
+		\end{itemize}
+
+		\item Esta é válida até os dias atuais.
+	\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\frame{
+    \Huge \color{blue} \bf  \centering Single Instruction - Single Data (SISD)
+}
+\begin{frame}{Single Instruction - Single Data (SISD)}
+	\begin{itemize}
+		\item Arquitetura que possui tipo de execução mais simples:
+		\begin{itemize}
+    		\item Executa apenas 1 instrução por ciclo de clock.
+    		\item Apenas 1 conjunto de dados ou operando.
+		\end{itemize}
+
+		\item Também chamado de \textbf{Computação Escalar}. 
+	\end{itemize}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.9\textwidth]{img/tobias/sisd1.png}
+		\caption{Soma de 2 operando.}
+		\label{fig:sisd1}
+	\end{figure}
+
+	\begin{itemize}
+		\item \textbf{Problema:} Para adicionar 5 pares de números, necessita de $n * 5$ clocks.
+		\item Cada um das etapas mostradas na Figura~\ref{fig:sisd1} possui sub-etapas piorando a execução da máquina.
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Single Instruction - Single Data (SISD)}
+    \begin{itemize}
+		\item Então, pra tornar mais eficiente, utiliza-se \textbf{pipelining}.
+		\item Por exemplo,
+		\begin{itemize}
+			\item  Se existe \textbf{unidade funcional} para os 5 passos da soma, então gasta-se 5 ciclos.
+			\begin{itemize}
+    		    \item Se todas as unidades estiverem ocupadas, existirá um resultado a cada ciclo. 
+			\end{itemize}
+
+    		\item Para a soma de n números teríamos somente $(n - 1) + 5$ ciclos de clock.
+		\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Single Instruction - Single Data (SISD)}
+    \begin{itemize}
+		\item Instruções normalmente possuem mais de 5 passos implicando em pipelines longos nos processadores reais:
+		\begin{itemize}
+			\item Implicam também em frequência de clock alta.
+		\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Single Instruction - Single Data (SISD)}
+    \begin{itemize}
+		\item Entretanto, longos pipeline possuem problemas com desvios:
+		\begin{itemize}
+			\item Deve ser \textbf{esvaziado} e \textbf{preenchido} novamente;
+			\item Há um número de ciclos (igual ao tamanho do pipeline) para que possa ficar eficiente novamente.
+		\end{itemize}
+
+		\item E por isso, deseja-se que o \textbf{número de desvios} seja \textbf{pequeno} evitando ou reposicionamento dos desvios de forma inteligente:
+		\begin{itemize}
+		    \item Compiladores e processadores tentam minimizar com adivinhações de resultado (branch prediction).
+		\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Single Instruction - Single Data (SISD)}
+    \begin{itemize}
+		\item Processadores podem ter um \textbf{desempenho superior} utilizando combinações de \textbf{vários pipelines} (Processadores Superescalares):
+		\begin{itemize}
+			\item \textbf{Cálculos Lógico/Aritiméticos} (ALU) são separados de \textbf{Pontos Flutuantes} (FPU).
+			\item Normalmente, FPU é dividido em uma unidade para adição e outra para multiplicação.
+			\begin{itemize}
+			    \item Além de unidades de divisão e computação de raiz quadrada.
+			\end{itemize}
+
+		\end{itemize}
+
+		\item Hoje, o ganho deste tipo de arquitetura está nos \textbf{vários pipelines} no qual podem ser usados \textbf{ao mesmo tempo}.
+	\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\frame{
+    \Huge \color{blue} \bf  \centering Single Instruction - Multiple Data (SIMD)
+}
+
+\begin{frame}{Single Instruction - Multiple Data (SIMD)}
+	\begin{itemize}
+		\item Com a \textbf{computação numérica}, permitiu-se o uso de vários conjuntos de dados \textbf{com o mesmo operador}.
+		\item A arquitetura que executa uma instrução para vários dados é chamada de \textbf{vetorial} (Computadores Vetoriais).
+		\item Computadores Vetoriais trabalham como \textbf{pipeline escalar}
+		\item Entretanto, eles trabalham com \textbf{vetores de dados} processados em \textbf{1 ciclo}:
+		\begin{itemize}
+			\item Este vetor é \textbf{limitado} pelos \textbf{componentes dentro da CPU}.
+			\item Um computador vetorial com 64 elemento de vetores pode gerar até 64 resultados por ciclo;
+			\item Diferentemente do processador escalar que precisa de 64 ciclos prévios;
+		\end{itemize}
+
+	\end{itemize}
+
+	
+\end{frame}
+
+
+\begin{frame}{Single Instruction - Multiple Data (SIMD)}
+	\begin{itemize}
+		\item Pra utilizar todo seu desempenho de processamento, os cálculos por ele executado \textbf{também devem ser naturalmente vetoriais} e utilizar \textbf{todos os recursos disponíveis}.
+		\item Usados no âmbito de computação com alta performance:
+		\begin{itemize}
+			\item Permite alta performance com baixa frequência de clock.
+		\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Single Instruction - Multiple Data (SIMD)}
+	\begin{itemize}
+		\item Estão desaparecendo lentamente com o passar dos anos:
+		\begin{itemize}
+			\item São \textbf{complexos} e \textbf{caros} e não suportam bem \textbf{problemas não-vetoriais}.
+		    \item Computadores escalares são baratos e possuem alta frequência de clock.
+		\end{itemize}
+
+		\item Computadores vetoriais não foram disseminados totalmente:
+		\begin{itemize}
+			\item Com o Pentium III, a Intel introduziu o SSE (Streaming SIMD Extension) que possuía um conjunto de instruções vetoriais;
+			\item Logo em seguida:
+			\begin{itemize}
+			    \item SSE2 com o Pentium IV;
+			    \item SSE3 com o Pentium IV Pescott.
+			\end{itemize}
+
+		\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+\frame{
+    \Huge \color{blue} \bf  \centering Multiple Instruction - Multiple Data (MIMD)
+}
+\begin{frame}{Multiple Instruction - Multiple Data (MIMD)}
+	\begin{itemize}
+		\item Até então foi considerado operações que executam em \textbf{1 ciclo de clock}.
+		\item Isso aplica-se a todos os computadores que possui \textbf{1 processador de 1 core}.
+		\item Arquiteturas com vários cores ou vários processadores independente da arquitetura (escalar/vetor) são declaradas MIMD.
+		\item Todos os processadores de alta performance pertence a essa categoria.
+		\item Pode ser subdividida de acordo com a arquitetura de memória:
+		\begin{itemize}
+			\item Memória Compartilhada;
+			\item Memória Distribuída;
+			\item Combinações dessas.
+		\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\frame{
+    \Huge \color{blue} \bf  \centering Memória Compartilhada - SM-MIMD
+}
+
+\begin{frame}{Memória Compartilhada - SM-MIMD}
+	\begin{itemize}
+		\item MIMD com memória compartilhada (SM-MIMD) são processadores que são conectados \textbf{num barramento comum de memória} RAM.
+		\item Também pode ser nomeado como Multiprocessamento Simétrico
+		\begin{itemize}
+			\item \textbf{Processadores devem ser idênticos} e possuem \textbf{igual acesso à memória};
+			\item Podem ser encontrados em PC e pequenos servidores.
+		\end{itemize}
+
+				\bigskip
+		\item \textbf{Vantagem:}
+		\begin{itemize}
+	    	\item Expansibilidade.
+		\end{itemize}
+
+		\item \textbf{Desvantagem:}
+		\begin{itemize}
+		    \item Todos devem compartilhar a mesma largura de banda, mesmo acessando diferentes módulos de memória.
+		\end{itemize}
+
+		\item Com isso, a conexão entre processador e memória torna-se predominantemente importante na eficiência.
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Memória Compartilhada - SM-MIMD}
+    \begin{figure}[h]
+    	\centering
+    	\includegraphics[width=0.95\textwidth]{img/tobias/sm-mimd.png}
+    	\caption{\textbf{Modelo} MIMD com compartilhamento de memória.}
+    	\label{fig:sm-mimd}
+    \end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Memória Compartilhada - SM-MIMD}
+    \begin{figure}[h]
+    	\centering
+    	\includegraphics[width=1\textwidth]{img/tobias/sm-mimd2.png}
+    	\caption{MIMD com compartilhamento de memória por meio de 1 único barramento.}
+    	\label{fig:sm-mimd2}
+    \end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Memória Compartilhada - SM-MIMD}
+    \begin{figure}[h]
+    	\centering
+    	\includegraphics[width=1\textwidth]{img/tobias/sm-mimd3.png}
+    	\caption{MIMD com compartilhamento de memória por meio de um switch.}
+    	\label{fig:sm-mimd3}
+    \end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Memória Compartilhada - SM-MIMD}
+	\begin{itemize}
+		\item Computadores de alta performance e workstations.
+		\item Possuem um alto \textbf{grau de complexabilidade} quando muitas conexões devem ser feitas:
+		\begin{itemize}
+		    \item Utiliza-se uma variante dessa com comutadores multi-estágios para reduzir este problema.
+		\end{itemize}
+
+						\bigskip
+		\item \textbf{Vantagem:}
+		\begin{itemize}
+		    \item Todos os processadores podem comunicar com as memórias tornando o software fácil para desenvolvimento e eficiente para o uso.
+		\end{itemize}
+
+		\item \textbf{Desvantagem:}
+		\begin{itemize}
+		    \item Utilizar poucos componentes por causa da complexidade.
+		\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\frame{
+    \Huge \color{blue} \bf  \centering Memória Distribuída - DM-MIMD
+}
+
+\begin{frame}{Memória Distribuída - DM-MIMD}
+	\begin{itemize}
+		\item Ao utilizar memória compartilhada, torna-se complicado a tarefa de acrescentar arbitrariamente o número de memória e processadores.
+		\item E sobre este problema, existe outro meio no qual utiliza-se \textbf{Memória Distribuída} (DM-MIMD).
+		\begin{itemize}
+			\item Cada processador \textbf{possui sua memória local}, e são \textbf{conectados entre si};
+			\item As exigências nesta rede são mais baixas mas a troca de informação é \textbf{mais lenta};
+			\item Podem ser expandidas facilmente e utilizar modelos de processador/memória diferentes;
+			\item Geralmente, o uso de milhares de processadores não-comuns são chamados de \textbf{Processamento Massivamente Paralelo}.
+		\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Memória Distribuída - DM-MIMD}
+	\begin{itemize}
+		\item Para que utilize todo o desempenho teórico deste, é necessário mais esforço na \textbf{programação} do que no \textbf{sistema de memória compartilhada}.
+		\item Os problemas são divididos em subproblemas no qual necessitam de pouca comunicação:
+		\begin{itemize}
+			\item Processador usa sua \textbf{própria memória};
+			\item Se deseja algum dado de outra memória, ele é \textbf{copiado};
+			\item A \textbf{requisição de informação} deve ser evitada pois a comunicação entre eles é \textbf{lenta}.
+		\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\frame{
+    \Huge \color{blue} \bf  \centering ccNUMA
+}
+
+\begin{frame}{ccNUMA}
+	\begin{itemize}
+		\item Sistemas de compartilhamento de memória possui problema de \textbf{tamanho limitado} e a distribuída possui um \textbf{árduo sistema de comunicação}. 
+		\item ccNUMA (\textit{cache coherent Non-Uniform Memory Access}, cache de acesso coerente a memória não uniforme) é uma arquitetura variante que consiste em vários processadores de Memória Compartilhada.
+		\item Consiste numa arquitetura que possui \textbf{caches nos processadores} para que reduza o acesso de dados remotos.
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{figure}[h]
+    	\centering
+    	\includegraphics[width=0.6\textwidth]{img/tobias/ccnuma.png}
+    	\caption{Arquitetura Paralela ccNUMA.}
+    	\label{fig:ccnuma}
+    \end{figure}
+
+\end{frame}
+
+
+\begin{frame}{ccNUMA}
+    \begin{itemize}
+		\item Eles são conectados entre si criando uma rede de comunicação rápida utilizando um switch.
+		\item É fácil utilizar tal como o Memória Compartilhada: 
+		\begin{itemize}
+		    \item Com a vantagem de ser facilmente expansível.
+		\end{itemize}
+
+		\item Para garantir o desempenho ideal, deve-se utilizar a memória local e não a dos outros módulos.
+		\item Módulos podem ser acoplados/conectados para obter um sistema de vários tamanhos diferentes.	
+	\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\frame{
+    \Huge \color{blue} \bf  \centering Cluster
+}
+\begin{frame}{Cluster}
+	\begin{itemize}
+		\item Clusters são uma forma \textbf{popular} de computação de alta performance.
+		\item Consistem em \textbf{vários computadores baratos} conectados entre si, conhecidos como \textbf{Rede de Workstations} (NOW).
+		\item Utilizar computadores com 2 cores/processadores, por exemplo, teriam como produto um Sistema Híbrido.
+		\begin{itemize}
+			\item Os \textbf{nós} teriam \textbf{sistemas de memória compartilhada} formados por \textbf{sistema de memória distribuída}.
+		\end{itemize}
+	
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Cluster}
+    \begin{figure}[h]
+    	\centering
+    	\includegraphics[width=1\textwidth]{img/tobias/cluster.png}
+    	\caption{Arquitetura Paralela Cluster.}
+    	\label{fig:ccnuma}
+    \end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Cluster}
+    \begin{itemize}
+		\item Essa rede distribuída é feita por redes alta vazão podendo utilizar comunicações \textbf{Myrinet} ou \textbf{Infiniband}.
+		\begin{itemize}
+			\item \textbf{Gigabit Ethernet} tem alta vazão mas com \textbf{alta latência} no envio dos pacotes.
+			\item Enquanto Gigabit Ethernet possui cerca de $100\mu s$ em latência, Myrinet possui $10 - 20 \mu s$.
+		\end{itemize}
+
+		\item Não é fácil utilizar todo seu poder de processamento:
+		\begin{itemize}
+			\item A comunicação entre nós é lenta pois a comunicação distribuída é naturalmente lenta.
+			\item Os nós geralmente possui limites de memória\footnote{Arquitetura 32-bit só endereça 4GB e x86-64 possuem limitados slots de memória, entre outros possíveis problemas.}.
+		\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Cluster}
+    \begin{itemize}
+		\item \textbf{Vantagens:}
+		\begin{itemize}
+			\item São bem-suscetível e tradicionais;
+			\item São ideais para problemas de \textbf{alto nível de paralelismo};
+			\item Sua modularidade permite \textbf{modificações} de forma facilitada. 
+		\end{itemize}
+
+		\item Uma derivada desse sistema veio com a expansão da conexão de vários computadores pelo mundo. São nomeados \textbf{Grid}.
+		\begin{itemize}
+			\item São sistemas no qual pode utilizar computadores com arquiteturas \textbf{totalmente diferentes};
+			\item São espalhados pelo mundo e conectados entre si;
+			\item Podem utilizar a internet como meio de comunicação;
+			\item Possuem um alto grau de processamento computacional.
+		\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\frame{
+    \Huge \color{blue} \bf  \centering Multiple Instruction - Single Data (MISD)
+}
+
+\begin{frame}{Multiple Instruction - Single Data (MISD)}
+	\begin{itemize}
+		\item Não pode ser feita nem pratica ou teoricamente de forma \textbf{sensata}.
+		
+				\bigskip
+		
+		\begin{block}{Openshaw (1999)}
+		    {\it ``Descobrimos que é difícil calcular o porquê você iria fazer `isso', a menos que você seja um cientista da computação interessado em computação estranha. É um sistema altamente especializado e restrito e até muitas vezes impraticável, pra não dizer inútil como base para uma máquina de uso geral''.}
+		\end{block}
+		
+	\end{itemize}
+
+\end{frame}
+
+

@@ -5,50 +5,38 @@ use IEEE.numeric_std.all;
 entity interface_3des is
 	port(
 		clock          : IN std_logic;
+		barramentoIn   : in std_logic_vector(63 downto 0);
+		inStable       : in std_logic;
+		-- barramentoOut  : in std_logic_vector(63 downto 0);
 		reset          : In std_logic;
 		done           : OUT std_logic
 	);
 end interface_3des;
 
 architecture interface_3des_behav of interface_3des is
-	component t_des 
-		port(
-			clock          : IN std_logic;
-			reset          : In std_logic;
-			text64         : IN std_logic_vector(0 TO 63);
-			key192         : IN std_logic_vector(0 TO 191);
-			done           : OUT std_logic;
-			textOut64      : OUT std_logic_vector(0 TO 63)
-		);
-	end component;
-
-	component t_un_des 
-		port(
-			clock          : IN std_logic;
-			reset          : In std_logic;
-			text64         : IN std_logic_vector(0 TO 63);
-			key192         : IN std_logic_vector(0 TO 191);
-			done           : OUT std_logic;
-			textOut64      : OUT std_logic_vector(0 TO 63)
-		);
-	end component;
-
-	component ramChave
-		generic(
-			blocos	: integer := 3; -- 3 blocos para a chave
-			bits_dado		: integer := 64
-		);
-		port (
-			clock   : in	std_logic;
-			escrita	: in	std_logic;
-			endereco : in	std_logic_vector(blocos - 1 DOWNTO 0);
-			datain	: in	std_logic_vector(bits_dado - 1 DOWNTO 0);
-			dataout : out std_logic_vector(bits_dado - 1 DOWNTO 0)
-		);
-	end component;
+--	component t_des 
+--		port(
+--			clock          : IN std_logic;
+--			reset          : In std_logic;
+--			text64         : IN std_logic_vector(0 TO 63);
+--			key192         : IN std_logic_vector(0 TO 191);
+--			done           : OUT std_logic;
+--			textOut64      : OUT std_logic_vector(0 TO 63)
+--		);
+--	end component;
+--
+--	component t_un_des 
+--		port(
+--			clock          : IN std_logic;
+--			reset          : In std_logic;
+--			text64         : IN std_logic_vector(0 TO 63);
+--			key192         : IN std_logic_vector(0 TO 191);
+--			done           : OUT std_logic;
+--			textOut64      : OUT std_logic_vector(0 TO 63)
+--		);
+--	end component;
 
 	--registrador de flags:
-	--Quantidade de blocos de chave?
 	--quantidade de blocos de texto
 	--encripta ou decripta
 
@@ -66,40 +54,74 @@ architecture interface_3des_behav of interface_3des is
 		);
 	end component;
 
+
+
+				when carregando_funcao =>
+					encripta <= barramentoIn(0);
+
+
+				when carregando_chave0 =>
+					reg_key0 <= barramentoIn;
+
+				when carregando_chave1 =>
+					reg_key1 <= barramentoIn;
+
+				when carregando_chave2 =>
+					reg_key2 <= barramentoIn;
+
+
+				when carregando_quantidade_blocos =>
+					quantidade_blocos <= barramentoIn;
+
+
+				when carregando_texto =>
+					sig_endereco <= i;
+					sig_datain <= barramentoIn;
+
+
+
+
 	type state_type is (state_reset,
-		des1Carrega, des1Opera, des1SalvaInformacao,
-		des2Carrega, des2Opera, des2SalvaInformacao,
-		des3Carrega, des3Opera, des3SalvaInformacao,
+
 		pronto);
 	signal estado   : state_type;
 
-	signal resultadoOperacao1 : std_logic_vector(0 to 63);
-	signal resultadoOperacao2 : std_logic_vector(0 to 63);
-	signal resultadoOperacao3 : std_logic_vector(0 to 63);
+	signal reg_key0 : std_logic_vector(0 to 63);
+	signal reg_key1 : std_logic_vector(0 to 63);
+	signal reg_key2 : std_logic_vector(0 to 63);
 
-	signal sig_text64 : std_logic_vector(0 to 63);
-	signal sig_key : std_logic_vector(0 to 63);
-	signal sig_textOut64 : std_logic_vector(0 to 63);
-	signal sig_done : std_logic;
-	signal sig_reset : std_logic;
+	signal encripta : std_logic;
+
+	signal quantidade_blocos : integer range 0 to 4095; -- 64 ^ 2 = 4.096
+	signal i : integer range 0 to 4095; -- 64 ^ 2 = 4.096
+
+	signal controle_recebido : std_logic;
 begin
 
-	maptdes: t_des port map(
-		clock     => sig_tdes_clock     ,
-		reset     => sig_tdes_reset     ,
-		text64    => sig_tdes_text64    ,
-		key192    => sig_tdes_key192    ,
-		done      => sig_tdes_done      ,
-		textOut64 => sig_tdes_textOut64 
-	);
+--	maptdes: t_des port map(
+--		clock     => sig_tdes_clock     ,
+--		reset     => sig_tdes_reset     ,
+--		text64    => sig_tdes_text64    ,
+--		key192    => sig_tdes_key192    ,
+--		done      => sig_tdes_done      ,
+--		textOut64 => sig_tdes_textOut64 
+--	);
+--
+--	maptundes: t_un_des port map(
+--		clock     => sig_tundes_clock     ,
+--		reset     => sig_tundes_reset     ,
+--		text64    => sig_tundes_text64    ,
+--		key192    => sig_tundes_key192    ,
+--		done      => sig_tundes_done      ,
+--		textOut64 => sig_tundes_textOut64 
+--	);
 
-	maptundes: t_un_des port map(
-		clock     => sig_tundes_clock     ,
-		reset     => sig_tundes_reset     ,
-		text64    => sig_tundes_text64    ,
-		key192    => sig_tundes_key192    ,
-		done      => sig_tundes_done      ,
-		textOut64 => sig_tundes_textOut64 
+	mapram: ramTexto port map(
+		clock     => clock ,
+		escrita   => sig_escrita ,
+		endereco  => sig_endereco ,
+		datain    => sig_datain ,
+		dataout   => sig_dataout 
 	);
 
 
@@ -112,47 +134,66 @@ begin
 				case estado is
 					when state_reset =>
 
-						if (reset = '0') then
-							estado <= des1Carrega;
+						if (reset = '0' and inStable = '1') then
+							estado <= carregando_funcao;
+							controle_recebido <= '0';
 						end if;
 
-					when des1Carrega =>
-						estado <= des1Opera;
 
-					when des1Opera =>
-
-						if (sig_done = '1') then
-							estado <= des1SalvaInformacao;
+					when carregando_funcao =>
+						if (inStable = '1' and controle_recebido = '0') then
+							controle_recebido <= '1';
+						elsif(inStable = '0' and controle_recebido = '1')
+							controle_recebido <= '0';
+							estado <= carregando_chave0;
 						end if;
 
-					when des1SalvaInformacao =>
-						estado <= des2Carrega;
 
-
-					when des2Carrega =>
-						estado <= des2Opera;
-
-					when des2Opera =>
-
-						if (sig_done = '1') then
-							estado <= des2SalvaInformacao;
+					when carregando_chave0 =>
+						if (inStable = '1' and controle_recebido = '0') then
+							controle_recebido <= '1';
+						elsif(inStable = '0' and controle_recebido = '1')
+							controle_recebido <= '0';
+							estado <= carregando_chave1;
 						end if;
 
-					when des2SalvaInformacao =>
-						estado <= des3Carrega;
-
-
-					when des3Carrega =>
-						estado <= des3Opera;
-
-					when des3Opera =>
-
-						if (sig_done = '1') then
-							estado <= des3SalvaInformacao;
+					when carregando_chave1 =>
+						if (inStable = '1' and controle_recebido = '0') then
+							controle_recebido <= '1';
+						elsif(inStable = '0' and controle_recebido = '1')
+							controle_recebido <= '0';
+							estado <= carregando_chave2;
 						end if;
 
-					when des3SalvaInformacao =>
-						estado <= pronto;
+					when carregando_chave2 =>
+						if (inStable = '1' and controle_recebido = '0') then
+							controle_recebido <= '1';
+						elsif(inStable = '0' and controle_recebido = '1')
+							controle_recebido <= '0';
+							estado <= carregando_quantidade_blocos;
+						end if;
+
+
+					when carregando_quantidade_blocos =>
+						if (inStable = '1' and controle_recebido = '0') then
+							controle_recebido <= '1';
+						elsif(inStable = '0' and controle_recebido = '1')
+							controle_recebido <= '0';
+							estado <= carregando_texto;
+						end if;
+
+
+					when carregando_texto =>
+						if (inStable = '1' and controle_recebido = '0') then
+							controle_recebido <= '1';
+						elsif(inStable = '0' and controle_recebido = '1')
+							controle_recebido <= '0';
+							if (i > quantidade_blocos ) then
+								estado <= pronto;
+							else 
+								i <= i + 1;
+							end if;
+						end if;
 
 					when others =>
 				end case;
@@ -170,51 +211,64 @@ begin
 				when state_reset =>
 					done <= '0';
 					sig_reset <= '1';
+					reg_key0 <= x"0000_0000";
+					reg_key1 <= x"0000_0000";
+					reg_key2 <= x"0000_0000";
+					crypt_decrypt <= '0';
+					controle_recebido <= '0';
+
+				when carregando_funcao =>
+					encripta <= barramentoIn(0);
 
 
-				when des1Carrega =>
-					sig_text64 <= text64;
-					sig_key <= key192(0 to 63);
+				when carregando_chave0 =>
+					reg_key0 <= barramentoIn;
 
-				when des1Opera =>
-					sig_reset <= '0';
-					if (sig_done = '1') then
-						resultadoOperacao1 <= sig_textOut64;
-					end if;
+				when carregando_chave1 =>
+					reg_key1 <= barramentoIn;
 
-				when des1SalvaInformacao =>
-					sig_reset <= '1';
+				when carregando_chave2 =>
+					reg_key2 <= barramentoIn;
 
 
-				when des2Carrega=>
-					sig_text64 <= resultadoOperacao1;
-					sig_key <= key192(64 to 127);
-
-				when des2Opera =>
-					sig_reset <= '0';
-					if (sig_done = '1') then
-						resultadoOperacao2 <= sig_textOut64;
-					end if;
-
-				when des2SalvaInformacao =>
-					sig_reset <= '1';
+				when carregando_quantidade_blocos =>
+					quantidade_blocos <= barramentoIn;
 
 
-				when des3Carrega=>
-					sig_text64 <= resultadoOperacao2;
-					sig_key <= key192(128 to 191);
+				when carregando_texto =>
+					sig_endereco <= i;
+					sig_datain <= barramentoIn;
 
-				when des3Opera =>
-					sig_reset <= '0';
-					if (sig_done = '1') then
-						resultadoOperacao3 <= sig_textOut64;
-					end if;
 
-				when des3SalvaInformacao =>
+--					
+--				when des1Carrega =>
+--					sig_text64 <= text64;
+--					sig_key <= key192(0 to 63);
+--
+--				when des1Opera =>
+--					sig_reset <= '0';
+--					if (sig_done = '1') then
+--						resultadoOperacao1 <= sig_textOut64;
+--					end if;
+--
+--				when des1SalvaInformacao =>
+--					sig_reset <= '1';
+--
+--
+--				when des3Carrega=>
+--					sig_text64 <= resultadoOperacao2;
+--					sig_key <= key192(128 to 191);
+--
+--				when des3Opera =>
+--					sig_reset <= '0';
+--					if (sig_done = '1') then
+--						resultadoOperacao3 <= sig_textOut64;
+--					end if;
+--
+--				when des3SalvaInformacao =>
 
 				when pronto =>
 					done <= '1';
-					textOut64 <= resultadoOperacao3;
 
 				when others =>
 			end case;

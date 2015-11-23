@@ -1,0 +1,582 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ret",
+				"retornaResultado"
+			],
+			[
+				"li",
+				"linuxTTY"
+			],
+			[
+				"e",
+				"encripta"
+			],
+			[
+				"men",
+				"menuOperacoes"
+			],
+			[
+				"me",
+				"menuOperacoes"
+			],
+			[
+				"re",
+				"retornaResultado"
+			],
+			[
+				"cl",
+				"clusterEnviaRecebe"
+			],
+			[
+				"Li",
+				"LinuxU"
+			],
+			[
+				"Lin",
+				"LinuxK"
+			],
+			[
+				"Se",
+				"Serial"
+			],
+			[
+				"te",
+				"texto"
+			],
+			[
+				"i",
+				"incrementaLista"
+			],
+			[
+				"resu",
+				"resultado"
+			],
+			[
+				"Ser",
+				"Serial1"
+			],
+			[
+				"prin",
+				"print"
+			],
+			[
+				"l",
+				"listaBlocoOriginalRoot"
+			],
+			[
+				"imp",
+				"imprimeTexto"
+			],
+			[
+				"k",
+				"keyHEX"
+			],
+			[
+				"im",
+				"imprimeTexto"
+			],
+			[
+				"imprim",
+				"imprimeChaveHEX"
+			],
+			[
+				"bu",
+				"bufferSubMenu"
+			],
+			[
+				"blo",
+				"bloco"
+			],
+			[
+				"bl",
+				"blocoAtual"
+			],
+			[
+				"pr",
+				"print"
+			],
+			[
+				"bloco",
+				"blocoAtual"
+			],
+			[
+				"bloc",
+				"blocoAtual"
+			],
+			[
+				"inc",
+				"incrementaLista"
+			],
+			[
+				"carac",
+				"Caractere"
+			],
+			[
+				"N",
+				"NULL"
+			],
+			[
+				"t",
+				"tList"
+			],
+			[
+				"ma",
+				"malloc"
+			],
+			[
+				"tex",
+				"textoDinamico"
+			],
+			[
+				"Fe",
+				"FeedBack"
+			],
+			[
+				"Re",
+				"Resultado"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "interface-3des.vhd",
+			"settings":
+			{
+				"buffer_size": 5055,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "3des/t_des.vhd",
+			"settings":
+			{
+				"buffer_size": 3640,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "3des/t_un_des.vhd",
+			"settings":
+			{
+				"buffer_size": 3773,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "3des/des/des.vhd",
+			"settings":
+			{
+				"buffer_size": 13909,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "3des/des/un_des.vhd",
+			"settings":
+			{
+				"buffer_size": 13431,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/untitled.tex",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc2.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ram_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ramTexto.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ramChave.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/interface-3des.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes.vhd",
+		"/Users/pripyat/Nuvens/Mega/Periodos/8 Periodo/Administração de Sistemas de Informação/Resumo de Trabalhos/SIG (Sistemas de Informações Gerenciais)/relatório/SIG-Rodolfo.tex",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ram.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/Codigos Antigos/Memórias RAM e ROM/RAM/vhdl/ram.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/Codigos Antigos/Memórias RAM e ROM/RAM/vhdl/ram_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/RAM/untitled",
+		"/Users/pripyat/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/des.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des.vhd",
+		"/Users/pripyat/Nuvens/Mega/Periodos/8 Periodo/Direito/Prova 2/Aulas/12-11-15.txt",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalho Conclusao de Curso/Tcc backup/LDD_FPGA/Git/Doc Code/Dots/tty.dot",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalho Conclusao de Curso/Tcc backup/LDD_FPGA/Git/Doc Code/Dots/fpga.dot",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalho Conclusao de Curso/Tcc backup/LDD_FPGA/Git/Doc Code/Dots/projeto.dot",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalho Conclusao de Curso/Tcc backup/LDD_FPGA/Git/Doc Code/Presentations/Apresentacao previa TCC/dd.tex",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalho Conclusao de Curso/Tcc backup/LDD_FPGA/Git/Doc Code/Presentations/Apresentacao previa TCC/introducao.tex",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalho Conclusao de Curso/Tcc backup/LDD_FPGA/Git/Doc Code/Presentations/Middle Apresentacao TCC (11-11-2015)/presetation.tex",
+		"/Users/pripyat/Nuvens/Mega/Periodos/8 Periodo/Administração de Sistemas de Informação/SPT",
+		"/Users/pripyat/Nuvens/Mega/Periodos/8 Periodo/Direito/Aulas/Direito 05-11-15.txt",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalho Conclusao de Curso/Tcc backup/LDD_FPGA/Git/Hardware/Arduino/Intermediario/vesao 2.c",
+		"/Users/pripyat/MEGA/Periodos/8 Periodo/Informática e Sociedade/Época das imagens de mundo.txt"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\\end{frame}",
+			"\\end{figure}",
+			"\\end{itemize}",
+			"\\frame",
+			"\\end{frame}",
+			"\\bigs",
+			"63",
+			"0 TO 55",
+			"(0)",
+			" to",
+			"1 TO 27",
+			"0 to 1",
+			"2 TO 27",
+			"0 to 27",
+			"tdes",
+			"ramTexto",
+			"bits_endereco",
+			"read_address",
+			"address",
+			"we",
+			"DATA_WIDTH",
+			"ADDRESS_WIDTH",
+			"  ",
+			"  );",
+			"des3SalvaInformacao",
+			"des2SalvaInformacao",
+			"des1SalvaInformacao",
+			"des1Opera",
+			"des2Opera",
+			"des3Opera",
+			"des3Carrega",
+			"des2Carrega",
+			"des1Carrega",
+			"color=blue",
+			"penwidth",
+			"usb",
+			"vh",
+			"vhd",
+			"vhsi",
+			"DCDCDC",
+			"estrut",
+			"do",
+			"itemize",
+			"lst",
+			"%\\",
+			"}\n",
+			"Urb",
+			"\n					\\begin{lstlisting}\n						int i = 0;\n					\\end{lstlisting}",
+			"$",
+			"TODO",
+			"LinuxK",
+			"blocoListCorrente",
+			"ListaBlocoOriginalRoot",
+			"blocoListRoot",
+			"blocoAtual",
+			"blocoList",
+			"bList",
+			"tList",
+			"Serial.\n",
+			"}\n",
+			"la",
+			"lab",
+			"porque",
+			"atrav"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\\end{frame}\n",
+			"\\end{figure}\n",
+			"\\end{itemize}\n",
+			"\n\n\\frame",
+			"\n\\frame",
+			"\\end{frame}\n\n\\frame",
+			"\\end{frame}\n",
+			"		\\bigs",
+			"55 downto 0",
+			"(27)",
+			"27 downto 0",
+			"1 downto 0",
+			"27 downto 2",
+			"27 downto 0",
+			"interface-3des",
+			"ramChave",
+			"blocos",
+			"endereco_leitura",
+			"endereco",
+			"escrita",
+			"bits_dado",
+			"bits_endereco",
+			"	",
+			"un_des3SalvaInformacao",
+			"un_des2SalvaInformacao",
+			"un_des1SalvaInformacao",
+			"un_des1Opera",
+			"un_des2Opera",
+			"un_des3Opera",
+			"un_des3Carrega",
+			"un_des2Carrega",
+			"un_des1Carrega",
+			"style=dashed",
+			"DDDDDD",
+			"listaBlocoOriginalCorrente",
+			"listaBlocoOriginalRoot",
+			"ListaBlocoOriginalRoot",
+			"blocoListCorrente",
+			"blocoListRoot",
+			"tNodeBloco",
+			"bList"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "interface-3des.vhd",
+					"settings":
+					{
+						"buffer_size": 5055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								69,
+								270
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "3des/t_des.vhd",
+					"settings":
+					{
+						"buffer_size": 3640,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3630,
+								3630
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1900.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "3des/t_un_des.vhd",
+					"settings":
+					{
+						"buffer_size": 3773,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "3des/des/des.vhd",
+					"settings":
+					{
+						"buffer_size": 13909,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "3des/des/un_des.vhd",
+					"settings":
+					{
+						"buffer_size": 13431,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

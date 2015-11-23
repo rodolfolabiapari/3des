@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity tdes is
+entity t_des is
 	port(
 		clock          : IN std_logic;
 		reset          : In std_logic;
@@ -11,9 +11,9 @@ entity tdes is
 		done           : OUT std_logic;
 		textOut64      : OUT std_logic_vector(0 TO 63)
 	);
-end tdes;
+end t_des;
 
-architecture tdes_behav of tdes is
+architecture t_des_behav of t_des is
 	component des 
 		port (
 			clk          : IN std_logic;
@@ -170,4 +170,4 @@ begin
 			end case;
 		end if;
 	end process;
-end tdes_behav;
+end t_des_behav;
