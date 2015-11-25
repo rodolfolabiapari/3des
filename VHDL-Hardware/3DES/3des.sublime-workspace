@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"qua",
+				"quantidade_blocos"
+			],
+			[
+				"car",
+				"carregando_chave0"
+			],
+			[
+				"data",
+				"datain"
+			],
+			[
+				"qu",
+				"quantidade_blocos"
+			],
+			[
+				"quant",
+				"carregando_quantidade_blocos"
+			],
+			[
+				"wh",
+				"when"
+			],
+			[
+				"reg",
+				"reg_key0"
+			],
+			[
+				"std",
+				"std_logic"
+			],
+			[
 				"ret",
 				"retornaResultado"
 			],
@@ -147,7 +179,7 @@
 			"file": "interface-3des.vhd",
 			"settings":
 			{
-				"buffer_size": 5055,
+				"buffer_size": 6662,
 				"line_ending": "Unix"
 			}
 		},
@@ -258,6 +290,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"encripta",
 			"\\end{frame}",
 			"\\end{figure}",
 			"\\end{itemize}",
@@ -388,15 +421,15 @@
 					"file": "interface-3des.vhd",
 					"settings":
 					{
-						"buffer_size": 5055,
+						"buffer_size": 6662,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								69,
-								270
+								3302,
+								3302
 							]
 						],
 						"settings":
@@ -405,7 +438,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3454.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

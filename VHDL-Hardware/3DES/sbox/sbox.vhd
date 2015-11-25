@@ -157,7 +157,7 @@ begin
 	mapSbox3: sbox3 port map(
 		clk      => clk,
 		reset    => sig_reset,
-		busIn6 	 => bus48In (12 downto 12),
+		busIn6 	 => bus48In (17 downto 12),
 		done     => sig_3_done,
 		busOut4  => sig_3_busOut4
 	);
