@@ -6,14 +6,15 @@ entity sbox6 is
 	port(
 		clk 	: IN std_logic;
 		reset : IN std_logic;
-		busIn6 	: IN std_logic_vector(5 downto 0);
+		busIn6 	: IN std_logic_vector(0 TO 5);
 		done : OUT std_logic;
-		busOut4 : OUT std_logic_vector(3 downto 0)
+		busOut4 : OUT std_logic_vector(0 TO 3)
 	);
 end sbox6;
 
 architecture sbox6_behav of sbox6 is
-type memory is array (integer range 16 downto 0) of std_logic_vector (3 downto 0);
+type memory is array (integer range 0 to 255) of std_logic_vector (0 TO 3);
+
 
 	constant mem_Rom0 : memory := (
 	--  q0 t0 0-15
@@ -165,16 +166,16 @@ begin
 
 					if (clk'event and clk='1') then
 						if 	  (BusIn6(0) = '0' and BusIn6(5) = '0') then
-							busOut4 <= mem_Rom0(to_integer(unsigned(BusIn6( 4 downto 1 ))));
+							busOut4 <= mem_Rom0(to_integer(unsigned(BusIn6( 1 TO 4 ))));
 
 						elsif (BusIn6(0) = '0' and BusIn6(5) = '1') then
-							busOut4 <= mem_Rom1(to_integer(unsigned(BusIn6( 4 downto 1 ))));
+							busOut4 <= mem_Rom1(to_integer(unsigned(BusIn6( 1 TO 4 ))));
 
 						elsif (BusIn6(0) = '1' and BusIn6(5) = '0') then
-							busOut4 <= mem_Rom2(to_integer(unsigned(BusIn6( 4 downto 1 ))));
+							busOut4 <= mem_Rom2(to_integer(unsigned(BusIn6( 1 TO 4 ))));
 
 						elsif (BusIn6(0) = '1' and BusIn6(5) = '1') then
-							busOut4 <= mem_Rom3(to_integer(unsigned(BusIn6( 4 downto 1 ))));
+							busOut4 <= mem_Rom3(to_integer(unsigned(BusIn6( 1 TO 4 ))));
 						end if;
 					end if;
 

@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 entity ramTexto is
 	generic(
-		bits_endereco	: integer := 20; --8388608 = 2^20 endereços * 8 caracteres cada. 
+		bits_endereco	: integer := 10; -- 32
 		bits_dado		: integer := 64
 	);
 
@@ -19,24 +19,27 @@ end entity ramTexto;
 
 architecture ramTexto_arch of ramTexto is
 
-	 type ram_type is array (0 to (2 ** bits_endereco) - 1) of std_logic_vector(bits_dado - 1 DOWNTO 0);
-	 signal ram : ram_type;
+	type ram_type is array (0 to ((2 ** bits_endereco) - 1)) of std_logic_vector((bits_dado - 1) DOWNTO 0);
+	signal ram : ram_type := (others => (others => '0'));
 
-	 signal endereco_leitura : std_logic_vector(bits_endereco - 1 DOWNTO 0);
+	signal endereco_leitura : integer range 0 to ((2 ** bits_endereco) - 1) ;
 
 begin
 
-	RamProc: process(clock) is
+	endereco_leitura <= to_integer(unsigned(endereco));
 
+	RamProc: process(clock) is
 	begin
-	if (clock'event AND clock = '1') then
-		if (escrita = '1') then
-		ram(to_integer(unsigned(endereco))) <= datain;
-		end if;
-		endereco_leitura <= endereco;
-	end if;
+		if (clock'event AND clock = '1') then
+			if (escrita = '1') then
+				ram(endereco_leitura) <= datain;
+				dataout <= (others => '0');
+			else 
+				dataout <= ram(endereco_leitura);
+			end if;
+			--endereco_leitura <= to_integer(unsigned(endereco));
+	    end if;
 	end process RamProc;
 
-	dataout <= ram(to_integer(unsigned(endereco_leitura)));
 
 end architecture ramTexto_arch;

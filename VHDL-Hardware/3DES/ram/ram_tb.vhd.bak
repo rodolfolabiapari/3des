@@ -1,0 +1,170 @@
+-- Test Bench para memória RAM
+
+LIBRARY IEEE;
+USE IEEE.Std_logic_1164.all;
+USE IEEE.Numeric_std.all;
+
+ENTITY Ram_TB IS
+END ENTITY Ram_TB;
+
+ARCHITECTURE sinais OF Ram_TB IS
+
+	-- Sinais internos
+	signal sig_clock    : std_logic;
+	signal sig_escrita  : std_logic;
+	signal sig_endereco : std_logic_vector(63 DOWNTO 0);
+	signal sig_datain   : std_logic_vector(63 DOWNTO 0);
+	signal sig_dataout  : std_logic_vector(63 DOWNTO 0);
+
+	COMPONENT ramTexto                                                  -- Importação do componente RAM já construido
+		PORT
+		(
+			clock    : in	std_logic;
+			escrita  : in	std_logic;
+			endereco : in	std_logic_vector(63 DOWNTO 0);
+			datain   : in	std_logic_vector(63 DOWNTO 0);
+			dataout  : out std_logic_vector(63 DOWNTO 0)
+		);
+	END COMPONENT;
+
+
+BEGIN
+
+	-- Mapeamento de portas do componente RAM com sinais do Test Bench
+	UUT_ram: ramTexto PORT MAP
+	(
+		clock    => sig_clock   ,
+		escrita  => sig_escrita ,
+		endereco => sig_endereco,
+		datain   => sig_datain  ,
+		dataout  => sig_dataout 
+	);
+
+	P_clockGen: PROCESS IS                                        				 -- Controle de Clock
+	BEGIN
+		sig_clock <= '0';                                      					 -- Clock em nível baixo por 10 ns
+		WAIT FOR 10 ns;
+		sig_clock <= '1';                                     					 -- Clock em nível alto por 10 ns
+		WAIT FOR 10 ns;
+	END PROCESS P_clockGen;                                        				 -- Fim do controle de clock
+
+	P_WB: PROCESS IS                                               				 -- Processo de Escrita (WRITE)
+	BEGIN
+
+		WAIT UNTIL rising_edge(sig_clock);                          			 -- Caso occora uma borda de subida no clock, ou seja, um sinal para gravar os dados na memória
+
+			sig_escrita <= '1';                                             			 -- Inicializa seletor de opção, WE = 0, ou seja, desabilita escrita na memória
+			sig_endereco <= x"00000000_00000000";                          		 -- Inicializa o barramento de endereço
+			sig_datain  <= x"11111111_00000000";                                 			 -- Inicializa o barramento de entrada, ou seja, grava na posição "0" o valor "0"
+
+			WHILE sig_endereco /= x"0000000000000003" LOOP           				 -- Enquanto o endereço solicitado na memória for diferente da posição 255 "0000000001111111"
+																				 -- Posiciona o seletro de opção na posição de escrita, WE = 1
+
+				WAIT UNTIL rising_edge(sig_clock);                     			 -- Aguarda uma borda de subida no clock
+
+					sig_endereco <= std_logic_vector(unsigned(sig_endereco) + 1);  -- Incrementa o endereço de acesso à memória em uma unidade
+					sig_datain  <= std_logic_vector(unsigned(sig_datain) - 1);   -- Decrementa o valor a ser armazenado na memória em uma unidade
+
+			END LOOP;
+
+		WAIT UNTIL rising_edge(sig_clock);                             		     -- Aguarda a ocorrência de uma borda de subida no clock
+
+			sig_escrita <= '0';                                            		     -- Inicializa seletor de opção, desabilita escrita
+			sig_endereco <= x"0000000000000000";                         			 -- Inicializa o barramento de endereço
+
+			WHILE sig_endereco /= x"0000000000000003" LOOP               			 -- Lê os 256 primeiros endereços, ou seja, até sig_endereco for igual a "0000000001111111"
+
+				WAIT UNTIL rising_edge(sig_clock);                           	 -- Aguarda a ocorrência de uma borda de subida no clock
+
+					sig_endereco <= std_logic_vector(unsigned(sig_endereco) + 1);  -- Incrementa o valor do endereço em uma unidade, assim percorre todos os endereços
+
+			END LOOP;
+
+	END PROCESS P_WB;
+
+END ARCHITECTURE sinais;
+-- Test Bench para memória RAM
+
+LIBRARY IEEE;
+USE IEEE.Std_logic_1164.all;
+USE IEEE.Numeric_std.all;
+
+ENTITY Ram_TB IS
+END ENTITY Ram_TB;
+
+ARCHITECTURE sinais OF Ram_TB IS
+
+	-- Sinais internos
+	signal sig_clock    : std_logic;
+	signal sig_escrita  : std_logic;
+	signal sig_endereco : std_logic_vector(63 DOWNTO 0);
+	signal sig_datain   : std_logic_vector(63 DOWNTO 0);
+	signal sig_dataout  : std_logic_vector(63 DOWNTO 0);
+
+	COMPONENT ramTexto                                                  -- Importação do componente RAM já construido
+		PORT
+		(
+			clock    : in	std_logic;
+			escrita  : in	std_logic;
+			endereco : in	std_logic_vector(63 DOWNTO 0);
+			datain   : in	std_logic_vector(63 DOWNTO 0);
+			dataout  : out std_logic_vector(63 DOWNTO 0)
+		);
+	END COMPONENT;
+
+
+BEGIN
+
+	-- Mapeamento de portas do componente RAM com sinais do Test Bench
+	UUT_ram: ramTexto PORT MAP
+	(
+		clock    => sig_clock   ,
+		escrita  => sig_escrita ,
+		endereco => sig_endereco,
+		datain   => sig_datain  ,
+		dataout  => sig_dataout 
+	);
+
+	P_clockGen: PROCESS IS                                        				 -- Controle de Clock
+	BEGIN
+		sig_clock <= '0';                                      					 -- Clock em nível baixo por 10 ns
+		WAIT FOR 10 ns;
+		sig_clock <= '1';                                     					 -- Clock em nível alto por 10 ns
+		WAIT FOR 10 ns;
+	END PROCESS P_clockGen;                                        				 -- Fim do controle de clock
+
+	P_WB: PROCESS IS                                               				 -- Processo de Escrita (WRITE)
+	BEGIN
+
+		WAIT UNTIL rising_edge(sig_clock);                          			 -- Caso occora uma borda de subida no clock, ou seja, um sinal para gravar os dados na memória
+
+			sig_escrita <= '1';                                             			 -- Inicializa seletor de opção, WE = 0, ou seja, desabilita escrita na memória
+			sig_endereco <= "000000000";                          		 -- Inicializa o barramento de endereço
+			sig_datain  <= "1111111100000000";                                 			 -- Inicializa o barramento de entrada, ou seja, grava na posição "0" o valor "0"
+
+			WHILE sig_endereco /= "111111111" LOOP           				 -- Enquanto o endereço solicitado na memória for diferente da posição 255 "0000000001111111"
+																				 -- Posiciona o seletro de opção na posição de escrita, WE = 1
+
+				WAIT UNTIL rising_edge(sig_clock);                     			 -- Aguarda uma borda de subida no clock
+
+					sig_endereco <= std_logic_vector(unsigned(sig_endereco) + 1);  -- Incrementa o endereço de acesso à memória em uma unidade
+					sig_datain  <= std_logic_vector(unsigned(sig_datain) - 1);   -- Decrementa o valor a ser armazenado na memória em uma unidade
+
+			END LOOP;
+
+		WAIT UNTIL rising_edge(sig_clock);                             		     -- Aguarda a ocorrência de uma borda de subida no clock
+
+			sig_escrita <= '0';                                            		     -- Inicializa seletor de opção, desabilita escrita
+			sig_endereco <= "000000000";                         			 -- Inicializa o barramento de endereço
+
+			WHILE sig_endereco /= "111111111" LOOP               			 -- Lê os 256 primeiros endereços, ou seja, até sig_endereco for igual a "0000000001111111"
+
+				WAIT UNTIL rising_edge(sig_clock);                           	 -- Aguarda a ocorrência de uma borda de subida no clock
+
+					sig_endereco <= std_logic_vector(unsigned(sig_endereco) + 1);  -- Incrementa o valor do endereço em uma unidade, assim percorre todos os endereços
+
+			END LOOP;
+
+	END PROCESS P_WB;
+
+END ARCHITECTURE sinais;

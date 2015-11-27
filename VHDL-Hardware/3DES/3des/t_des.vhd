@@ -36,20 +36,20 @@ architecture t_des_behav of t_des is
 	signal resultadoOperacao2 : std_logic_vector(0 to 63);
 	signal resultadoOperacao3 : std_logic_vector(0 to 63);
 
-	signal sig_text64 : std_logic_vector(0 to 63);
-	signal sig_key : std_logic_vector(0 to 63);
-	signal sig_textOut64 : std_logic_vector(0 to 63);
-	signal sig_done : std_logic;
-	signal sig_reset : std_logic;
+	signal sig_des_text64 : std_logic_vector(0 to 63);
+	signal sig_des_key : std_logic_vector(0 to 63);
+	signal sig_des_textOut64 : std_logic_vector(0 to 63);
+	signal sig_des_done : std_logic;
+	signal sig_des_reset : std_logic;
 begin
 
 	mapDes: des port map(
 		clk       => clock       ,
-		reset     => sig_reset     ,
-		text64    => sig_text64    ,
-		key       => sig_key       ,
-		done      => sig_done      ,
-		textOut64 => sig_textOut64  
+		reset     => sig_des_reset     ,
+		text64    => sig_des_text64    ,
+		key       => sig_des_key       ,
+		done      => sig_des_done      ,
+		textOut64 => sig_des_textOut64  
 	);
 
 
@@ -71,7 +71,7 @@ begin
 
 					when des1Opera =>
 
-						if (sig_done = '1') then
+						if (sig_des_done = '1') then
 							estado <= des1SalvaInformacao;
 						end if;
 
@@ -84,7 +84,7 @@ begin
 
 					when des2Opera =>
 
-						if (sig_done = '1') then
+						if (sig_des_done = '1') then
 							estado <= des2SalvaInformacao;
 						end if;
 
@@ -97,7 +97,7 @@ begin
 
 					when des3Opera =>
 
-						if (sig_done = '1') then
+						if (sig_des_done = '1') then
 							estado <= des3SalvaInformacao;
 						end if;
 
@@ -119,45 +119,46 @@ begin
 			case estado is
 				when state_reset =>
 					done <= '0';
-					sig_reset <= '1';
+					sig_des_reset <= '1';
+					textOut64 <= (others => '0');
 
 
 				when des1Carrega =>
-					sig_text64 <= text64;
-					sig_key <= key192(0 to 63);
+					sig_des_text64 <= text64;
+					sig_des_key <= key192(0 to 63);
 
 				when des1Opera =>
-					sig_reset <= '0';
-					if (sig_done = '1') then
-						resultadoOperacao1 <= sig_textOut64;
+					sig_des_reset <= '0';
+					if (sig_des_done = '1') then
+						resultadoOperacao1 <= sig_des_textOut64;
 					end if;
 
 				when des1SalvaInformacao =>
-					sig_reset <= '1';
+					sig_des_reset <= '1';
 
 
 				when des2Carrega=>
-					sig_text64 <= resultadoOperacao1;
-					sig_key <= key192(64 to 127);
+					sig_des_text64 <= resultadoOperacao1;
+					sig_des_key <= key192(64 to 127);
 
 				when des2Opera =>
-					sig_reset <= '0';
-					if (sig_done = '1') then
-						resultadoOperacao2 <= sig_textOut64;
+					sig_des_reset <= '0';
+					if (sig_des_done = '1') then
+						resultadoOperacao2 <= sig_des_textOut64;
 					end if;
 
 				when des2SalvaInformacao =>
-					sig_reset <= '1';
+					sig_des_reset <= '1';
 
 
 				when des3Carrega=>
-					sig_text64 <= resultadoOperacao2;
-					sig_key <= key192(128 to 191);
+					sig_des_text64 <= resultadoOperacao2;
+					sig_des_key <= key192(128 to 191);
 
 				when des3Opera =>
-					sig_reset <= '0';
-					if (sig_done = '1') then
-						resultadoOperacao3 <= sig_textOut64;
+					sig_des_reset <= '0';
+					if (sig_des_done = '1') then
+						resultadoOperacao3 <= sig_des_textOut64;
 					end if;
 
 				when des3SalvaInformacao =>

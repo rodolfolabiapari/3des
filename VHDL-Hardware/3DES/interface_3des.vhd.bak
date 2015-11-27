@@ -43,24 +43,17 @@ architecture interface_3des_behav of interface_3des is
 	signal s_tdes_key192    : std_logic_vector(0 TO 191);
 	signal s_tdes_done      : std_logic;
 	signal s_tdes_textOut64 : std_logic_vector(0 TO 63);
-
-
-	component t_un_des 
-		port(
-			clock          : IN std_logic;
-			reset          : In std_logic;
-			text64         : IN std_logic_vector(0 TO 63);
-			key192         : IN std_logic_vector(0 TO 191);
-			done           : OUT std_logic;
-			textOut64      : OUT std_logic_vector(0 TO 63)
-		);
-	end component;
-
-	signal s_tundes_reset     : std_logic;
-	signal s_tundes_text64    : std_logic_vector(0 TO 63);
-	signal s_tundes_key192    : std_logic_vector(0 TO 191);
-	signal s_tundes_done      : std_logic;
-	signal s_tundes_textOut64 : std_logic_vector(0 TO 63);
+--
+--	component t_un_des 
+--		port(
+--			clock          : IN std_logic;
+--			reset          : In std_logic;
+--			text64         : IN std_logic_vector(0 TO 63);
+--			key192         : IN std_logic_vector(0 TO 191);
+--			done           : OUT std_logic;
+--			textOut64      : OUT std_logic_vector(0 TO 63)
+--		);
+--	end component;
 
 	--registrador de flags:
 	--quantidade de blocos de texto
@@ -108,8 +101,7 @@ architecture interface_3des_behav of interface_3des is
 		state_carregando_quantidade_blocos,
 		state_carregando_texto,
 		preparacao_operacao,
-		state_encripta_recebe_ram, state_encripta_opera, state_encripta_recebe_resultado, state_encripta_seleciona_bloco,
-		state_decripta_recebe_ram, state_decripta_opera, state_decripta_recebe_resultado, state_decripta_seleciona_bloco,
+		state_encripta,
 		pronto);
 
 	signal estado   : state_type;
@@ -124,15 +116,15 @@ begin
 		done      => s_tdes_done      ,
 		textOut64 => s_tdes_textOut64 
 	);
-
-	maptundes: t_un_des port map(
-		clock     => clock     ,
-		reset     => s_tundes_reset     ,
-		text64    => s_tundes_text64    ,
-		key192    => s_tundes_key192    ,
-		done      => s_tundes_done      ,
-		textOut64 => s_tundes_textOut64 
-	);
+--
+--	maptundes: t_un_des port map(
+--		clock     => s_tundes_clock     ,
+--		reset     => s_tundes_reset     ,
+--		text64    => s_tundes_text64    ,
+--		key192    => s_tundes_key192    ,
+--		done      => s_tundes_done      ,
+--		textOut64 => s_tundes_textOut64 
+--	);
 
 	mapram: ramTexto port map(
 		clock     => clock ,
@@ -205,56 +197,31 @@ begin
 							controle_recebido <= '1';
 						elsif(inStable = '0' and controle_recebido = '1') then
 							controle_recebido <= '0';
-							if (i >= quantidade_blocos or i >= (2 ** bits_endereco - 1)) then
+							if (i >= quantidade_blocos ) then
 								estado <= preparacao_operacao;
 							end if;
 						end if;
 
 					when preparacao_operacao =>
+						estado <= state_encripta;
 						controle_recebido <= '0';
 						if (encripta = '1') then
-							estado <= state_encripta_seleciona_bloco;
-						else 
-							estado <= state_decripta_seleciona_bloco;
+							estado <= state_encripta;
+--						else 
+--							estado <= state_decripta;
 						end if;
 
-
-
-				when state_encripta_seleciona_bloco =>
-					estado <= state_encripta_recebe_ram;
-					if (i >= quantidade_blocos ) then
-						estado <= pronto;
-					end if;
-
-				when state_encripta_recebe_ram =>
-					estado <= state_encripta_opera;
-
-				when state_encripta_opera =>
-					if (s_tdes_done = '1') then
-						estado <= state_encripta_recebe_resultado;
-					end if;
-
-				when state_encripta_recebe_resultado =>
-					estado <= state_encripta_seleciona_bloco;
-
-
-
-				when state_decripta_seleciona_bloco =>
-					estado <= state_decripta_recebe_ram;
-					if (i >= quantidade_blocos ) then
-						estado <= pronto;
-					end if;
-
-				when state_decripta_recebe_ram =>
-					estado <= state_decripta_opera;
-
-				when state_decripta_opera =>
-					if (s_tundes_done = '1') then
-						estado <= state_decripta_recebe_resultado;
-					end if;
-
-				when state_decripta_recebe_resultado =>
-					estado <= state_decripta_seleciona_bloco;
+					when state_encripta =>
+						if (s_tdes_done = '1' and controle_recebido = '0') then
+							controle_recebido <= '1';
+						elsif(s_tdes_done = '0') then
+							if (controle_recebido = '1') then
+								controle_recebido <= '0';
+								if (i >= quantidade_blocos ) then
+									estado <= pronto;
+								end if;
+							end if;
+						end if;
 
 					when others =>
 
@@ -282,7 +249,6 @@ begin
 					encripta <= '0';	
 					quantidade_blocos <= (others => '0');
 					s_tdes_reset <= '1';
-					s_tundes_reset <= '1';
 					i <= (others => '0');
 
 				when state_carregando_funcao =>
@@ -315,79 +281,54 @@ begin
 
 
 				when state_carregando_texto =>
-					s_ram_escrita <= '1';
 					if (inStable = '1') then 
 						s_ram_endereco <= std_logic_vector(i);
 						s_ram_datain <= barramentoIn;
 					else
-						i <= i + 1;
+						if (i >= quantidade_blocos ) then
+							i <= (others => '0');
+						else 
+							i <= i + 1;
+						end if;
 					end if;
-
 
 				when preparacao_operacao =>
 					s_tdes_key192 <= reg_key0 & reg_key1 & reg_key2;
-					s_tundes_key192 <= reg_key0 & reg_key1 & reg_key2;
-					i <= (others => '0');
-
-
-
-				when state_encripta_seleciona_bloco =>
-					s_ram_escrita <= '0';
-					s_tdes_reset <= '1';
-					s_ram_endereco <= std_logic_vector(i);
-					if (i >= quantidade_blocos ) then
-						i <= (others => '0');
-					end if;
-
-				when state_encripta_recebe_ram =>
-
-				when state_encripta_opera =>
 					s_tdes_reset <= '0';
-					s_tdes_text64 <= s_ram_dataout;
+					--s_tundes_reset <= '0';
 
-				when state_encripta_recebe_resultado =>
-					s_ram_escrita <= '1';	
-					s_tdes_reset <= '0'; 
-					s_ram_datain <= s_tdes_textOut64;
-					s_ram_endereco <= std_logic_vector(i +  -- unsigned to std
-											to_unsigned( -- offset
-												2 ** (bits_endereco - 1)
-												, bits_endereco)
+
+				when state_encripta =>
+
+					if (s_tdes_done = '1' and controle_recebido = '0') then
+						--s_ram_endereco <= std_logic_vector(i + (2 ** (bits_endereco sll 1)));
+						--s_ram_endereco <= std_logic_vector(i + (2 ** (to_unsigned(bits_endereco, i'length) sll 2)));
+						s_ram_endereco <= std_logic_vector(i);  -- unsigned to std
+						s_ram_endereco <= std_logic_vector(
+											to_unsigned(
+												2 ** (bits_endereco / 2)
+												, bits_endereco -1)
 											);
-					i <= i + 1;
 
-
-
-				when state_decripta_seleciona_bloco =>
-					s_ram_escrita <= '0';
-					s_tundes_reset <= '1';
-					s_ram_endereco <= std_logic_vector(i);
-					if (i >= quantidade_blocos ) then
-						i <= (others => '0');
+						s_ram_datain <= s_tdes_textOut64;
+					elsif(s_tdes_done = '0') then
+						if (controle_recebido = '1') then
+							s_tdes_reset <= '1';
+							if (i >= quantidade_blocos ) then
+								i <= (others => '0');
+							else 
+								i <= i + 1;
+							end if;
+						else
+							s_tdes_reset <= '0'; 
+							s_ram_endereco <= std_logic_vector(i);
+							s_tdes_text64 <= s_ram_dataout;
+						end if;
 					end if;
-
-				when state_decripta_recebe_ram =>
-
-				when state_decripta_opera =>
-					s_tundes_reset <= '0';
-					s_tundes_text64 <= s_ram_dataout;
-
-				when state_decripta_recebe_resultado =>
-					s_ram_escrita <= '1';	
-					s_tundes_reset <= '0'; 
-					s_ram_datain <= s_tundes_textOut64;
-					s_ram_endereco <= std_logic_vector(i +  -- unsigned to std
-											to_unsigned( -- offset
-												2 ** (bits_endereco - 1)
-												, bits_endereco)
-											);
-					i <= i + 1;
-
-
+					
 
 				when pronto =>
 					done <= '1';
-
 
 				when others =>
 			end case;
