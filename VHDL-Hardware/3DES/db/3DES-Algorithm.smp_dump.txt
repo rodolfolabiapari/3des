@@ -1,0 +1,244 @@
+
+State Machine - |interface_3des|estado
+Name estado.pronto estado.state_decripta_seleciona_bloco estado.state_decripta_recebe_resultado estado.state_decripta_opera estado.state_decripta_recebe_ram estado.state_encripta_seleciona_bloco estado.state_encripta_recebe_resultado estado.state_encripta_opera estado.state_encripta_recebe_ram estado.preparacao_operacao estado.state_carregando_texto estado.state_carregando_quantidade_blocos estado.state_carregando_chave2 estado.state_carregando_chave1 estado.state_carregando_chave0 estado.state_carregando_funcao estado.state_reset 
+estado.state_reset 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+estado.state_carregando_funcao 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+estado.state_carregando_chave0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+estado.state_carregando_chave1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+estado.state_carregando_chave2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+estado.state_carregando_quantidade_blocos 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+estado.state_carregando_texto 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+estado.preparacao_operacao 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+estado.state_encripta_recebe_ram 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+estado.state_encripta_opera 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+estado.state_encripta_recebe_resultado 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+estado.state_encripta_seleciona_bloco 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+estado.state_decripta_recebe_ram 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+estado.state_decripta_opera 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+estado.state_decripta_recebe_resultado 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+estado.state_decripta_seleciona_bloco 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+estado.pronto 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|estado
+Name estado.pronto estado.un_des3SalvaInformacao estado.un_des3Opera estado.un_des3Carrega estado.un_des2SalvaInformacao estado.un_des2Opera estado.un_des2Carrega estado.un_des1SalvaInformacao estado.un_des1Opera estado.un_des1Carrega estado.state_reset 
+estado.state_reset 0 0 0 0 0 0 0 0 0 0 0 
+estado.un_des1Carrega 0 0 0 0 0 0 0 0 0 1 1 
+estado.un_des1Opera 0 0 0 0 0 0 0 0 1 0 1 
+estado.un_des1SalvaInformacao 0 0 0 0 0 0 0 1 0 0 1 
+estado.un_des2Carrega 0 0 0 0 0 0 1 0 0 0 1 
+estado.un_des2Opera 0 0 0 0 0 1 0 0 0 0 1 
+estado.un_des2SalvaInformacao 0 0 0 0 1 0 0 0 0 0 1 
+estado.un_des3Carrega 0 0 0 1 0 0 0 0 0 0 1 
+estado.un_des3Opera 0 0 1 0 0 0 0 0 0 0 1 
+estado.un_des3SalvaInformacao 0 1 0 0 0 0 0 0 0 0 1 
+estado.pronto 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|processKey:mapK|state
+Name state.pronto state.pc2_g state.pc2_f state.pc2_e state.pc2_d state.pc2_c state.pc2_b state.pc2_a state.pc2_9 state.pc2_8 state.pc2_7 state.pc2_6 state.pc2_5 state.pc2_4 state.pc2_3 state.pc2_2 state.pc2_1 state.rotacaog_1 state.rotacaof_2 state.rotacaoe_2 state.rotacaod_2 state.rotacaoc_2 state.rotacaob_2 state.rotacaoa_2 state.rotacao9_1 state.rotacao8_2 state.rotacao7_2 state.rotacao6_2 state.rotacao5_2 state.rotacao4_2 state.rotacao3_2 state.rotacao2_1 state.rotacao1_1 state.pc1 
+state.pc1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.rotacao1_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.rotacao2_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.rotacao3_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.rotacao4_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.rotacao5_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.rotacao6_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.rotacao7_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.rotacao8_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.rotacao9_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.rotacaoa_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.rotacaob_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.rotacaoc_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.rotacaod_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.rotacaoe_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.rotacaof_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.rotacaog_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_4 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_5 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_6 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_7 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_8 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_9 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_a 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_b 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_c 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_d 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_e 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_f 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_g 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pronto 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|state
+Name state.pronto state.op_p_box state.op_sbox state.op_xor 
+state.op_xor 0 0 0 0 
+state.op_sbox 0 0 1 1 
+state.op_p_box 0 1 0 1 
+state.pronto 1 0 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|state
+Name state.pronto state.espera state.liberaSbox 
+state.liberaSbox 0 0 0 
+state.espera 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|estado
+Name estado.pronto estado.des3SalvaInformacao estado.des3Opera estado.des3Carrega estado.des2SalvaInformacao estado.des2Opera estado.des2Carrega estado.des1SalvaInformacao estado.des1Opera estado.des1Carrega estado.state_reset 
+estado.state_reset 0 0 0 0 0 0 0 0 0 0 0 
+estado.des1Carrega 0 0 0 0 0 0 0 0 0 1 1 
+estado.des1Opera 0 0 0 0 0 0 0 0 1 0 1 
+estado.des1SalvaInformacao 0 0 0 0 0 0 0 1 0 0 1 
+estado.des2Carrega 0 0 0 0 0 0 1 0 0 0 1 
+estado.des2Opera 0 0 0 0 0 1 0 0 0 0 1 
+estado.des2SalvaInformacao 0 0 0 0 1 0 0 0 0 0 1 
+estado.des3Carrega 0 0 0 1 0 0 0 0 0 0 1 
+estado.des3Opera 0 0 1 0 0 0 0 0 0 0 1 
+estado.des3SalvaInformacao 0 1 0 0 0 0 0 0 0 0 1 
+estado.pronto 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|des:mapDes|processKey:mapK|state
+Name state.pronto state.pc2_g state.pc2_f state.pc2_e state.pc2_d state.pc2_c state.pc2_b state.pc2_a state.pc2_9 state.pc2_8 state.pc2_7 state.pc2_6 state.pc2_5 state.pc2_4 state.pc2_3 state.pc2_2 state.pc2_1 state.rotacaog_1 state.rotacaof_2 state.rotacaoe_2 state.rotacaod_2 state.rotacaoc_2 state.rotacaob_2 state.rotacaoa_2 state.rotacao9_1 state.rotacao8_2 state.rotacao7_2 state.rotacao6_2 state.rotacao5_2 state.rotacao4_2 state.rotacao3_2 state.rotacao2_1 state.rotacao1_1 state.pc1 
+state.pc1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.rotacao1_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.rotacao2_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.rotacao3_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.rotacao4_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.rotacao5_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.rotacao6_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.rotacao7_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.rotacao8_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.rotacao9_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.rotacaoa_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.rotacaob_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.rotacaoc_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.rotacaod_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.rotacaoe_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.rotacaof_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.rotacaog_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_4 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_5 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_6 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_7 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_8 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_9 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_a 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_b 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_c 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_d 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_e 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_f 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pc2_g 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.pronto 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|state
+Name state.pronto state.op_p_box state.op_sbox state.op_xor 
+state.op_xor 0 0 0 0 
+state.op_sbox 0 0 1 1 
+state.op_p_box 0 1 0 1 
+state.pronto 1 0 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|state
+Name state.pronto state.espera state.liberaSbox 
+state.liberaSbox 0 0 0 
+state.espera 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 
+
+State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state
+Name state.pronto state.consultaRam state.inicia 
+state.inicia 0 0 0 
+state.consultaRam 0 1 1 
+state.pronto 1 0 1 

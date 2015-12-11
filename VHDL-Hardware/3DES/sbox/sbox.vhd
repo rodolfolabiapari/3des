@@ -1,3 +1,7 @@
+
+-- Gerenciador de Sbox
+-- Arquivo que realiza as comutacoes feitas pelas Sbox
+-- Utiliza-se as 8 S-box
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
@@ -6,18 +10,16 @@ entity sbox is
 	port(
 		clk 		: IN std_logic;
 		reset 	    : IN std_logic;
+		-- Dado de entrada
 		bus48In 	: IN std_logic_vector(0 TO 47);
+		-- Dado de saida todo comutado
 		bus32Out    : OUT std_logic_vector(0 TO 31);
+		-- informa sucesso
 		done 		: OUT std_logic
 	);
 end sbox;
 
 architecture sbox_behav of sbox is
-
---	component INV
---	  port (A: in STD_LOGIC;
---	  F: out STD_LOGIC);
---	end component;
 	
 	-- SBOX 1
 	component sbox1
@@ -123,21 +125,19 @@ architecture sbox_behav of sbox is
 	signal sig_8_done : std_logic;
 	signal sig_8_busOut4 : std_logic_vector (0 TO 3);
 
-
-	-- Build an enumerated type for the state machine
+	-- Maquina de estados
 	type state_type is (liberaSbox, espera, pronto);
-	-- Register to hold the current state
 	signal state   : state_type;
 	
-	
 	signal sig_reset : std_logic;
-
+	-- Buffers
 	signal sig_bus48 : std_logic_vector(0 TO 47);
 	signal sig_bus32 : std_logic_vector(0 TO 31);
 	
 begin
+	-- Direciona a entrada para o barramento das S-box
 	sig_bus48 <= bus48In;
-
+ 
 	mapSbox1: sbox1 port map(
 		clk      => clk,
 		reset    => sig_reset,
@@ -216,6 +216,7 @@ begin
 			
 		elsif (rising_edge(clk)) then
 			case state is
+				-- Reseta todos os 
 				when liberaSbox=>
 					sig_reset <= '0';
 
@@ -245,6 +246,8 @@ begin
 
 						state <= pronto;
 					end if;
+
+				-- Retorna o produto resultante
 				when pronto=>
 					done <= '1';
 					bus32Out <= sig_bus32;

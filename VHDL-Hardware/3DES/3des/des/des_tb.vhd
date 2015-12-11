@@ -58,7 +58,7 @@ BEGIN
 		--key-133457799BBCDFF1
 
 		--sig_bus64In <= x"133457799BBCDFF1";
-		sig_text64 <= x"3031323334353637";
+		sig_text64 <= x"0123456789ABCDEF";
 		sig_key <= x"133457799BBCDFF1";
 		sig_reset <= '1';
 		wait for 2 ns;

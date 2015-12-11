@@ -38,7 +38,7 @@ BEGIN
 		clock     => sig_clock    ,
 		reset     => sig_reset    ,
 		text64    => x"0123456789ABCDEF"   ,
-		key192    => x"133457799BBCDFF1133457799BBCDFF1133457799BBCDFF1",
+		key192    => x"133457799BBCDFF1133457799BBCDFF2133457799BBCDFF3",
 		done      => sig_done     ,
 		textOut64 => sig_textOut64
 	);

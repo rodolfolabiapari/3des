@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"ip",
+				"sig_ipIn"
+			],
+			[
+				"rese",
+				"sig_reset"
+			],
+			[
+				"sig",
+				"sig_busIn6"
+			],
+			[
+				"si",
+				"sig_busIn6"
+			],
+			[
+				"sig_",
+				"sig_done"
+			],
+			[
+				"std",
+				"std_logic_vector"
+			],
+			[
+				"sib",
+				"sig_busIn6"
+			],
+			[
 				"qua",
 				"quantidade_blocos"
 			],
@@ -30,10 +58,6 @@
 			[
 				"reg",
 				"reg_key0"
-			],
-			[
-				"std",
-				"std_logic"
 			],
 			[
 				"ret",
@@ -176,10 +200,13 @@
 	"buffers":
 	[
 		{
+			"contents": "",
 			"file": "interface-3des.vhd",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
-				"buffer_size": 6662,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
@@ -187,7 +214,15 @@
 			"file": "3des/t_des.vhd",
 			"settings":
 			{
-				"buffer_size": 3640,
+				"buffer_size": 4800,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "3des/t_des_tb.vhd",
+			"settings":
+			{
+				"buffer_size": 1647,
 				"line_ending": "Windows"
 			}
 		},
@@ -195,15 +230,93 @@
 			"file": "3des/t_un_des.vhd",
 			"settings":
 			{
-				"buffer_size": 3773,
+				"buffer_size": 5050,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "3des/des/des.vhd",
+			"file": "3des/t_un_des_tb.vhd",
 			"settings":
 			{
-				"buffer_size": 13909,
+				"buffer_size": 1671,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\n-- Processamento das chaves\n-- Arquivo responsavel por operar sobre a chave inicial geranto todas as 16 chaves\n-- que serao utilizadas ao longo do algoritmo.\n-- Ambos a encriptacao e decriptacao utilizam este mesmo metodo\nlibrary IEEE;\nuse IEEE.std_logic_1164.all;\nuse IEEE.numeric_std.all;\n\nentity processKey is\n	port(\n		clk         : IN std_logic;\n		reset       : IN std_logic;\n		-- chave inicial \n		bus64In     : IN std_logic_vector(0 TO 63);\n		-- informa fim de operacao\n		done        : OUT std_logic;\n		-- 16 chaves\n		key0        : OUT std_logic_vector(0 TO 47);\n		key1        : OUT std_logic_vector(0 TO 47);\n		key2        : OUT std_logic_vector(0 TO 47);\n		key3        : OUT std_logic_vector(0 TO 47);\n		key4        : OUT std_logic_vector(0 TO 47);\n		key5        : OUT std_logic_vector(0 TO 47);\n		key6        : OUT std_logic_vector(0 TO 47);\n		key7        : OUT std_logic_vector(0 TO 47);\n		key8        : OUT std_logic_vector(0 TO 47);\n		key9        : OUT std_logic_vector(0 TO 47);\n		keya        : OUT std_logic_vector(0 TO 47);\n		keyb        : OUT std_logic_vector(0 TO 47);\n		keyc        : OUT std_logic_vector(0 TO 47);\n		keyd        : OUT std_logic_vector(0 TO 47);\n		keye        : OUT std_logic_vector(0 TO 47);\n		keyf        : OUT std_logic_vector(0 TO 47) \n	);\nend processKey;\n\narchitecture processKey_behav of processKey is\n	-- Permutacao inicial da chave\n	component permutedChoice1\n		port(\n		bus64In 	: IN std_logic_vector(0 TO 63);\n		bus56Out    : OUT std_logic_vector(0 TO 55)\n		);\n	end component;\n\n	-- permutacao para uso\n	component permutedChoice2\n		port(\n		bus56In 	: IN std_logic_vector(0 TO 55);\n		bus48Out    : OUT std_logic_vector(0 TO 47)\n		);\n	end component;\n\n	-- maquina que estados\n	type state_type is (pc1, \n		rotacao1_1,\n		rotacao2_1,\n		rotacao3_2,\n		rotacao4_2,\n		rotacao5_2,\n		rotacao6_2,\n		rotacao7_2,\n		rotacao8_2,\n		rotacao9_1,\n		rotacaoa_2,\n		rotacaob_2,\n		rotacaoc_2,\n		rotacaod_2,\n		rotacaoe_2,\n		rotacaof_2,\n		rotacaog_1,\n		pc2_1,\n		pc2_2,\n		pc2_3,\n		pc2_4,\n		pc2_5,\n		pc2_6,\n		pc2_7,\n		pc2_8,\n		pc2_9,\n		pc2_a,\n		pc2_b,\n		pc2_c,\n		pc2_d,\n		pc2_e,\n		pc2_f,\n		pc2_g,\n		pronto);\n	signal state   : state_type;\n\n\n	signal c0, d0,\n	       c1, d1,\n	       c2, d2,\n	       c3, d3,\n	       c4, d4,\n	       c5, d5,\n	       c6, d6,\n	       c7, d7,\n	       c8, d8,\n	       c9, d9,\n	       ca, da,\n	       cb, db,\n	       cc, dc,\n	       cd, dd,\n	       ce, de,\n	       cf, df,\n	       cg, dg : std_logic_vector(0 TO 27);\n\n	signal cd1,\n	       cd2,\n	       cd3,\n	       cd4,\n	       cd5,\n	       cd6,\n	       cd7,\n	       cd8,\n	       cd9,\n	       cda,\n	       cdb,\n	       cdc,\n	       cdd,\n	       cde,\n	       cdf,\n	       cdg : std_logic_vector(0 TO 55);\n\n	signal sig_result_pc1 : std_logic_vector(0 TO 55);\n\n	signal inicio : std_logic_vector (0 TO 63);\nbegin\n\n	mapPc1: permutedChoice1 port map(\n		bus64In 	 => bus64In,\n		bus56Out     => sig_result_pc1\n	);\n\n	mapPc2_k0: permutedChoice2 port map(\n		bus56In 	 => cd1,\n		bus48Out     => key0\n	);\n	mapPc2_k1: permutedChoice2 port map(\n		bus56In 	 => cd2,\n		bus48Out     => key1\n	);\n	mapPc2_k2: permutedChoice2 port map(\n		bus56In 	 => cd3,\n		bus48Out     => key2\n	);\n	mapPc2_k3: permutedChoice2 port map(\n		bus56In 	 => cd4,\n		bus48Out     => key3\n	);\n	mapPc2_k4: permutedChoice2 port map(\n		bus56In 	 => cd5,\n		bus48Out     => key4\n	);\n	mapPc2_k5: permutedChoice2 port map(\n		bus56In 	 => cd6,\n		bus48Out     => key5\n	);\n	mapPc2_k6: permutedChoice2 port map(\n		bus56In 	 => cd7,\n		bus48Out     => key6\n	);\n	mapPc2_k7: permutedChoice2 port map(\n		bus56In 	 => cd8,\n		bus48Out     => key7\n	);\n	mapPc2_k8: permutedChoice2 port map(\n		bus56In 	 => cd9,\n		bus48Out     => key8\n	);\n	mapPc2_k9: permutedChoice2 port map(\n		bus56In 	 => cda,\n		bus48Out     => key9\n	);\n	mapPc2_ka: permutedChoice2 port map(\n		bus56In 	 => cdb,\n		bus48Out     => keya\n	);\n	mapPc2_kb: permutedChoice2 port map(\n		bus56In 	 => cdc,\n		bus48Out     => keyb\n	);\n	mapPc2_kc: permutedChoice2 port map(\n		bus56In 	 => cdd,\n		bus48Out     => keyc\n	);\n	mapPc2_kd: permutedChoice2 port map(\n		bus56In 	 => cde,\n		bus48Out     => keyd\n	);\n	mapPc2_ke: permutedChoice2 port map(\n		bus56In 	 => cdf,\n		bus48Out     => keye\n	);\n	mapPc2_kf: permutedChoice2 port map(\n		bus56In 	 => cdg,\n		bus48Out     => keyf\n	);\n\n\n\n	-- Logic to advance to the next state\n	process (clk, reset)\n	begin\n		-- Reseta todos os componentes\n		if reset = '1' then\n			done <= '0';\n			state <= pc1;\n\n		elsif (rising_edge(clk)) then\n			case state is\n				-- Realiza a primeira permutacao (PC1)\n				when pc1=>\n					c0 <= sig_result_pc1(0 TO 27);\n					d0 <= sig_result_pc1(28 TO 55);\n\n					state <= rotacao1_1;\n\n\n-- Iteracao 1\nwhen rotacao1_1=>\n\n	c1 <= c0 (1 TO 27) & c0 (0);\n	d1 <= d0 (1 TO 27) & d0 (0);\n	state <= pc2_1;\n\nwhen pc2_1=>\n	cd1 <= c1(0 to 27) & d1(0 to 27);\n	state <= rotacao2_1;\n\n				-- Iteracao 2\n				when rotacao2_1=>\n\n					c2 <= c1 (1 TO 27) & c1 (0);\n					d2 <= d1 (1 TO 27) & d1 (0);\n					state <= pc2_2;\n\n				when pc2_2=>\n					cd2 <= c2(0 to 27) & d2(0 to 27);\n\n					state <= rotacao3_2;\n\n\n				-- Iteracao 3\n				when rotacao3_2=>\n\n					c3 <= c2 (2 TO 27) & c2 (0 to 1);\n					d3 <= d2 (2 TO 27) & d2 (0 to 1);\n					state <= pc2_3;\n\n				when pc2_3=>\n					cd3 <= c3(0 to 27) & d3(0 to 27);\n\n					state <= rotacao4_2;\n\n\n				-- Iteracao 4\n				when rotacao4_2=>\n\n					c4 <= c3 (2 TO 27) & c3 (0 to 1);\n					d4 <= d3 (2 TO 27) & d3 (0 to 1);\n					state <= pc2_4;\n\n				when pc2_4=>\n					cd4 <= c4(0 to 27) & d4(0 to 27);\n\n					state <= rotacao5_2;\n\n\n				-- Iteracao 5\n				when rotacao5_2=>\n\n					c5 <= c4 (2 TO 27) & c4 (0 to 1);\n					d5 <= d4 (2 TO 27) & d4 (0 to 1);\n					state <= pc2_5;\n\n				when pc2_5=>\n					cd5 <= c5(0 to 27) & d5(0 to 27);\n\n					state <= rotacao6_2;\n\n\n				-- Iteracao 6\n				when rotacao6_2=>\n\n					c6 <= c5 (2 TO 27) & c5 (0 to 1);\n					d6 <= d5 (2 TO 27) & d5 (0 to 1);\n					state <= pc2_6;\n\n				when pc2_6=>\n					cd6 <= c6(0 to 27) & d6(0 to 27);\n\n					state <= rotacao7_2;\n\n\n				-- Iteracao 7\n				when rotacao7_2=>\n\n					c7 <= c6 (2 TO 27) & c6 (0 to 1);\n					d7 <= d6 (2 TO 27) & d6 (0 to 1);\n					state <= pc2_7;\n\n				when pc2_7=>\n					cd7 <= c7(0 to 27) & d7(0 to 27);\n\n					state <= rotacao8_2;\n\n\n				-- Iteracao 8\n				when rotacao8_2=>\n\n					c8 <= c7 (2 TO 27) & c7 (0 to 1);\n					d8 <= d7 (2 TO 27) & d7 (0 to 1);\n					state <= pc2_8;\n\n				when pc2_8=>\n					cd8 <= c8(0 to 27) & d8(0 to 27);\n\n					state <= rotacao9_1;\n\n\n				-- Iteracao 9\n				when rotacao9_1=>\n\n					c9 <= c8 (1 TO 27) & c8 (0);\n					d9 <= d8 (1 TO 27) & d8 (0);\n					state <= pc2_9;\n\n				when pc2_9=>\n					cd9 <= c9(0 to 27) & d9(0 to 27);\n\n					state <= rotacaoa_2;\n\n\n				-- Iteracao 10\n				when rotacaoa_2=>\n\n					ca <= c9 (2 TO 27) & c9 (0 to 1);\n					da <= d9 (2 TO 27) & d9 (0 to 1);\n					state <= pc2_a;\n\n				when pc2_a=>\n					cda <= ca(0 to 27) & da(0 to 27);\n\n					state <= rotacaob_2;\n\n\n				-- Iteracao 11\n				when rotacaob_2=>\n\n					cb <= ca (2 TO 27) & ca (0 to 1);\n					db <= da (2 TO 27) & da (0 to 1);\n					state <= pc2_b;\n\n				when pc2_b=>\n					cdb <= cb(0 to 27) & db(0 to 27);\n\n					state <= rotacaoc_2;\n\n\n				-- Iteracao 12\n				when rotacaoc_2=>\n\n					cc <= cb (2 TO 27) & cb (0 to 1);\n					dc <= db (2 TO 27) & db (0 to 1);\n					state <= pc2_c;\n\n				when pc2_c=>\n					cdc <= cc(0 to 27) & dc(0 to 27);\n\n					state <= rotacaod_2;\n\n\n				-- Iteracao 13\n				when rotacaod_2=>\n\n					cd <= cc (2 TO 27) & cc (0 to 1);\n					dd <= dc (2 TO 27) & dc (0 to 1);\n					state <= pc2_d;\n\n				when pc2_d=>\n					cdd <= cd(0 to 27) & dd(0 to 27);\n\n					state <= rotacaoe_2;\n\n\n				-- Iteracao 14\n				when rotacaoe_2=>\n\n					ce <= cd (2 TO 27) & cd (0 to 1);\n					de <= dd (2 TO 27) & dd (0 to 1);\n					state <= pc2_e;\n\n				when pc2_e=>\n					cde <= ce(0 to 27) & de(0 to 27);\n\n					state <= rotacaof_2;\n\n\n				-- Iteracao 15\n				when rotacaof_2=>\n\n					cf <= ce (2 TO 27) & ce (0 to 1);\n					df <= de (2 TO 27) & de (0 to 1);\n					state <= pc2_f;\n\n				when pc2_f=>\n					cdf <= cf(0 to 27) & df(0 to 27);\n\n					state <= rotacaog_1;\n\n\n				-- Iteracao 16\n				when rotacaog_1=>\n\n					cg <= cf (1 TO 27) & cf (0);\n					dg <= df (1 TO 27) & df (0);\n					state <= pc2_g;\n\n				when pc2_g=>\n					cdg <= cg(0 to 27) & dg(0 to 27);\n\n					state <= pronto;\n\n\n				-- Indica sucesso\n				when pronto=>\n					done <= '1';\n\n					state <= pronto;\n\n			end case;\n		end if;\n	end process;\n\nend processKey_behav;\n",
+			"file": "/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Documentos /Relatórios/Relatorio Final/3DES/keys/processKey.vhd",
+			"file_size": 8779,
+			"file_write_time": 1448605771000000,
+			"settings":
+			{
+				"buffer_size": 8308,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "feistel/e_tb.vhd",
+			"settings":
+			{
+				"buffer_size": 957,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "feistel/f_tb.vhd",
+			"settings":
+			{
+				"buffer_size": 1489,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "feistel/p_tb.vhd",
+			"settings":
+			{
+				"buffer_size": 973,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "3des/des/ ip_finale_tb.vhd",
+			"settings":
+			{
+				"buffer_size": 1102,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "3des/des/ip_tb.vhd",
+			"settings":
+			{
+				"buffer_size": 1061,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sbox/sbox_tb.vhd",
+			"settings":
+			{
+				"buffer_size": 1943,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "\n-- DES\n-- Arquivo responsavel por organizar o processamento de 1 bloco de 64 bits utilizando a encriptacao\n-- do algoritmo DES.\n-- Utiliza-se componentes como IP, IP^-1, Funcao Feistel e Processamento de Chave.\nlibrary IEEE;\nuse IEEE.std_logic_1164.all;\nuse IEEE.numeric_std.all;\n\nentity des is\n	port(\n		clk          : IN std_logic;\n		reset        : In std_logic;\n		-- Texto de entrada para encriptacao\n		text64       : IN std_logic_vector(0 TO 63);\n		-- Chave de para encriptacao\n		key          : IN std_logic_vector(0 TO 63);\n		-- Aviso de Termino\n		done         : OUT std_logic;\n		-- Valor resultante\n		textOut64    : OUT std_logic_vector(0 TO 63)\n	);\nend des;\n\narchitecture des_behav of des is\n	-- IP\n	component initialPermutation\n		port(\n		ipIn          : IN std_logic_vector(0 TO 63);\n		ipOut         : OUT std_logic_vector(0 TO 63)\n		);\n	end component;\n\n	signal sig_ip_ipIn        : std_logic_vector(0 TO 63);\n	signal sig_ip_ipOut       : std_logic_vector(0 TO 63);\n\n\n	-- IP^-1\n	component initialPermutationFinale\n		port(\n		ipIn          : IN std_logic_vector(0 TO 63);\n		ipOut         : OUT std_logic_vector(0 TO 63)\n		);\n	end component;\n\n	signal sig_ip_ipIn_Finale : std_logic_vector(0 TO 63);\n	signal sig_ip_ipOut_Finale: std_logic_vector(0 TO 63);\n\n\n	-- Funcao Feistel\n	component f\n		port(\n		clk           : IN std_logic;\n		reset         : In std_logic;\n		halfBlock     : IN std_logic_vector(0 TO 31);\n		key           : IN std_logic_vector(0 TO 47);\n		done          : OUT std_logic;\n		busFeistelOut : OUT std_logic_vector(0 TO 31)\n		);\n	end component;\n\n	signal sig_f_reset        : std_logic;\n	signal sig_f_halfBlock    : std_logic_vector(0 TO 31);\n	signal sig_f_key          : std_logic_vector(0 TO 47);\n	signal sig_f_done         : std_logic;\n	signal sig_f_busFeistelOut: std_logic_vector(0 TO 31);\n	\n\n	-- Processamento de chave\n	component processKey\n		port(\n		clk           : IN std_logic;\n		reset         : IN std_logic;\n		bus64In       : IN std_logic_vector(0 TO 63);\n		done          : OUT std_logic;\n		key0          : OUT std_logic_vector(0 TO 47);\n		key1          : OUT std_logic_vector(0 TO 47);\n		key2          : OUT std_logic_vector(0 TO 47);\n		key3          : OUT std_logic_vector(0 TO 47);\n		key4          : OUT std_logic_vector(0 TO 47);\n		key5          : OUT std_logic_vector(0 TO 47);\n		key6          : OUT std_logic_vector(0 TO 47);\n		key7          : OUT std_logic_vector(0 TO 47);\n		key8          : OUT std_logic_vector(0 TO 47);\n		key9          : OUT std_logic_vector(0 TO 47);\n		keya          : OUT std_logic_vector(0 TO 47);\n		keyb          : OUT std_logic_vector(0 TO 47);\n		keyc          : OUT std_logic_vector(0 TO 47);\n		keyd          : OUT std_logic_vector(0 TO 47);\n		keye          : OUT std_logic_vector(0 TO 47);\n		keyf          : OUT std_logic_vector(0 TO 47) \n		);\n	end component;\n\n	signal sig_k_reset        : std_logic;\n	signal sig_k_done         : std_logic;\n	signal sig_k_key0         : std_logic_vector(0 TO 47);\n	signal sig_k_key1         : std_logic_vector(0 TO 47);\n	signal sig_k_key2         : std_logic_vector(0 TO 47);\n	signal sig_k_key3         : std_logic_vector(0 TO 47);\n	signal sig_k_key4         : std_logic_vector(0 TO 47);\n	signal sig_k_key5         : std_logic_vector(0 TO 47);\n	signal sig_k_key6         : std_logic_vector(0 TO 47);\n	signal sig_k_key7         : std_logic_vector(0 TO 47);\n	signal sig_k_key8         : std_logic_vector(0 TO 47);\n	signal sig_k_key9         : std_logic_vector(0 TO 47);\n	signal sig_k_keya         : std_logic_vector(0 TO 47);\n	signal sig_k_keyb         : std_logic_vector(0 TO 47);\n	signal sig_k_keyc         : std_logic_vector(0 TO 47);\n	signal sig_k_keyd         : std_logic_vector(0 TO 47);\n	signal sig_k_keye         : std_logic_vector(0 TO 47);\n	signal sig_k_keyf         : std_logic_vector(0 TO 47);\n\n\n\n	-- Sinais para operacao com o texto\n	signal l0, r0,\n	       l1, r1,\n	       l2, r2,\n	       l3, r3,\n	       l4, r4,\n	       l5, r5,\n	       l6, r6,\n	       l7, r7,\n	       l8, r8,\n	       l9, r9,\n	       la, ra,\n	       lb, rb,\n	       lc, rc,\n	       ld, rd,\n	       le, re,\n	       lf, rf,\n	       lg, rg : std_logic_vector(0 TO 31);\n\n	-- flag que verifica se as chaves ja foram calculadas\n	signal chavesJaCalculadas : std_logic;\n	\n\n	-- Maquina de estados\n	type state_type is (op_reset_key,\n		op_process_key, op_ip, op_ip_final,\n		op_f0_working, op_f0_done, op_f0_clean,\n		op_f1_working, op_f1_done, op_f1_clean,\n		op_f2_working, op_f2_done, op_f2_clean,\n		op_f3_working, op_f3_done, op_f3_clean,\n		op_f4_working, op_f4_done, op_f4_clean,\n		op_f5_working, op_f5_done, op_f5_clean,\n		op_f6_working, op_f6_done, op_f6_clean,\n		op_f7_working, op_f7_done, op_f7_clean,\n		op_f8_working, op_f8_done, op_f8_clean,\n		op_f9_working, op_f9_done, op_f9_clean,\n		op_fa_working, op_fa_done, op_fa_clean,\n		op_fb_working, op_fb_done, op_fb_clean,\n		op_fc_working, op_fc_done, op_fc_clean,\n		op_fd_working, op_fd_done, op_fd_clean,\n		op_fe_working, op_fe_done, op_fe_clean,\n		op_ff_working, op_ff_done, op_ff_clean,\n		pronto\n	 );\n	signal state   : state_type;\nbegin\n\n	mapIp: initialPermutation port map(\n		ipIn          => sig_ip_ipIn        ,\n		ipOut         => sig_ip_ipOut       \n	);\n	mapIpFinale: initialPermutationFinale port map(\n		ipIn          => sig_ip_ipIn_Finale ,\n		ipOut         => sig_ip_ipOut_Finale       \n	);\n	mapF: f port map(\n		clk           => clk          ,\n		reset         => sig_f_reset        ,\n		halfBlock     => sig_f_halfBlock    ,\n		key           => sig_f_key          ,\n		done          => sig_f_done         ,\n		busFeistelOut => sig_f_busFeistelOut\n	);\n	mapK: processKey port map(\n		clk           => clk           ,\n		reset         => sig_k_reset         ,\n		bus64In       => key                 ,\n		done          => sig_k_done          ,\n		key0          => sig_k_key0          ,\n		key1          => sig_k_key1          ,\n		key2          => sig_k_key2          ,\n		key3          => sig_k_key3          ,\n		key4          => sig_k_key4          ,\n		key5          => sig_k_key5          ,\n		key6          => sig_k_key6          ,\n		key7          => sig_k_key7          ,\n		key8          => sig_k_key8          ,\n		key9          => sig_k_key9          ,\n		keya          => sig_k_keya          ,\n		keyb          => sig_k_keyb          ,\n		keyc          => sig_k_keyc          ,\n		keyd          => sig_k_keyd          ,\n		keye          => sig_k_keye          ,\n		keyf          => sig_k_keyf          \n	);\n\n\n	process (clk, reset)\n	begin\n		-- Reset\n		if reset =  '1' then\n			-- diz que nao esta pronto\n			done <= '0';\n			-- Reseta o f\n			sig_f_reset <= '1';\n\n			-- verifica se as chaves ja foram calculadas\n			if (chavesJaCalculadas /= '0') then\n				-- Se nao foram, calcula novamente\n				sig_k_reset <= '1';\n				state <= op_reset_key;\n			else\n				-- caso contrario, ja processa o preco\n				state <= op_process_key;\n			end if ;\n\n\n		elsif (rising_edge(clk)) then\n			case state is\n				-- reseta todas as chaves\n				when op_reset_key=>\n					sig_k_reset <= '0';\n					state <= op_process_key;\n\n-- Processa as chaves\nwhen op_process_key=>\n	if (sig_k_done = '1') then\n		chavesJaCalculadas <= '1';\n		sig_ip_ipIn <= text64;\n		state <= op_ip;\n	end if;\n\n-- Processa a inicial permutation\nwhen op_ip=>\n	l0 <= sig_ip_ipOut(0 to 31);\n	r0 <= sig_ip_ipOut(32 to 63);\n\n					state <= op_f0_working;\n\n					\n-- F0-------------------------------\n-- inicia o processamento				\nwhen op_f0_working =>\n	-- Reseta a funcao f\n	sig_f_reset <= '0';\n\n	-- recebe a chave da iteracao i\n	sig_f_key <= sig_k_key0;\n	-- recebe o pedaco do texto\n	sig_f_halfBlock <= r0;\n	state <= op_f0_done;\n\n-- espera o resultado da operacao\nwhen op_f0_done =>\n	-- quando terminar esta iteracao da funcao f\n	if (sig_f_done = '1') then\n		-- inverte os pedacos\n		l1 <= r0;	\n		-- realiza o xor de li com o resultado da funcao\n		r1 <= l0 xor sig_f_busFeistelOut;\n\n		state <= op_f0_clean;\n\n	end if;\n\n-- Limpa a funcao para a proxima iteracao\nwhen op_f0_clean =>\n	sig_f_reset <= '1';\n	state <= op_f1_working;\n\n-- F1-------------------------------\n\n				when op_f1_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_key1;\n					sig_f_halfBlock <= r1;\n					state <= op_f1_done;\n\n				when op_f1_done =>\n					if (sig_f_done = '1') then\n\n						l2 <= r1;	\n						r2 <= l1 xor sig_f_busFeistelOut;\n\n						state <= op_f1_clean;\n\n					end if;\n\n				when op_f1_clean =>\n					sig_f_reset <= '1';\n					state <= op_f2_working;\n\n-- F2-------------------------------\n\n				when op_f2_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_key2;\n					sig_f_halfBlock <= r2;\n					state <= op_f2_done;\n\n				when op_f2_done =>\n					if (sig_f_done = '1') then\n\n						l3 <= r2;	\n						r3 <= l2 xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_f2_clean;\n\n					end if;\n\n				when op_f2_clean =>\n					sig_f_reset <= '1';\n					state <= op_f3_working;\n\n-- F3-------------------------------\n\n				when op_f3_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_key3;\n					sig_f_halfBlock <= r3;\n					state <= op_f3_done;\n\n				when op_f3_done =>\n					if (sig_f_done = '1') then\n\n						l4 <= r3;	\n						r4 <= l3 xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_f3_clean;\n\n					end if;\n\n				when op_f3_clean =>\n					sig_f_reset <= '1';\n					state <= op_f4_working;\n\n-- F4-------------------------------\n\n				when op_f4_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_key4;\n					sig_f_halfBlock <= r4;\n					state <= op_f4_done;\n\n				when op_f4_done =>\n					if (sig_f_done = '1') then\n\n						l5 <= r4;	\n						r5 <= l4 xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_f4_clean;\n\n					end if;\n\n				when op_f4_clean =>\n					sig_f_reset <= '1';\n					state <= op_f5_working;\n\n-- F5-------------------------------\n\n				when op_f5_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_key5;\n					sig_f_halfBlock <= r5;\n					state <= op_f5_done;\n\n				when op_f5_done =>\n					if (sig_f_done = '1') then\n\n						l6 <= r5;	\n						r6 <= l5 xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_f5_clean;\n\n					end if;\n\n				when op_f5_clean =>\n					sig_f_reset <= '1';\n					state <= op_f6_working;\n\n-- F6-------------------------------\n\n				when op_f6_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_key6;\n					sig_f_halfBlock <= r6;\n					state <= op_f6_done;\n\n				when op_f6_done =>\n					if (sig_f_done = '1') then\n\n						l7 <= r6;	\n						r7 <= l6 xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_f6_clean;\n\n					end if;\n\n				when op_f6_clean =>\n					sig_f_reset <= '1';\n					state <= op_f7_working;\n\n-- F7-------------------------------\n\n				when op_f7_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_key7;\n					sig_f_halfBlock <= r7;\n					state <= op_f7_done;\n\n				when op_f7_done =>\n					if (sig_f_done = '1') then\n\n						l8 <= r7;	\n						r8 <= l7 xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_f7_clean;\n\n					end if;\n\n				when op_f7_clean =>\n					sig_f_reset <= '1';\n					state <= op_f8_working;\n\n-- F8-------------------------------\n\n				when op_f8_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_key8;\n					sig_f_halfBlock <= r8;\n					state <= op_f8_done;\n\n				when op_f8_done =>\n					if (sig_f_done = '1') then\n\n						l9 <= r8;	\n						r9 <= l8 xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_f8_clean;\n\n					end if;\n\n				when op_f8_clean =>\n					sig_f_reset <= '1';\n					state <= op_f9_working;\n\n-- F9-------------------------------\n\n				when op_f9_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_key9;\n					sig_f_halfBlock <= r9;\n					state <= op_f9_done;\n\n				when op_f9_done =>\n					if (sig_f_done = '1') then\n\n						la <= r9;	\n						ra <= l9 xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_f9_clean;\n\n					end if;\n\n				when op_f9_clean =>\n					sig_f_reset <= '1';\n					state <= op_fa_working;\n\n-- Fa-------------------------------\n\n				when op_fa_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_keya;\n					sig_f_halfBlock <= ra;\n					state <= op_fa_done;\n\n				when op_fa_done =>\n					if (sig_f_done = '1') then\n\n						lb <= ra;	\n						rb <= la xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_fa_clean;\n\n					end if;\n\n				when op_fa_clean =>\n					sig_f_reset <= '1';\n					state <= op_fb_working;\n\n-- Fb-------------------------------\n\n				when op_fb_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_keyb;\n					sig_f_halfBlock <= rb;\n					state <= op_fb_done;\n\n				when op_fb_done =>\n					if (sig_f_done = '1') then\n\n						lc <= rb;	\n						rc <= lb xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_fb_clean;\n\n					end if;\n\n				when op_fb_clean =>\n					sig_f_reset <= '1';\n					state <= op_fc_working;\n\n-- Fc-------------------------------\n\n				when op_fc_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_keyc;\n					sig_f_halfBlock <= rc;\n					state <= op_fc_done;\n\n				when op_fc_done =>\n					if (sig_f_done = '1') then\n\n						ld <= rc;	\n						rd <= lc xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_fc_clean;\n\n					end if;\n\n				when op_fc_clean =>\n					sig_f_reset <= '1';\n					state <= op_fd_working;\n\n-- Fd-------------------------------\n\n				when op_fd_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_keyd;\n					sig_f_halfBlock <= rd;\n					state <= op_fd_done;\n\n				when op_fd_done =>\n					if (sig_f_done = '1') then\n\n						le <= rd;	\n						re <= ld xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_fd_clean;\n\n					end if;\n\n				when op_fd_clean =>\n					sig_f_reset <= '1';\n					state <= op_fe_working;\n\n-- Fe-------------------------------\n\n				when op_fe_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_keye;\n					sig_f_halfBlock <= re;\n					state <= op_fe_done;\n\n				when op_fe_done =>\n					if (sig_f_done = '1') then\n\n						lf <= re;	\n						rf <= le xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_fe_clean;\n\n					end if;\n\n				when op_fe_clean =>\n					sig_f_reset <= '1';\n					state <= op_ff_working;\n\n-- Ff-------------------------------\n\n				when op_ff_working =>\n\n					sig_f_reset <= '0';\n\n					sig_f_key <= sig_k_keyf;\n					sig_f_halfBlock <= rf;\n					state <= op_ff_done;\n\n				when op_ff_done =>\n					if (sig_f_done = '1') then\n\n						lg <= rf;	\n						rg <= lf xor sig_f_busFeistelOut;\n						--sig_f_reset <= '1';\n\n						state <= op_ff_clean;\n\n					end if;\n\n				when op_ff_clean =>\n					sig_f_reset <= '1';\n					state <= op_ip_final;\n\n\n-- Realiza a permutacao final\nwhen op_ip_final =>\n	sig_ip_ipIn_Finale <= rg & lg;\n	textOut64 <= sig_ip_ipOut_Finale;\n\n	state <= pronto;\n\n\n-- Avisa que o processamento terminou e direciona o resultado para a saida\nwhen pronto=>\n	done <= '1';\n	textOut64 <= sig_ip_ipOut_Finale;\n	state <= pronto;\n			end case;\n		end if;\n	end process;\n\nend des_behav;\n",
+			"file": "3des/des/des.vhd",
+			"file_size": 15718,
+			"file_write_time": 1448604507000000,
+			"settings":
+			{
+				"buffer_size": 14881,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "3des/des/des_tb.vhd",
+			"settings":
+			{
+				"buffer_size": 1679,
 				"line_ending": "Windows"
 			}
 		},
@@ -211,7 +324,35 @@
 			"file": "3des/des/un_des.vhd",
 			"settings":
 			{
-				"buffer_size": 13431,
+				"buffer_size": 14498,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "3des/des/un_des_tb.vhd",
+			"settings":
+			{
+				"buffer_size": 1704,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "A Figura abaixo mostra os valores de L_0 e R_0, o valor da função Feistel após sua execução e os novos valores de L_(0+1) e R_(0+1) respectivamente.",
+			"settings":
+			{
+				"buffer_size": 148,
+				"line_ending": "Unix",
+				"name": "A Figura abaixo mostra os valores de L_0 e R_0, o"
+			}
+		},
+		{
+			"contents": "LIBRARY IEEE;	\n\nENTITY Ram_TB IS\n	generic(\n		bits_endereco	: integer := 10; -- 32\n		bits_dado		: integer := 64\n	);\nEND ENTITY Ram_TB;\n\nARCHITECTURE sinais OF Ram_TB IS\n\n	-- Sinais internos\n	signal sig_clock    : std_logic;\n	signal sig_escrita  : std_logic;\n	signal sig_endereco : std_logic_vector(bits_endereco - 1 DOWNTO 0);\n	signal sig_datain   : std_logic_vector(bits_dado - 1 DOWNTO 0);\n	signal sig_dataout  : std_logic_vector(bits_dado - 1 DOWNTO 0);\n\n	COMPONENT ramTexto                                                  -- ImportaÃ§Ã£o do componente RAM jÃ¡ construido\n		PORT\n		(\n			clock    : in	std_logic;\n			escrita  : in	std_logic;\n			endereco : in	std_logic_vector(bits_endereco - 1 DOWNTO 0);\n			datain   : in	std_logic_vector(bits_dado - 1 DOWNTO 0);\n			dataout  : out std_logic_vector(bits_dado - 1 DOWNTO 0)\n		);\n	END COMPONENT;\n\n\nBEGIN\n\n	-- Mapeamento de portas do componente RAM com sinais do Test Bench\n	UUT_ram: ramTexto PORT MAP\n	(\n		clock    => sig_clock   ,\n		escrita  => sig_escrita ,\n		endereco => sig_endereco,\n		datain   => sig_datain  ,\n		dataout  => sig_dataout \n	);\n\n	P_clockGen: PROCESS IS                                        				 -- Controle de Clock\n	BEGIN\n		sig_clock <= '0';                                      					 -- Clock em nÃ­vel baixo por 10 ns\n		WAIT FOR 1 ns;\n		sig_clock <= '1';                                     					 -- Clock em nÃ­vel alto por 10 ns\n		WAIT FOR 1 ns;\n	END PROCESS P_clockGen;                                        				 -- Fim do controle de clock\n\n	P_WB: PROCESS IS                                               				 -- Processo de Escrita (WRITE)\n	BEGIN\n\n		WAIT UNTIL rising_edge(sig_clock);                          			 -- Caso occora uma borda de subida no clock, ou seja, um sinal para gravar os dados na memÃ³ria\n\n			sig_escrita <= '1';                                             			 -- Inicializa seletor de opÃ§Ã£o, WE = 0, ou seja, desabilita escrita na memÃ³ria\n			sig_endereco <= \"0000000000\";                          		 -- Inicializa o barramento de endereÃ§o\n			sig_datain  <= x\"1010101010101010\";                                 			 -- Inicializa o barramento de entrada, ou seja, grava na posiÃ§Ã£o \"0\" o valor \"0\"\n\n			WHILE sig_endereco /= \"000000100\" LOOP           				 -- Enquanto o endereÃ§o solicitado na memÃ³ria for diferente da posiÃ§Ã£o 255 \"0000000001111111\"\n																				 -- Posiciona o seletro de opÃ§Ã£o na posiÃ§Ã£o de escrita, WE = 1\n\n				WAIT UNTIL rising_edge(sig_clock);                     			 -- Aguarda uma borda de subida no clock\n\n					sig_endereco <= std_logic_vector(unsigned(sig_endereco) + 1);  -- Incrementa o endereÃ§o de acesso Ã  memÃ³ria em uma unidade\n					sig_datain  <= std_logic_vector(unsigned(sig_datain) - 1);   -- Decrementa o valor a ser armazenado na memÃ³ria em uma unidade\n\n			END LOOP;\n\n		WAIT UNTIL rising_edge(sig_clock);                             		     -- Aguarda a ocorrÃªncia de uma borda de subida no clock\n\n			sig_escrita <= '0';                                            		     -- Inicializa seletor de opÃ§Ã£o, desabilita escrita\n			sig_endereco <= x\"0000000000\";                         			 -- Inicializa o barramento de endereÃ§o\n\n			WHILE sig_endereco /= x\"0000000002\" LOOP               			 -- LÃª os 256 primeiros endereÃ§os, ou seja, atÃ© sig_endereco for igual a \"0000000001111111\"\n\n				WAIT UNTIL rising_edge(sig_clock);                           	 -- Aguarda a ocorrÃªncia de uma borda de subida no clock\n\n					sig_endereco <= std_logic_vector(unsigned(sig_endereco) + 1);  -- Incrementa o valor do endereÃ§o em uma unidade, assim percorre todos os endereÃ§os\n\n			END LOOP;\n\n	END PROCESS P_WB;\n\nEND ARCHITECTURE sinais;\n\n",
+			"file": "ram/ram_tb.vhd",
+			"file_size": 3892,
+			"file_write_time": 1448487912000000,
+			"settings":
+			{
+				"buffer_size": 3682,
 				"line_ending": "Windows"
 			}
 		}
@@ -219,11 +360,19 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 400.0,
 		"selected_items":
 		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: add",
+				"Package Control: Add Repository"
+			]
 		],
-		"width": 392.0
+		"width": 457.0
 	},
 	"console":
 	{
@@ -240,14 +389,37 @@
 	},
 	"file_history":
 	[
-		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/untitled.tex",
-		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc2.vhd",
-		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1.vhd",
-		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey.vhd",
-		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ram_tb.vhd",
-		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ramTexto.vhd",
-		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ramChave.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip_finale.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ ip_finale_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1_tb2.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/p_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/p_box.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/e.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/e_tb.vhd",
 		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc2.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc2_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ramChave.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ramTexto.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1_tb.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Documentos /Relatórios/Relatorio Final/3DES/feistel/f.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Documentos /Relatórios/Relatorio Final/3DES/sbox/sbox1.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Documentos /Relatórios/Relatorio Final/3DES/feistel/p_box.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Documentos /Relatórios/Relatorio Final/3DES/feistel/e.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Documentos /Relatórios/Relatorio Final/3DES/keys/pc1.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Documentos /Relatórios/Relatorio Final/3DES/keys/pc2.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/untitled.tex",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1.vhd",
+		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ram_tb.vhd",
 		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/interface-3des.vhd",
 		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes.vhd",
 		"/Users/pripyat/Nuvens/Mega/Periodos/8 Periodo/Administração de Sistemas de Informação/Resumo de Trabalhos/SIG (Sistemas de Informações Gerenciais)/relatório/SIG-Rodolfo.tex",
@@ -260,7 +432,6 @@
 		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des_tb.vhd",
 		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/tdes_tb.vhd",
 		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/des.vhd",
-		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des.vhd",
 		"/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des.vhd",
 		"/Users/pripyat/Nuvens/Mega/Periodos/8 Periodo/Direito/Prova 2/Aulas/12-11-15.txt",
 		"/Users/pripyat/Nuvens/Copy/Copy/Trabalho Conclusao de Curso/Tcc backup/LDD_FPGA/Git/Doc Code/Dots/tty.dot",
@@ -290,6 +461,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"e_",
+			"bus48ou",
+			"e_",
+			"bus64In",
+			"bus56In",
+			"bus56Out",
+			"bus64In",
 			"encripta",
 			"\\end{frame}",
 			"\\end{figure}",
@@ -362,6 +540,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"initialPermutation_",
+			"bus32Ou",
+			"p_box_",
+			"bus32In",
+			"bus48Out",
+			"bus56In",
 			"\\end{frame}\n",
 			"\\end{figure}\n",
 			"\\end{itemize}\n",
@@ -413,7 +597,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 15,
 			"sheets":
 			[
 				{
@@ -421,15 +605,15 @@
 					"file": "interface-3des.vhd",
 					"settings":
 					{
-						"buffer_size": 6662,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3302,
-								3302
+								0,
+								0
 							]
 						],
 						"settings":
@@ -448,15 +632,15 @@
 					"file": "3des/t_des.vhd",
 					"settings":
 					{
-						"buffer_size": 3640,
+						"buffer_size": 4800,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3630,
-								3630
+								1046,
+								295
 							]
 						],
 						"settings":
@@ -465,25 +649,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1900.0,
+						"translation.y": 402.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "3des/t_un_des.vhd",
+					"file": "3des/t_des_tb.vhd",
 					"settings":
 					{
-						"buffer_size": 3773,
+						"buffer_size": 1647,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1152,
+								1200
 							]
 						],
 						"settings":
@@ -492,25 +676,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 304.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "3des/des/des.vhd",
+					"file": "3des/t_un_des.vhd",
 					"settings":
 					{
-						"buffer_size": 13909,
+						"buffer_size": 5050,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								709,
+								709
 							]
 						],
 						"settings":
@@ -526,10 +710,91 @@
 				},
 				{
 					"buffer": 4,
-					"file": "3des/des/un_des.vhd",
+					"file": "3des/t_un_des_tb.vhd",
 					"settings":
 					{
-						"buffer_size": 13431,
+						"buffer_size": 1671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1221,
+								1221
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/pripyat/Nuvens/Copy/Copy/Trabalhos_e_Pesquisas/Crypto/Documentos /Relatórios/Relatorio Final/3DES/keys/processKey.vhd",
+					"settings":
+					{
+						"buffer_size": 8308,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4801,
+								4620
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2933.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "feistel/e_tb.vhd",
+					"settings":
+					{
+						"buffer_size": 957,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								864,
+								864
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "feistel/f_tb.vhd",
+					"settings":
+					{
+						"buffer_size": 1489,
 						"regions":
 						{
 						},
@@ -538,6 +803,275 @@
 							[
 								0,
 								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "feistel/p_tb.vhd",
+					"settings":
+					{
+						"buffer_size": 973,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								876,
+								876
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "3des/des/ ip_finale_tb.vhd",
+					"settings":
+					{
+						"buffer_size": 1102,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "3des/des/ip_tb.vhd",
+					"settings":
+					{
+						"buffer_size": 1061,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								915,
+								979
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "sbox/sbox_tb.vhd",
+					"settings":
+					{
+						"buffer_size": 1943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1313,
+								1361
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 649.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "3des/des/des.vhd",
+					"settings":
+					{
+						"buffer_size": 14881,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								302,
+								302
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "3des/des/des_tb.vhd",
+					"settings":
+					{
+						"buffer_size": 1679,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1518,
+								1518
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 349.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "3des/des/un_des.vhd",
+					"settings":
+					{
+						"buffer_size": 14498,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 631.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "3des/des/un_des_tb.vhd",
+					"settings":
+					{
+						"buffer_size": 1704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1576,
+								1576
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/VHDL/sublime-vhdl-master/Syntaxes/VHDL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 65.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"settings":
+					{
+						"buffer_size": 148,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								148
+							]
+						],
+						"settings":
+						{
+							"auto_name": "A Figura abaixo mostra os valores de L_0 e R_0, o",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "ram/ram_tb.vhd",
+					"settings":
+					{
+						"buffer_size": 3682,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14,
+								14
 							]
 						],
 						"settings":
@@ -560,7 +1094,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"layout":
 	{

@@ -35,11 +35,8 @@ BEGIN
 	signal_dadoA: PROCESS
 	BEGIN
 
-		sig_bus64In <= x"aaaaaaaaaaaaaaaa";
-		wait for 6 ns;
-
-		sig_bus64In <= x"7777777777777777";
-		wait for 6 ns;
+		sig_bus64In <= x"133457799BBCDFF1";
+		wait for 5 ns;
 
 	END PROCESS;
 

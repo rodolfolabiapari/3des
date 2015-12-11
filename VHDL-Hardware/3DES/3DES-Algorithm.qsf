@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY 3des
+set_global_assignment -name TOP_LEVEL_ENTITY interface_3des
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:00:56  OCTOBER 05, 2015"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.0
@@ -49,17 +49,17 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR simulation/modelsim -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE 3des/t_un_des.vhd
+set_global_assignment -name VHDL_FILE 3des/t_des.vhd
+set_global_assignment -name VHDL_FILE ram/ramTexto.vhd
+set_global_assignment -name VHDL_FILE ram/ram_tb.vhd
+set_global_assignment -name VHDL_FILE interface_3des.vhd
 set_global_assignment -name VHDL_FILE 3des/des/un_des.vhd
 set_global_assignment -name VHDL_FILE 3des/des/ip_finale.vhd
 set_global_assignment -name VHDL_FILE 3des/des/ip.vhd
 set_global_assignment -name VHDL_FILE 3des/des/des.vhd
-set_global_assignment -name VHDL_FILE 3des/tdes.vhd
 set_global_assignment -name VHDL_FILE feistel/p_box.vhd
 set_global_assignment -name VHDL_FILE feistel/f.vhd
 set_global_assignment -name VHDL_FILE feistel/e.vhd
@@ -75,4 +75,7 @@ set_global_assignment -name VHDL_FILE sbox/sbox3.vhd
 set_global_assignment -name VHDL_FILE sbox/sbox2.vhd
 set_global_assignment -name VHDL_FILE sbox/sbox1.vhd
 set_global_assignment -name VHDL_FILE sbox/sbox.vhd
-set_global_assignment -name VHDL_FILE 3des.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 3DES-Algorithm
-Mon Oct 05 17:08:49 2015
+Sat Dec 05 08:54:53 2015
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -10,7 +10,42 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |interface_3des|estado
+  9. State Machine - |interface_3des|t_un_des:maptundes|estado
+ 10. State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|processKey:mapK|state
+ 11. State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|state
+ 12. State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|state
+ 13. State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state
+ 14. State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state
+ 15. State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state
+ 16. State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state
+ 17. State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state
+ 18. State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state
+ 19. State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state
+ 20. State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state
+ 21. State Machine - |interface_3des|t_des:maptdes|estado
+ 22. State Machine - |interface_3des|t_des:maptdes|des:mapDes|processKey:mapK|state
+ 23. State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|state
+ 24. State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|state
+ 25. State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state
+ 26. State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state
+ 27. State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state
+ 28. State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state
+ 29. State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state
+ 30. State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state
+ 31. State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state
+ 32. State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state
+ 33. Registers Removed During Synthesis
+ 34. General Register Statistics
+ 35. Inverted Register Statistics
+ 36. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 37. Parameter Settings for User Entity Instance: Top-level Entity: |interface_3des
+ 38. Parameter Settings for User Entity Instance: ramTexto:mapram
+ 39. Elapsed Time Per Partition
+ 40. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +71,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Oct 05 17:08:49 2015          ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec 05 08:54:53 2015      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; 3DES-Algorithm                             ;
-; Top-level Entity Name              ; 3des                                       ;
-; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
+; Top-level Entity Name              ; interface_3des                             ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 423                                        ;
+;     Total combinational functions  ; 343                                        ;
+;     Dedicated logic registers      ; 280                                        ;
+; Total registers                    ; 280                                        ;
+; Total pins                         ; 68                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -58,9 +93,9 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP2C5T144C8        ;                    ;
-; Top-level entity name                                                      ; 3des               ; 3DES-Algorithm     ;
-; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; interface_3des     ; 3DES-Algorithm     ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -99,12 +134,14 @@ applicable agreement for further details.
 ; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
 ; Auto ROM Replacement                                                       ; On                 ; On                 ;
 ; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
 ; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
 ; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
 ; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
 ; Strict RAM Replacement                                                     ; Off                ; Off                ;
 ; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
 ; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
 ; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
 ; Auto Resource Sharing                                                      ; Off                ; Off                ;
 ; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
@@ -112,7 +149,7 @@ applicable agreement for further details.
 ; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
 ; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
 ; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
 ; Report Parameter Settings                                                  ; On                 ; On                 ;
 ; Report Source Assignments                                                  ; On                 ; On                 ;
 ; Report Connectivity Checks                                                 ; On                 ; On                 ;
@@ -149,20 +186,682 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                              ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+; 3des/t_un_des.vhd                ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des.vhd      ;         ;
+; 3des/t_des.vhd                   ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_des.vhd         ;         ;
+; ram/ramTexto.vhd                 ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ramTexto.vhd       ;         ;
+; interface_3des.vhd               ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/interface_3des.vhd     ;         ;
+; 3des/des/un_des.vhd              ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des.vhd    ;         ;
+; 3des/des/ip_finale.vhd           ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip_finale.vhd ;         ;
+; 3des/des/ip.vhd                  ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip.vhd        ;         ;
+; 3des/des/des.vhd                 ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/des.vhd       ;         ;
+; feistel/p_box.vhd                ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/p_box.vhd      ;         ;
+; feistel/f.vhd                    ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/f.vhd          ;         ;
+; feistel/e.vhd                    ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/feistel/e.vhd          ;         ;
+; keys/processKey.vhd              ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/processKey.vhd    ;         ;
+; keys/pc2.vhd                     ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc2.vhd           ;         ;
+; keys/pc1.vhd                     ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/keys/pc1.vhd           ;         ;
+; sbox/sbox8.vhd                   ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox8.vhd         ;         ;
+; sbox/sbox7.vhd                   ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox7.vhd         ;         ;
+; sbox/sbox6.vhd                   ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox6.vhd         ;         ;
+; sbox/sbox5.vhd                   ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox5.vhd         ;         ;
+; sbox/sbox4.vhd                   ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox4.vhd         ;         ;
+; sbox/sbox3.vhd                   ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox3.vhd         ;         ;
+; sbox/sbox2.vhd                   ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox2.vhd         ;         ;
+; sbox/sbox1.vhd                   ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox1.vhd         ;         ;
+; sbox/sbox.vhd                    ; yes             ; User VHDL File  ; E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/sbox/sbox.vhd          ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 423         ;
+;                                             ;             ;
+; Total combinational functions               ; 343         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 213         ;
+;     -- 3 input functions                    ; 62          ;
+;     -- <=2 input functions                  ; 68          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 325         ;
+;     -- arithmetic mode                      ; 18          ;
+;                                             ;             ;
+; Total registers                             ; 280         ;
+;     -- Dedicated logic registers            ; 280         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 68          ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 280         ;
+; Total fan-out                               ; 2086        ;
+; Average fan-out                             ; 2.75        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                    ; Library Name ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------+--------------+
+; |interface_3des                 ; 343 (71)          ; 280 (42)     ; 0           ; 0            ; 0       ; 0         ; 68   ; 0            ; |interface_3des                                                                        ;              ;
+;    |t_des:maptdes|              ; 136 (15)          ; 119 (13)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_des:maptdes                                                          ;              ;
+;       |des:mapDes|              ; 121 (107)         ; 106 (56)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_des:maptdes|des:mapDes                                               ;              ;
+;          |f:mapF|               ; 11 (5)            ; 15 (6)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_des:maptdes|des:mapDes|f:mapF                                        ;              ;
+;             |sbox:mapSbox|      ; 6 (4)             ; 9 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox                           ;              ;
+;                |sbox1:mapSbox1| ; 2 (2)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1            ;              ;
+;          |processKey:mapK|      ; 3 (3)             ; 35 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_des:maptdes|des:mapDes|processKey:mapK                               ;              ;
+;    |t_un_des:maptundes|         ; 136 (15)          ; 119 (13)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_un_des:maptundes                                                     ;              ;
+;       |un_des:mapUN_Des|        ; 121 (107)         ; 106 (56)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_un_des:maptundes|un_des:mapUN_Des                                    ;              ;
+;          |f:mapF|               ; 11 (5)            ; 15 (6)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF                             ;              ;
+;             |sbox:mapSbox|      ; 6 (4)             ; 9 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox                ;              ;
+;                |sbox1:mapSbox1| ; 2 (2)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1 ;              ;
+;          |processKey:mapK|      ; 3 (3)             ; 35 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|processKey:mapK                    ;              ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|estado                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
++-------------------------------------------+---------------+---------------------------------------+----------------------------------------+-----------------------------+----------------------------------+---------------------------------------+----------------------------------------+-----------------------------+----------------------------------+----------------------------+-------------------------------+-------------------------------------------+--------------------------------+--------------------------------+--------------------------------+--------------------------------+--------------------+
+; Name                                      ; estado.pronto ; estado.state_decripta_seleciona_bloco ; estado.state_decripta_recebe_resultado ; estado.state_decripta_opera ; estado.state_decripta_recebe_ram ; estado.state_encripta_seleciona_bloco ; estado.state_encripta_recebe_resultado ; estado.state_encripta_opera ; estado.state_encripta_recebe_ram ; estado.preparacao_operacao ; estado.state_carregando_texto ; estado.state_carregando_quantidade_blocos ; estado.state_carregando_chave2 ; estado.state_carregando_chave1 ; estado.state_carregando_chave0 ; estado.state_carregando_funcao ; estado.state_reset ;
++-------------------------------------------+---------------+---------------------------------------+----------------------------------------+-----------------------------+----------------------------------+---------------------------------------+----------------------------------------+-----------------------------+----------------------------------+----------------------------+-------------------------------+-------------------------------------------+--------------------------------+--------------------------------+--------------------------------+--------------------------------+--------------------+
+; estado.state_reset                        ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 0                  ;
+; estado.state_carregando_funcao            ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 1                              ; 1                  ;
+; estado.state_carregando_chave0            ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 1                              ; 0                              ; 1                  ;
+; estado.state_carregando_chave1            ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 1                              ; 0                              ; 0                              ; 1                  ;
+; estado.state_carregando_chave2            ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 1                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.state_carregando_quantidade_blocos ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 1                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.state_carregando_texto             ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 1                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.preparacao_operacao                ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 1                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.state_encripta_recebe_ram          ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 1                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.state_encripta_opera               ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 1                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.state_encripta_recebe_resultado    ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 1                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.state_encripta_seleciona_bloco     ; 0             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 1                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.state_decripta_recebe_ram          ; 0             ; 0                                     ; 0                                      ; 0                           ; 1                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.state_decripta_opera               ; 0             ; 0                                     ; 0                                      ; 1                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.state_decripta_recebe_resultado    ; 0             ; 0                                     ; 1                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.state_decripta_seleciona_bloco     ; 0             ; 1                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
+; estado.pronto                             ; 1             ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                                     ; 0                                      ; 0                           ; 0                                ; 0                          ; 0                             ; 0                                         ; 0                              ; 0                              ; 0                              ; 0                              ; 1                  ;
++-------------------------------------------+---------------+---------------------------------------+----------------------------------------+-----------------------------+----------------------------------+---------------------------------------+----------------------------------------+-----------------------------+----------------------------------+----------------------------+-------------------------------+-------------------------------------------+--------------------------------+--------------------------------+--------------------------------+--------------------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|estado                                                                                                                                                                                                                                                    ;
++-------------------------------+---------------+-------------------------------+---------------------+-----------------------+-------------------------------+---------------------+-----------------------+-------------------------------+---------------------+-----------------------+--------------------+
+; Name                          ; estado.pronto ; estado.un_des3SalvaInformacao ; estado.un_des3Opera ; estado.un_des3Carrega ; estado.un_des2SalvaInformacao ; estado.un_des2Opera ; estado.un_des2Carrega ; estado.un_des1SalvaInformacao ; estado.un_des1Opera ; estado.un_des1Carrega ; estado.state_reset ;
++-------------------------------+---------------+-------------------------------+---------------------+-----------------------+-------------------------------+---------------------+-----------------------+-------------------------------+---------------------+-----------------------+--------------------+
+; estado.state_reset            ; 0             ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 0                  ;
+; estado.un_des1Carrega         ; 0             ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 1                     ; 1                  ;
+; estado.un_des1Opera           ; 0             ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 0                             ; 1                   ; 0                     ; 1                  ;
+; estado.un_des1SalvaInformacao ; 0             ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 1                             ; 0                   ; 0                     ; 1                  ;
+; estado.un_des2Carrega         ; 0             ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 1                     ; 0                             ; 0                   ; 0                     ; 1                  ;
+; estado.un_des2Opera           ; 0             ; 0                             ; 0                   ; 0                     ; 0                             ; 1                   ; 0                     ; 0                             ; 0                   ; 0                     ; 1                  ;
+; estado.un_des2SalvaInformacao ; 0             ; 0                             ; 0                   ; 0                     ; 1                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 1                  ;
+; estado.un_des3Carrega         ; 0             ; 0                             ; 0                   ; 1                     ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 1                  ;
+; estado.un_des3Opera           ; 0             ; 0                             ; 1                   ; 0                     ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 1                  ;
+; estado.un_des3SalvaInformacao ; 0             ; 1                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 1                  ;
+; estado.pronto                 ; 1             ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 0                             ; 0                   ; 0                     ; 1                  ;
++-------------------------------+---------------+-------------------------------+---------------------+-----------------------+-------------------------------+---------------------+-----------------------+-------------------------------+---------------------+-----------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|processKey:mapK|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++------------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------+
+; Name             ; state.pronto ; state.pc2_g ; state.pc2_f ; state.pc2_e ; state.pc2_d ; state.pc2_c ; state.pc2_b ; state.pc2_a ; state.pc2_9 ; state.pc2_8 ; state.pc2_7 ; state.pc2_6 ; state.pc2_5 ; state.pc2_4 ; state.pc2_3 ; state.pc2_2 ; state.pc2_1 ; state.rotacaog_1 ; state.rotacaof_2 ; state.rotacaoe_2 ; state.rotacaod_2 ; state.rotacaoc_2 ; state.rotacaob_2 ; state.rotacaoa_2 ; state.rotacao9_1 ; state.rotacao8_2 ; state.rotacao7_2 ; state.rotacao6_2 ; state.rotacao5_2 ; state.rotacao4_2 ; state.rotacao3_2 ; state.rotacao2_1 ; state.rotacao1_1 ; state.pc1 ;
++------------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------+
+; state.pc1        ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0         ;
+; state.rotacao1_1 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 1         ;
+; state.rotacao2_1 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 1         ;
+; state.rotacao3_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 1         ;
+; state.rotacao4_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacao5_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacao6_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacao7_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacao8_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacao9_1 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaoa_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaob_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaoc_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaod_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaoe_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaof_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaog_1 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_1      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_2      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_3      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_4      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_5      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_6      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_7      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_8      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_9      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_a      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_b      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_c      ; 0            ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_d      ; 0            ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_e      ; 0            ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_f      ; 0            ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_g      ; 0            ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pronto     ; 1            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
++------------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|state ;
++----------------+--------------+----------------+---------------+-----------------+
+; Name           ; state.pronto ; state.op_p_box ; state.op_sbox ; state.op_xor    ;
++----------------+--------------+----------------+---------------+-----------------+
+; state.op_xor   ; 0            ; 0              ; 0             ; 0               ;
+; state.op_sbox  ; 0            ; 0              ; 1             ; 1               ;
+; state.op_p_box ; 0            ; 1              ; 0             ; 1               ;
+; state.pronto   ; 1            ; 0              ; 0             ; 1               ;
++----------------+--------------+----------------+---------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|state ;
++------------------+--------------+--------------+----------------------------------------------+
+; Name             ; state.pronto ; state.espera ; state.liberaSbox                             ;
++------------------+--------------+--------------+----------------------------------------------+
+; state.liberaSbox ; 0            ; 0            ; 0                                            ;
+; state.espera     ; 0            ; 1            ; 1                                            ;
+; state.pronto     ; 1            ; 0            ; 1                                            ;
++------------------+--------------+--------------+----------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                                          ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                                     ;
+; state.consultaRam ; 0            ; 1                 ; 1                                                     ;
+; state.pronto      ; 1            ; 0                 ; 1                                                     ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                                          ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                                     ;
+; state.consultaRam ; 0            ; 1                 ; 1                                                     ;
+; state.pronto      ; 1            ; 0                 ; 1                                                     ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                                          ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                                     ;
+; state.consultaRam ; 0            ; 1                 ; 1                                                     ;
+; state.pronto      ; 1            ; 0                 ; 1                                                     ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                                          ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                                     ;
+; state.consultaRam ; 0            ; 1                 ; 1                                                     ;
+; state.pronto      ; 1            ; 0                 ; 1                                                     ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                                          ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                                     ;
+; state.consultaRam ; 0            ; 1                 ; 1                                                     ;
+; state.pronto      ; 1            ; 0                 ; 1                                                     ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                                          ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                                     ;
+; state.consultaRam ; 0            ; 1                 ; 1                                                     ;
+; state.pronto      ; 1            ; 0                 ; 1                                                     ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                                          ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                                     ;
+; state.consultaRam ; 0            ; 1                 ; 1                                                     ;
+; state.pronto      ; 1            ; 0                 ; 1                                                     ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                                          ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                                     ;
+; state.consultaRam ; 0            ; 1                 ; 1                                                     ;
+; state.pronto      ; 1            ; 0                 ; 1                                                     ;
++-------------------+--------------+-------------------+-------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|estado                                                                                                                                                                                                                           ;
++----------------------------+---------------+----------------------------+------------------+--------------------+----------------------------+------------------+--------------------+----------------------------+------------------+--------------------+--------------------+
+; Name                       ; estado.pronto ; estado.des3SalvaInformacao ; estado.des3Opera ; estado.des3Carrega ; estado.des2SalvaInformacao ; estado.des2Opera ; estado.des2Carrega ; estado.des1SalvaInformacao ; estado.des1Opera ; estado.des1Carrega ; estado.state_reset ;
++----------------------------+---------------+----------------------------+------------------+--------------------+----------------------------+------------------+--------------------+----------------------------+------------------+--------------------+--------------------+
+; estado.state_reset         ; 0             ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 0                  ;
+; estado.des1Carrega         ; 0             ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 1                  ; 1                  ;
+; estado.des1Opera           ; 0             ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 0                          ; 1                ; 0                  ; 1                  ;
+; estado.des1SalvaInformacao ; 0             ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 1                          ; 0                ; 0                  ; 1                  ;
+; estado.des2Carrega         ; 0             ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 1                  ; 0                          ; 0                ; 0                  ; 1                  ;
+; estado.des2Opera           ; 0             ; 0                          ; 0                ; 0                  ; 0                          ; 1                ; 0                  ; 0                          ; 0                ; 0                  ; 1                  ;
+; estado.des2SalvaInformacao ; 0             ; 0                          ; 0                ; 0                  ; 1                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 1                  ;
+; estado.des3Carrega         ; 0             ; 0                          ; 0                ; 1                  ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 1                  ;
+; estado.des3Opera           ; 0             ; 0                          ; 1                ; 0                  ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 1                  ;
+; estado.des3SalvaInformacao ; 0             ; 1                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 1                  ;
+; estado.pronto              ; 1             ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 0                          ; 0                ; 0                  ; 1                  ;
++----------------------------+---------------+----------------------------+------------------+--------------------+----------------------------+------------------+--------------------+----------------------------+------------------+--------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|des:mapDes|processKey:mapK|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
++------------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------+
+; Name             ; state.pronto ; state.pc2_g ; state.pc2_f ; state.pc2_e ; state.pc2_d ; state.pc2_c ; state.pc2_b ; state.pc2_a ; state.pc2_9 ; state.pc2_8 ; state.pc2_7 ; state.pc2_6 ; state.pc2_5 ; state.pc2_4 ; state.pc2_3 ; state.pc2_2 ; state.pc2_1 ; state.rotacaog_1 ; state.rotacaof_2 ; state.rotacaoe_2 ; state.rotacaod_2 ; state.rotacaoc_2 ; state.rotacaob_2 ; state.rotacaoa_2 ; state.rotacao9_1 ; state.rotacao8_2 ; state.rotacao7_2 ; state.rotacao6_2 ; state.rotacao5_2 ; state.rotacao4_2 ; state.rotacao3_2 ; state.rotacao2_1 ; state.rotacao1_1 ; state.pc1 ;
++------------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------+
+; state.pc1        ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0         ;
+; state.rotacao1_1 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 1         ;
+; state.rotacao2_1 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 1         ;
+; state.rotacao3_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 1         ;
+; state.rotacao4_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacao5_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacao6_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacao7_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacao8_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacao9_1 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaoa_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaob_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaoc_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaod_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaoe_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaof_2 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.rotacaog_1 ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_1      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_2      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_3      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_4      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_5      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_6      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_7      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_8      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_9      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_a      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_b      ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_c      ; 0            ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_d      ; 0            ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_e      ; 0            ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_f      ; 0            ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pc2_g      ; 0            ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
+; state.pronto     ; 1            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1         ;
++------------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|state         ;
++----------------+--------------+----------------+---------------+--------------+
+; Name           ; state.pronto ; state.op_p_box ; state.op_sbox ; state.op_xor ;
++----------------+--------------+----------------+---------------+--------------+
+; state.op_xor   ; 0            ; 0              ; 0             ; 0            ;
+; state.op_sbox  ; 0            ; 0              ; 1             ; 1            ;
+; state.op_p_box ; 0            ; 1              ; 0             ; 1            ;
+; state.pronto   ; 1            ; 0              ; 0             ; 1            ;
++----------------+--------------+----------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|state ;
++------------------+--------------+--------------+-----------------------------------+
+; Name             ; state.pronto ; state.espera ; state.liberaSbox                  ;
++------------------+--------------+--------------+-----------------------------------+
+; state.liberaSbox ; 0            ; 0            ; 0                                 ;
+; state.espera     ; 0            ; 1            ; 1                                 ;
+; state.pronto     ; 1            ; 0            ; 1                                 ;
++------------------+--------------+--------------+-----------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                               ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                          ;
+; state.consultaRam ; 0            ; 1                 ; 1                                          ;
+; state.pronto      ; 1            ; 0                 ; 1                                          ;
++-------------------+--------------+-------------------+--------------------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                               ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                          ;
+; state.consultaRam ; 0            ; 1                 ; 1                                          ;
+; state.pronto      ; 1            ; 0                 ; 1                                          ;
++-------------------+--------------+-------------------+--------------------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                               ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                          ;
+; state.consultaRam ; 0            ; 1                 ; 1                                          ;
+; state.pronto      ; 1            ; 0                 ; 1                                          ;
++-------------------+--------------+-------------------+--------------------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                               ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                          ;
+; state.consultaRam ; 0            ; 1                 ; 1                                          ;
+; state.pronto      ; 1            ; 0                 ; 1                                          ;
++-------------------+--------------+-------------------+--------------------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                               ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                          ;
+; state.consultaRam ; 0            ; 1                 ; 1                                          ;
+; state.pronto      ; 1            ; 0                 ; 1                                          ;
++-------------------+--------------+-------------------+--------------------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                               ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                          ;
+; state.consultaRam ; 0            ; 1                 ; 1                                          ;
+; state.pronto      ; 1            ; 0                 ; 1                                          ;
++-------------------+--------------+-------------------+--------------------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                               ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                          ;
+; state.consultaRam ; 0            ; 1                 ; 1                                          ;
+; state.pronto      ; 1            ; 0                 ; 1                                          ;
++-------------------+--------------+-------------------+--------------------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |interface_3des|t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; Name              ; state.pronto ; state.consultaRam ; state.inicia                               ;
++-------------------+--------------+-------------------+--------------------------------------------+
+; state.inicia      ; 0            ; 0                 ; 0                                          ;
+; state.consultaRam ; 0            ; 1                 ; 1                                          ;
+; state.pronto      ; 1            ; 0                 ; 1                                          ;
++-------------------+--------------+-------------------+--------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                              ;
++------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+; Register name                                                                            ; Reason for Removal                                                                                   ;
++------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+; t_un_des:maptundes|un_des:mapUN_Des|chavesJaCalculadas                                   ; Stuck at VCC due to stuck port data_in                                                               ;
+; t_des:maptdes|des:mapDes|chavesJaCalculadas                                              ; Stuck at VCC due to stuck port data_in                                                               ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox2:mapSbox2|done              ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done              ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox3:mapSbox3|done              ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done              ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox4:mapSbox4|done              ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done              ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox5:mapSbox5|done              ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done              ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox6:mapSbox6|done              ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done              ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox7:mapSbox7|done              ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done              ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox8:mapSbox8|done              ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done              ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox2:mapSbox2|done                         ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done                         ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox3:mapSbox3|done                         ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done                         ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox4:mapSbox4|done                         ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done                         ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox5:mapSbox5|done                         ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done                         ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox6:mapSbox6|done                         ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done                         ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox7:mapSbox7|done                         ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done                         ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox8:mapSbox8|done                         ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|done                         ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state.consultaRam ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state.consultaRam ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state.consultaRam ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state.consultaRam ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state.consultaRam ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state.consultaRam ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state.consultaRam ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state.pronto      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state.pronto      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state.pronto      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state.pronto      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state.pronto      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state.pronto      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state.pronto      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto      ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state.consultaRam            ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam            ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state.consultaRam            ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam            ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state.consultaRam            ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam            ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state.consultaRam            ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam            ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state.consultaRam            ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam            ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state.consultaRam            ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam            ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state.consultaRam            ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.consultaRam            ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state.pronto                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state.pronto                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state.pronto                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state.pronto                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state.pronto                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state.pronto                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state.pronto                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.pronto                 ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state.inicia      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state.inicia      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state.inicia      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state.inicia      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state.inicia      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state.inicia      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state.inicia      ; Merged with t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia      ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox2:mapSbox2|state.inicia                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox3:mapSbox3|state.inicia                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox4:mapSbox4|state.inicia                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox5:mapSbox5|state.inicia                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox6:mapSbox6|state.inicia                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox7:mapSbox7|state.inicia                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia                 ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox8:mapSbox8|state.inicia                 ; Merged with t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1|state.inicia                 ;
+; Total Number of Removed Registers = 58                                                   ;                                                                                                      ;
++------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 280   ;
+; Number of registers using Synchronous Clear  ; 20    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 252   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 24    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------+
+; Inverted Register Statistics                                                ;
++-------------------------------------------------------------------+---------+
+; Inverted Register                                                 ; Fan out ;
++-------------------------------------------------------------------+---------+
+; t_un_des:maptundes|un_des:mapUN_Des|sig_f_reset                   ; 7       ;
+; t_un_des:maptundes|un_des:mapUN_Des|state.op_reset_key            ; 4       ;
+; t_un_des:maptundes|un_des:mapUN_Des|sig_k_reset                   ; 36      ;
+; t_des:maptdes|des:mapDes|sig_f_reset                              ; 7       ;
+; t_des:maptdes|des:mapDes|state.op_reset_key                       ; 4       ;
+; t_des:maptdes|des:mapDes|sig_k_reset                              ; 36      ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sig_reset_sbox         ; 6       ;
+; t_des:maptdes|des:mapDes|f:mapF|sig_reset_sbox                    ; 6       ;
+; t_un_des:maptundes|un_des:mapUN_Des|f:mapF|sbox:mapSbox|sig_reset ; 5       ;
+; t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sig_reset            ; 5       ;
+; Total number of inverted registers = 10                           ;         ;
++-------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; 8:1                ; 10 bits   ; 50 LEs        ; 10 LEs               ; 40 LEs                 ; Yes        ; |interface_3des|i[9]                                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |interface_3des|t_un_des:maptundes|un_des:mapUN_Des|f:mapF|state ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |interface_3des|t_des:maptdes|des:mapDes|f:mapF|state            ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |interface_3des|t_un_des:maptundes|Selector7                     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |interface_3des|t_des:maptdes|Selector0                          ;
+; 16:1               ; 5 bits    ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; No         ; |interface_3des|Selector14                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |interface_3des ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; bits_endereco  ; 10    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ramTexto:mapram ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; bits_endereco  ; 10    ; Signed Integer                      ;
+; bits_dado      ; 64    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Mon Oct 05 17:08:47 2015
+    Info: Processing started: Sat Dec 05 08:54:41 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 3DES-Algorithm -c 3DES-Algorithm
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Error (10500): VHDL syntax error at tdes.vhd(7) near text ")";  expecting an identifier, or "constant", or "file", or "signal", or "variable" File: //VBOXSVR/rodolfolabiapari/Documents/Nuvem/MEGA/Pesquisas/EncryptionInHardware/Code/VHD/3DES VHDL/3des/tdes.vhd Line: 7
-Error (10500): VHDL syntax error at tdes.vhd(16) near text "component";  expecting ";", or an identifier ("component" is a reserved keyword), or "entity" File: //VBOXSVR/rodolfolabiapari/Documents/Nuvem/MEGA/Pesquisas/EncryptionInHardware/Code/VHD/3DES VHDL/3des/tdes.vhd Line: 16
-Error (10396): VHDL syntax error at tdes.vhd(629): name used in construct must match previously specified name "tdes" File: //VBOXSVR/rodolfolabiapari/Documents/Nuvem/MEGA/Pesquisas/EncryptionInHardware/Code/VHD/3DES VHDL/3des/tdes.vhd Line: 629
-Error (10523): Ignored construct tdes at tdes.vhd(5) due to previous errors File: //VBOXSVR/rodolfolabiapari/Documents/Nuvem/MEGA/Pesquisas/EncryptionInHardware/Code/VHD/3DES VHDL/3des/tdes.vhd Line: 5
-Info (12021): Found 0 design units, including 0 entities, in source file 3des/tdes.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file 3des/t_un_des.vhd
+    Info (12022): Found design unit 1: t_un_des-t_un_des_behav
+    Info (12023): Found entity 1: t_un_des
+Info (12021): Found 2 design units, including 1 entities, in source file 3des/t_des.vhd
+    Info (12022): Found design unit 1: t_des-t_des_behav
+    Info (12023): Found entity 1: t_des
+Info (12021): Found 2 design units, including 1 entities, in source file ram/ramtexto.vhd
+    Info (12022): Found design unit 1: ramTexto-ramTexto_arch
+    Info (12023): Found entity 1: ramTexto
+Info (12021): Found 2 design units, including 1 entities, in source file ram/ram_tb.vhd
+    Info (12022): Found design unit 1: Ram_TB-sinais
+    Info (12023): Found entity 1: Ram_TB
+Info (12021): Found 2 design units, including 1 entities, in source file interface_3des.vhd
+    Info (12022): Found design unit 1: interface_3des-interface_3des_behav
+    Info (12023): Found entity 1: interface_3des
+Info (12021): Found 2 design units, including 1 entities, in source file 3des/des/un_des.vhd
+    Info (12022): Found design unit 1: un_des-un_des_behav
+    Info (12023): Found entity 1: un_des
+Info (12021): Found 2 design units, including 1 entities, in source file 3des/des/ip_finale.vhd
+    Info (12022): Found design unit 1: initialPermutationFinale-initialPermutationFinale_behav
+    Info (12023): Found entity 1: initialPermutationFinale
+Info (12021): Found 2 design units, including 1 entities, in source file 3des/des/ip.vhd
+    Info (12022): Found design unit 1: initialPermutation-initialPermutation_behav
+    Info (12023): Found entity 1: initialPermutation
+Info (12021): Found 2 design units, including 1 entities, in source file 3des/des/des.vhd
+    Info (12022): Found design unit 1: des-des_behav
+    Info (12023): Found entity 1: des
+Info (12021): Found 2 design units, including 1 entities, in source file feistel/p_box.vhd
+    Info (12022): Found design unit 1: p_box-p_box_behav
+    Info (12023): Found entity 1: p_box
+Info (12021): Found 2 design units, including 1 entities, in source file feistel/f.vhd
+    Info (12022): Found design unit 1: f-f_behav
+    Info (12023): Found entity 1: f
+Info (12021): Found 2 design units, including 1 entities, in source file feistel/e.vhd
+    Info (12022): Found design unit 1: expansion-expansion_behav
+    Info (12023): Found entity 1: expansion
+Info (12021): Found 2 design units, including 1 entities, in source file keys/processkey.vhd
+    Info (12022): Found design unit 1: processKey-processKey_behav
+    Info (12023): Found entity 1: processKey
+Info (12021): Found 2 design units, including 1 entities, in source file keys/pc2.vhd
+    Info (12022): Found design unit 1: permutedChoice2-permutedChoice2_behav
+    Info (12023): Found entity 1: permutedChoice2
+Info (12021): Found 2 design units, including 1 entities, in source file keys/pc1.vhd
+    Info (12022): Found design unit 1: permutedChoice1-permutedChoice1_behav
+    Info (12023): Found entity 1: permutedChoice1
 Info (12021): Found 2 design units, including 1 entities, in source file sbox/sbox8.vhd
     Info (12022): Found design unit 1: sbox8-sbox8_behav
     Info (12023): Found entity 1: sbox8
@@ -190,40 +889,102 @@ Info (12021): Found 2 design units, including 1 entities, in source file sbox/sb
 Info (12021): Found 2 design units, including 1 entities, in source file sbox/sbox.vhd
     Info (12022): Found design unit 1: sbox-sbox_behav
     Info (12023): Found entity 1: sbox
-Info (12021): Found 2 design units, including 1 entities, in source file keys/processkey.vhd
-    Info (12022): Found design unit 1: processKey-processKey_behav
-    Info (12023): Found entity 1: processKey
-Info (12021): Found 2 design units, including 1 entities, in source file keys/pc2.vhd
-    Info (12022): Found design unit 1: permutedChoice2-permutedChoice2_behav
-    Info (12023): Found entity 1: permutedChoice2
-Info (12021): Found 2 design units, including 1 entities, in source file keys/pc1.vhd
-    Info (12022): Found design unit 1: permutedChoice1-permutedChoice1_behav
-    Info (12023): Found entity 1: permutedChoice1
-Info (12021): Found 2 design units, including 1 entities, in source file feistel/p_box.vhd
-    Info (12022): Found design unit 1: p_box-p_box_behav
-    Info (12023): Found entity 1: p_box
-Info (12021): Found 2 design units, including 1 entities, in source file feistel/f.vhd
-    Info (12022): Found design unit 1: f-f_behav
-    Info (12023): Found entity 1: f
-Info (12021): Found 2 design units, including 1 entities, in source file feistel/e.vhd
-    Info (12022): Found design unit 1: expansion-expansion_behav
-    Info (12023): Found entity 1: expansion
-Info (12021): Found 2 design units, including 1 entities, in source file 3des/des/un_des.vhd
-    Info (12022): Found design unit 1: un_des-un_des_behav
-    Info (12023): Found entity 1: un_des
-Info (12021): Found 2 design units, including 1 entities, in source file 3des/des/ip_finale.vhd
-    Info (12022): Found design unit 1: initialPermutationFinale-initialPermutationFinale_behav
-    Info (12023): Found entity 1: initialPermutationFinale
-Info (12021): Found 2 design units, including 1 entities, in source file 3des/des/ip.vhd
-    Info (12022): Found design unit 1: initialPermutation-initialPermutation_behav
-    Info (12023): Found entity 1: initialPermutation
-Info (12021): Found 2 design units, including 1 entities, in source file 3des/des/des.vhd
-    Info (12022): Found design unit 1: des-des_behav
-    Info (12023): Found entity 1: des
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 4 errors, 1 warning
-    Error: Peak virtual memory: 479 megabytes
-    Error: Processing ended: Mon Oct 05 17:08:49 2015
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:01
+Info (12127): Elaborating entity "interface_3des" for the top level hierarchy
+Info (12128): Elaborating entity "t_des" for hierarchy "t_des:maptdes"
+Info (12128): Elaborating entity "des" for hierarchy "t_des:maptdes|des:mapDes"
+Warning (10492): VHDL Process Statement warning at des.vhd(213): signal "chavesJaCalculadas" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (10018): Can't recognize finite state machine "state" because it has a complex reset state
+Info (12128): Elaborating entity "initialPermutation" for hierarchy "t_des:maptdes|des:mapDes|initialPermutation:mapIp"
+Info (12128): Elaborating entity "initialPermutationFinale" for hierarchy "t_des:maptdes|des:mapDes|initialPermutationFinale:mapIpFinale"
+Info (12128): Elaborating entity "f" for hierarchy "t_des:maptdes|des:mapDes|f:mapF"
+Info (12128): Elaborating entity "expansion" for hierarchy "t_des:maptdes|des:mapDes|f:mapF|expansion:mapE"
+Info (12128): Elaborating entity "sbox" for hierarchy "t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox"
+Warning (10036): Verilog HDL or VHDL warning at sbox.vhd(134): object "sig_bus48" assigned a value but never read
+Info (12128): Elaborating entity "sbox1" for hierarchy "t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox1:mapSbox1"
+Info (12128): Elaborating entity "sbox2" for hierarchy "t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox2:mapSbox2"
+Info (12128): Elaborating entity "sbox3" for hierarchy "t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox3:mapSbox3"
+Info (12128): Elaborating entity "sbox4" for hierarchy "t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox4:mapSbox4"
+Info (12128): Elaborating entity "sbox5" for hierarchy "t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox5:mapSbox5"
+Info (12128): Elaborating entity "sbox6" for hierarchy "t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox6:mapSbox6"
+Info (12128): Elaborating entity "sbox7" for hierarchy "t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox7:mapSbox7"
+Info (12128): Elaborating entity "sbox8" for hierarchy "t_des:maptdes|des:mapDes|f:mapF|sbox:mapSbox|sbox8:mapSbox8"
+Info (12128): Elaborating entity "p_box" for hierarchy "t_des:maptdes|des:mapDes|f:mapF|p_box:mapP_box"
+Info (12128): Elaborating entity "processKey" for hierarchy "t_des:maptdes|des:mapDes|processKey:mapK"
+Info (12128): Elaborating entity "permutedChoice1" for hierarchy "t_des:maptdes|des:mapDes|processKey:mapK|permutedChoice1:mapPc1"
+Info (12128): Elaborating entity "permutedChoice2" for hierarchy "t_des:maptdes|des:mapDes|processKey:mapK|permutedChoice2:mapPc2_k0"
+Info (12128): Elaborating entity "t_un_des" for hierarchy "t_un_des:maptundes"
+Info (12128): Elaborating entity "un_des" for hierarchy "t_un_des:maptundes|un_des:mapUN_Des"
+Warning (10492): VHDL Process Statement warning at un_des.vhd(213): signal "chavesJaCalculadas" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (10018): Can't recognize finite state machine "state" because it has a complex reset state
+Info (12128): Elaborating entity "ramTexto" for hierarchy "ramTexto:mapram"
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 54 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "barramentoIn[10]"
+    Warning (15610): No output dependent on input pin "barramentoIn[11]"
+    Warning (15610): No output dependent on input pin "barramentoIn[12]"
+    Warning (15610): No output dependent on input pin "barramentoIn[13]"
+    Warning (15610): No output dependent on input pin "barramentoIn[14]"
+    Warning (15610): No output dependent on input pin "barramentoIn[15]"
+    Warning (15610): No output dependent on input pin "barramentoIn[16]"
+    Warning (15610): No output dependent on input pin "barramentoIn[17]"
+    Warning (15610): No output dependent on input pin "barramentoIn[18]"
+    Warning (15610): No output dependent on input pin "barramentoIn[19]"
+    Warning (15610): No output dependent on input pin "barramentoIn[20]"
+    Warning (15610): No output dependent on input pin "barramentoIn[21]"
+    Warning (15610): No output dependent on input pin "barramentoIn[22]"
+    Warning (15610): No output dependent on input pin "barramentoIn[23]"
+    Warning (15610): No output dependent on input pin "barramentoIn[24]"
+    Warning (15610): No output dependent on input pin "barramentoIn[25]"
+    Warning (15610): No output dependent on input pin "barramentoIn[26]"
+    Warning (15610): No output dependent on input pin "barramentoIn[27]"
+    Warning (15610): No output dependent on input pin "barramentoIn[28]"
+    Warning (15610): No output dependent on input pin "barramentoIn[29]"
+    Warning (15610): No output dependent on input pin "barramentoIn[30]"
+    Warning (15610): No output dependent on input pin "barramentoIn[31]"
+    Warning (15610): No output dependent on input pin "barramentoIn[32]"
+    Warning (15610): No output dependent on input pin "barramentoIn[33]"
+    Warning (15610): No output dependent on input pin "barramentoIn[34]"
+    Warning (15610): No output dependent on input pin "barramentoIn[35]"
+    Warning (15610): No output dependent on input pin "barramentoIn[36]"
+    Warning (15610): No output dependent on input pin "barramentoIn[37]"
+    Warning (15610): No output dependent on input pin "barramentoIn[38]"
+    Warning (15610): No output dependent on input pin "barramentoIn[39]"
+    Warning (15610): No output dependent on input pin "barramentoIn[40]"
+    Warning (15610): No output dependent on input pin "barramentoIn[41]"
+    Warning (15610): No output dependent on input pin "barramentoIn[42]"
+    Warning (15610): No output dependent on input pin "barramentoIn[43]"
+    Warning (15610): No output dependent on input pin "barramentoIn[44]"
+    Warning (15610): No output dependent on input pin "barramentoIn[45]"
+    Warning (15610): No output dependent on input pin "barramentoIn[46]"
+    Warning (15610): No output dependent on input pin "barramentoIn[47]"
+    Warning (15610): No output dependent on input pin "barramentoIn[48]"
+    Warning (15610): No output dependent on input pin "barramentoIn[49]"
+    Warning (15610): No output dependent on input pin "barramentoIn[50]"
+    Warning (15610): No output dependent on input pin "barramentoIn[51]"
+    Warning (15610): No output dependent on input pin "barramentoIn[52]"
+    Warning (15610): No output dependent on input pin "barramentoIn[53]"
+    Warning (15610): No output dependent on input pin "barramentoIn[54]"
+    Warning (15610): No output dependent on input pin "barramentoIn[55]"
+    Warning (15610): No output dependent on input pin "barramentoIn[56]"
+    Warning (15610): No output dependent on input pin "barramentoIn[57]"
+    Warning (15610): No output dependent on input pin "barramentoIn[58]"
+    Warning (15610): No output dependent on input pin "barramentoIn[59]"
+    Warning (15610): No output dependent on input pin "barramentoIn[60]"
+    Warning (15610): No output dependent on input pin "barramentoIn[61]"
+    Warning (15610): No output dependent on input pin "barramentoIn[62]"
+    Warning (15610): No output dependent on input pin "barramentoIn[63]"
+Info (21057): Implemented 494 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 67 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 426 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 59 warnings
+    Info: Peak virtual memory: 502 megabytes
+    Info: Processing ended: Sat Dec 05 08:54:53 2015
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:05
 
 

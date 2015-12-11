@@ -1,19 +1,26 @@
+
+-- Initial Permutation
+-- Permutacao inicial (IP) de um texto (M) e' o primeiro passo pra encriptacao
+-- e' permutado os bits de M de acordo com a tabelaa IP criando um bloco permutado
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity initialPermutation is
 	port(
+		-- Vetor M de entrada
 		ipIn   : IN std_logic_vector(0 TO 63);
+		-- Vetor IP de saida
 		ipOut  : OUT std_logic_vector(0 TO 63)
 	);
 end initialPermutation;
 
 architecture initialPermutation_behav of initialPermutation is
-
+	-- Vetor buffer
 	signal Buffer64 : std_logic_vector(0 TO 63);
 BEGIN
 
+	-- Permutacao
 	Buffer64(00) <= ipIn(57);
 	Buffer64(01) <= ipIn(49);
 	Buffer64(02) <= ipIn(41);
@@ -78,6 +85,8 @@ BEGIN
 	Buffer64(61) <= ipIn(22);
 	Buffer64(62) <= ipIn(14);
 	Buffer64(63) <= ipIn(6);
+
+	-- Direciona o buffer para a saida
 	ipOut <= Buffer64;
 
 end initialPermutation_behav;
