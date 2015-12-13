@@ -100,7 +100,7 @@ int main (int argc, char *argv[]) {
 		exit(1);
 	}*/
 	
-	char acao = 'e';
+	char acao = 'd';
 	
 	
         char * textoChave;
@@ -110,8 +110,8 @@ int main (int argc, char *argv[]) {
 		
 	if (acao == 'e' || acao == 'E') {
 		textoChave = "senha.txt";
-		textoPuro = "entrada.txt";
-		textoSaida = "out.txt";
+		textoPuro = "textoDecriptografado.txt";
+		textoSaida = "textoCriptografado.txt";
 		
 		if ((orienta = fopen("RelatorioDeExecucaoEncripta.txt", "wb")) == NULL) {
 			printf("Erro ao criar arquivo de orientações!!!\n");
@@ -121,8 +121,8 @@ int main (int argc, char *argv[]) {
 		} else if (acao == 'd' || acao == 'D'){
 		
 			textoChave = "senha.txt";
-			textoPuro = "out.txt";
-			textoSaida = "out2.txt";
+			textoPuro = "textoCriptografado.txt";
+			textoSaida = "textoDecriptografado.txt";
 
 			if ((orienta = fopen("RelatorioDeExecucaoDesencripta.txt", "wb")) == NULL) {
 				printf("Erro ao criar arquivo de orientac'o'es!!!\n");
@@ -302,7 +302,7 @@ int main (int argc, char *argv[]) {
 		}
 		*/
 
-		for (i = 0; i  <  len; i++) {
+		for (i = 0; i  <  len * 2; i++) {
 			//initial_hex[i] = input[i];
 			printf("%c",initial_hex[i]);
 			fprintf(orienta, "%c",initial_hex[i]);
