@@ -1,3 +1,8 @@
+
+-- Processamento das chaves
+-- Arquivo responsavel por operar sobre a chave inicial geranto todas as 16 chaves
+-- que serao utilizadas ao longo do algoritmo.
+-- Ambos a encriptacao e decriptacao utilizam este mesmo metodo
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
@@ -6,8 +11,11 @@ entity processKey is
 	port(
 		clk         : IN std_logic;
 		reset       : IN std_logic;
+		-- chave inicial 
 		bus64In     : IN std_logic_vector(0 TO 63);
+		-- informa fim de operacao
 		done        : OUT std_logic;
+		-- 16 chaves
 		key0        : OUT std_logic_vector(0 TO 47);
 		key1        : OUT std_logic_vector(0 TO 47);
 		key2        : OUT std_logic_vector(0 TO 47);
@@ -28,6 +36,7 @@ entity processKey is
 end processKey;
 
 architecture processKey_behav of processKey is
+	-- Permutacao inicial da chave
 	component permutedChoice1
 		port(
 		bus64In 	: IN std_logic_vector(0 TO 63);
@@ -35,6 +44,7 @@ architecture processKey_behav of processKey is
 		);
 	end component;
 
+	-- permutacao para uso
 	component permutedChoice2
 		port(
 		bus56In 	: IN std_logic_vector(0 TO 55);
@@ -42,7 +52,7 @@ architecture processKey_behav of processKey is
 		);
 	end component;
 
-
+	-- maquina que estados
 	type state_type is (pc1, 
 		rotacao1_1,
 		rotacao2_1,
@@ -77,8 +87,6 @@ architecture processKey_behav of processKey is
 		pc2_f,
 		pc2_g,
 		pronto);
-
-
 	signal state   : state_type;
 
 
@@ -120,9 +128,6 @@ architecture processKey_behav of processKey is
 	signal sig_result_pc1 : std_logic_vector(0 TO 55);
 
 	signal inicio : std_logic_vector (0 TO 63);
-	signal comparacao56 : std_logic_vector (0 TO 55);
-	signal comparacao48 : std_logic_vector (0 TO 47);
-	signal ccompare, dcompare: std_logic_vector(0 to 27);
 begin
 
 	mapPc1: permutedChoice1 port map(
@@ -200,12 +205,14 @@ begin
 	-- Logic to advance to the next state
 	process (clk, reset)
 	begin
+		-- Reseta todos os componentes
 		if reset = '1' then
 			done <= '0';
 			state <= pc1;
 
 		elsif (rising_edge(clk)) then
 			case state is
+				-- Realiza a primeira permutacao (PC1)
 				when pc1=>
 					c0 <= sig_result_pc1(0 TO 27);
 					d0 <= sig_result_pc1(28 TO 55);
@@ -419,6 +426,7 @@ begin
 					state <= pronto;
 
 
+				-- Indica sucesso
 				when pronto=>
 					done <= '1';
 
@@ -427,10 +435,5 @@ begin
 			end case;
 		end if;
 	end process;
-
-	ccompare <= "1111000011001100101010101111";
-	dcompare <= "0101010101100110011110001111";
-
-	comparacao48 <="110010110011110110001011000011100001011111110101";
 
 end processKey_behav;

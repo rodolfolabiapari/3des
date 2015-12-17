@@ -1,18 +1,26 @@
+
+-- Permuted Choise 2
+-- Permutacao que ocorre antes do envio da chave para operacao com o texto
+-- Esta permutacao nao e' a permutacao inicial das chave
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity permutedChoice2 is
 	port(
+		-- entrada da chave
 		bus56In 	: IN std_logic_vector(0 TO 55);
+		-- chave operada
 		bus48Out    : OUT std_logic_vector(0 TO 47)
 	);
 end permutedChoice2;
 
 architecture permutedChoice2_behav of permutedChoice2 is
 
+	-- buffer de operacao
 	signal busBuffer48 : std_logic_vector(0 TO 47);
 BEGIN
+	-- permutacoes
 	busBuffer48(00) <= bus56In(13);
 	busBuffer48(01) <= bus56In(16);
 	busBuffer48(02) <= bus56In(10);
@@ -69,6 +77,7 @@ BEGIN
 	busBuffer48(46) <= bus56In(28);
 	busBuffer48(47) <= bus56In(31);
 
+	-- retorna o buffer permutado
 	bus48Out <= busBuffer48;
 
 end permutedChoice2_behav;

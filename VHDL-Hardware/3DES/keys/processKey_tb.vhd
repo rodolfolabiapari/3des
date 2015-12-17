@@ -21,23 +21,71 @@ ARCHITECTURE processKey_tb_behav OF processKey_tb IS
 		reset       : IN std_logic;
 		bus64In 	: IN std_logic_vector(0 TO 63);
 		done        : OUT std_logic;
-		bus48Out    : OUT std_logic_vector(0 TO 47)
+		-- 16 chaves
+		key0        : OUT std_logic_vector(0 TO 47);
+		key1        : OUT std_logic_vector(0 TO 47);
+		key2        : OUT std_logic_vector(0 TO 47);
+		key3        : OUT std_logic_vector(0 TO 47);
+		key4        : OUT std_logic_vector(0 TO 47);
+		key5        : OUT std_logic_vector(0 TO 47);
+		key6        : OUT std_logic_vector(0 TO 47);
+		key7        : OUT std_logic_vector(0 TO 47);
+		key8        : OUT std_logic_vector(0 TO 47);
+		key9        : OUT std_logic_vector(0 TO 47);
+		keya        : OUT std_logic_vector(0 TO 47);
+		keyb        : OUT std_logic_vector(0 TO 47);
+		keyc        : OUT std_logic_vector(0 TO 47);
+		keyd        : OUT std_logic_vector(0 TO 47);
+		keye        : OUT std_logic_vector(0 TO 47);
+		keyf        : OUT std_logic_vector(0 TO 47) 
 		);
 	END COMPONENT;
 
 	SIGNAL sig_bus64In 	   :  std_logic_vector(0 TO 63);
-	SIGNAL sig_bus48Out    :  std_logic_vector(0 TO 47);
 	signal sig_clk         : std_logic;
 	signal sig_reset       : std_logic;
 	signal sig_done        : std_logic;
+
+	signal sig_key0        : std_logic_vector(0 to 47);
+	signal sig_key1        : std_logic_vector(0 to 47);
+	signal sig_key2        : std_logic_vector(0 to 47);
+	signal sig_key3        : std_logic_vector(0 to 47);
+	signal sig_key4        : std_logic_vector(0 to 47);
+	signal sig_key5        : std_logic_vector(0 to 47);
+	signal sig_key6        : std_logic_vector(0 to 47);
+	signal sig_key7        : std_logic_vector(0 to 47);
+	signal sig_key8        : std_logic_vector(0 to 47);
+	signal sig_key9        : std_logic_vector(0 to 47);
+	signal sig_keya        : std_logic_vector(0 to 47);
+	signal sig_keyb        : std_logic_vector(0 to 47);
+	signal sig_keyc        : std_logic_vector(0 to 47);
+	signal sig_keyd        : std_logic_vector(0 to 47);
+	signal sig_keye        : std_logic_vector(0 to 47);
+	signal sig_keyf        : std_logic_vector(0 to 47);
 BEGIN
 	-- Mapeamento de portas
-	UUT_pc1: processKey PORT MAP(
+	UUT_pk: processKey PORT MAP(
 		clk         => sig_clk,
 		reset       => sig_reset,
 		bus64In 	=> sig_bus64In,
 		done        => sig_done,
-		bus48Out    => sig_bus48Out
+		-- 16 chaves
+		key0        => sig_key0,
+		key1        => sig_key1,
+		key2        => sig_key2,
+		key3        => sig_key3,
+		key4        => sig_key4,
+		key5        => sig_key5,
+		key6        => sig_key6,
+		key7        => sig_key7,
+		key8        => sig_key8,
+		key9        => sig_key9,
+		keya        => sig_keya,
+		keyb        => sig_keyb,
+		keyc        => sig_keyc,
+		keyd        => sig_keyd,
+		keye        => sig_keye,
+		keyf        => sig_keyf
 	);
 
 	processClk: Process 

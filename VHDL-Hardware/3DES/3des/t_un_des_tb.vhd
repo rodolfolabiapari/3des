@@ -37,8 +37,8 @@ BEGIN
 	UUT_un_des_box: t_un_des PORT MAP(
 		clock     => sig_clock    ,
 		reset     => sig_reset    ,
-		text64    => x"22FD4264516A6E36"   ,
-		key192    => x"133457799BBCDFF1133457799BBCDFF1133457799BBCDFF1",
+		text64    => x"40a30ad149aa2959"   ,
+		key192    => x"133457799BBCDFF3133457799BBCDFF2133457799BBCDFF1",
 		done      => sig_done     ,
 		textOut64 => sig_textOut64
 	);

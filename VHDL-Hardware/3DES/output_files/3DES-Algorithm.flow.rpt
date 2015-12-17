@@ -1,5 +1,5 @@
 Flow report for 3DES-Algorithm
-Mon Oct 05 17:08:49 2015
+Tue Dec 15 16:06:45 2015
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Flow Failed - Mon Oct 05 17:08:49 2015     ;
+; Flow Status                        ; Successful - Tue Dec 15 16:06:45 2015      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; 3DES-Algorithm                             ;
-; Top-level Entity Name              ; 3des                                       ;
-; Family                             ; Cyclone II                                 ;
-; Device                             ; EP2C5T144C8                                ;
+; Top-level Entity Name              ; interface_3des                             ;
+; Family                             ; Cyclone IV E                               ;
+; Device                             ; EP4CE115F29C7                              ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
+; Total logic elements               ; 420 / 114,480 ( < 1 % )                    ;
+;     Total combinational functions  ; 351 / 114,480 ( < 1 % )                    ;
+;     Dedicated logic registers      ; 280 / 114,480 ( < 1 % )                    ;
+; Total registers                    ; 280                                        ;
+; Total pins                         ; 68 / 529 ( 13 % )                          ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                      ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                            ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -64,56 +64,68 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/05/2015 17:08:48 ;
+; Start date & time ; 12/15/2015 16:05:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; 3DES-Algorithm      ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                            ;
-+-------------------------------------+---------------------------------------+----------------+-------------+----------------+
-; Assignment Name                     ; Value                                 ; Default Value  ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------------+----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 8796757439449.144407572802284         ; --             ; --          ; --             ;
-; EDA_NETLIST_WRITER_OUTPUT_DIR       ; simulation/modelsim                   ; --             ; --          ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --             ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>         ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --             ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --             ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --             ; 3des        ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --             ; 3des        ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --             ; 3des        ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --             ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --             ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --             ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; 3des                                  ; 3DES-Algorithm ; --          ; --             ;
-+-------------------------------------+---------------------------------------+----------------+-------------+----------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                               ;
++-------------------------------------+---------------------------------------+----------------+----------------+----------------+
+; Assignment Name                     ; Value                                 ; Default Value  ; Entity Name    ; Section Id     ;
++-------------------------------------+---------------------------------------+----------------+----------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 8796759628884.145020272901876         ; --             ; --             ; --             ;
+; EDA_NETLIST_WRITER_OUTPUT_DIR       ; simulation/modelsim                   ; --             ; --             ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --             ; --             ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>         ; --             ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --             ; --             ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --             ; --             ; --             ;
+; PARTITION_COLOR                     ; 16764057                              ; --             ; interface_3des ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --             ; interface_3des ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --             ; interface_3des ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --             ; --             ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --             ; --             ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --             ; --             ; --             ;
+; TOP_LEVEL_ENTITY                    ; interface_3des                        ; 3DES-Algorithm ; --             ; --             ;
++-------------------------------------+---------------------------------------+----------------+----------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 479 MB              ; 00:00:01                           ;
-; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:01                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 491 MB              ; 00:00:05                           ;
+; Fitter                    ; 00:00:39     ; 1.0                     ; 857 MB              ; 00:00:26                           ;
+; Assembler                 ; 00:00:09     ; 1.0                     ; 422 MB              ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 501 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 388 MB              ; 00:00:01                           ;
+; Total                     ; 00:01:07     ; --                      ; --                  ; 00:00:41                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Flow OS Summary                                                                   ;
-+----------------------+------------------+-----------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+----------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; pripyat-PC       ; Windows 7 ; 6.1        ; x86_64         ;
-+----------------------+------------------+-----------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; pripyat-PC       ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; pripyat-PC       ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; pripyat-PC       ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; pripyat-PC       ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; pripyat-PC       ; Windows 7 ; 6.1        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off 3DES-Algorithm -c 3DES-Algorithm
+quartus_fit --read_settings_files=off --write_settings_files=off 3DES-Algorithm -c 3DES-Algorithm
+quartus_asm --read_settings_files=off --write_settings_files=off 3DES-Algorithm -c 3DES-Algorithm
+quartus_sta 3DES-Algorithm -c 3DES-Algorithm
+quartus_eda --read_settings_files=off --write_settings_files=off 3DES-Algorithm -c 3DES-Algorithm
 
 
 

@@ -10,13 +10,13 @@ use IEEE.std_logic_unsigned.all;
 use IEEE.math_real.all;
 use IEEE.math_complex.all;
 
-ENTITY tdes_tb IS
-END tdes_tb;
+ENTITY t_des_tb IS
+END t_des_tb;
 
-ARCHITECTURE tdes_tb_behav OF tdes_tb IS
+ARCHITECTURE t_des_tb_behav OF t_des_tb IS
 
 	-- Importação de componente
-	COMPONENT tdes port (
+	COMPONENT t_des port (
 		clock          : IN std_logic;
 		reset          : In std_logic;
 		text64         : IN std_logic_vector(0 TO 63);
@@ -34,11 +34,11 @@ ARCHITECTURE tdes_tb_behav OF tdes_tb IS
 	signal sig_textOut64    : std_logic_vector(0 TO 63);
 BEGIN
 	-- Mapeamento de portas
-	UUT_des_box: tdes PORT MAP(
+	UUT_des_box: t_des PORT MAP(
 		clock     => sig_clock    ,
 		reset     => sig_reset    ,
 		text64    => x"0123456789ABCDEF"   ,
-		key192    => x"133457799BBCDFF1133457799BBCDFF1133457799BBCDFF1",
+		key192    => x"133457799BBCDFF1133457799BBCDFF2133457799BBCDFF3",
 		done      => sig_done     ,
 		textOut64 => sig_textOut64
 	);
@@ -64,4 +64,4 @@ BEGIN
 
 	END PROCESS;
 
-END ARCHITECTURE tdes_tb_behav;
+END ARCHITECTURE t_des_tb_behav;

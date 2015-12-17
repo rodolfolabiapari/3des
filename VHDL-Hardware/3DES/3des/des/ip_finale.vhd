@@ -1,19 +1,26 @@
+
+-- Initial Permutation^-1
+-- Permutacao inicial^-1 (IP^-1) de um texto (M) e' o ultimo passo pra encriptacao.
+-- e' permutado os bits de M de acordo com a tabelaa IP^-1 criando um bloco permutado final
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity initialPermutationFinale is
 	port(
+		-- Vetor IP^-1
 		ipIn   : IN std_logic_vector(0 TO 63);
+		-- Vetor de saida
 		ipOut  : OUT std_logic_vector(0 TO 63)
 	);
 end initialPermutationFinale;
 
 architecture initialPermutationFinale_behav of initialPermutationFinale is
 
+	-- Vetor buffer
 	signal Buffer64 : std_logic_vector(0 TO 63);
 BEGIN
-
+	-- Permutacao
 	Buffer64(00) <= ipIn(39);
 	Buffer64(01) <= ipIn(07);
 	Buffer64(02) <= ipIn(47);
@@ -85,6 +92,8 @@ BEGIN
 	Buffer64(61) <= ipIn(16);
 	Buffer64(62) <= ipIn(56);
 	Buffer64(63) <= ipIn(24);
+
+	-- Direciona o buffer para a saida
 	ipOut <= Buffer64;
 
 end initialPermutationFinale_behav;

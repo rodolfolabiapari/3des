@@ -1,3 +1,7 @@
+
+-- Sbox n
+-- Caixa responsavel pela SUBSTITUICAO dos bits de entradas pelos bits de acordo com
+-- as tabelas pre-estabelecidas
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
@@ -6,15 +10,18 @@ entity sbox1 is
 	port(
 		clk 	: IN std_logic;
 		reset : IN std_logic;
-		busIn6 	: IN std_logic_vector(5 downto 0);
+		-- dado de entrada
+		busIn6 	: IN std_logic_vector(0 TO 5);
+		-- Informa sucesso
 		done : OUT std_logic;
-		busOut4 : OUT std_logic_vector(3 downto 0)
+		-- valor de saida
+		busOut4 : OUT std_logic_vector(0 TO 3)
 	);
 end sbox1;
 
 architecture sbox1_behav of sbox1 is
-type memory is array (integer range 16 downto 0) of std_logic_vector (3 downto 0);
-
+-- Tabela de substituicao 
+type memory is array (integer range 0 to 16) of std_logic_vector (0 TO 3);
  	constant mem_Rom0 : memory := (
 	--  q0 t0 0-15
 	-- 0X  XX XXXX
@@ -102,72 +109,47 @@ type memory is array (integer range 16 downto 0) of std_logic_vector (3 downto 0
 		);
 
 
---	constant mem_RomX : memory := (
---	--  q0 t0 0-15
---	-- 0X  XX XXXX
---	-- 0x8, 0x1, 0x7, 0xd, 0x6, 0xf, 0x3, 0x2, 0x0, 0xb, 0x5, 0x9, 0xe, 0xc, 0xa, 0x4, //00-15
---	-- 00000000 a 00001111
---			0 => x"",
---			1 => x"",
---			2 => x"",
---			3 => x"",
---			4 => x"",
---			5 => x"",
---			6 => x"",
---			7 => x"",
---			8 => x"",
---			9 => x"",
---			10 => x"",
---			11 => x"",
---			12 => x"",
---			13 => x"",
---			14 => x"",
---			15 => x"",
---			others => "0000"
---		);
-
-	-- Build an enumerated type for the state machine
+	-- Maquina de estado
 	type state_type is (inicia, consultaRam, pronto);
-
-	-- Register to hold the current state
 	signal state   : state_type;
 
 begin
 
-	-- Logic to advance to the next state
 	process (clk, reset)
 	begin
+		-- Estado de reset
 		if reset = '1' then
 			done <= '0';
 			state <= inicia;
 
 		elsif (rising_edge(clk)) then
 			case state is
+				-- Inicias a substituicao
 				when inicia=>
 					done <= '0';
-
 					state <= consultaRam;
 
+
+				-- Consulta a ram retornando o resultado
 				when consultaRam=>
-
-
 					if (clk'event and clk='1') then
 						if 	  (BusIn6(0) = '0' and BusIn6(5) = '0') then
-							busOut4 <= mem_Rom0(to_integer(unsigned(BusIn6( 4 downto 1 ))));
+							busOut4 <= mem_Rom0(to_integer(unsigned(BusIn6( 1 TO 4 ))));
 
 						elsif (BusIn6(0) = '0' and BusIn6(5) = '1') then
-							busOut4 <= mem_Rom1(to_integer(unsigned(BusIn6( 4 downto 1 ))));
+							busOut4 <= mem_Rom1(to_integer(unsigned(BusIn6( 1 TO 4 ))));
 
 						elsif (BusIn6(0) = '1' and BusIn6(5) = '0') then
-							busOut4 <= mem_Rom2(to_integer(unsigned(BusIn6( 4 downto 1 ))));
+							busOut4 <= mem_Rom2(to_integer(unsigned(BusIn6( 1 TO 4 ))));
 
 						elsif (BusIn6(0) = '1' and BusIn6(5) = '1') then
-							busOut4 <= mem_Rom3(to_integer(unsigned(BusIn6( 4 downto 1 ))));
+							busOut4 <= mem_Rom3(to_integer(unsigned(BusIn6( 1 TO 4 ))));
 						end if;
 					end if;
 
 					state <= pronto;
 
+				-- Informa sucesso
 				when pronto=>
 					done <= '1';
 

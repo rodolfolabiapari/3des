@@ -1,3 +1,8 @@
+
+-- UnDES
+-- Arquivo responsavel por organizar o processamento de 1 bloco de 64 bits utilizando a decriptacao
+-- do algoritmo DES.
+-- Utiliza-se componentes como IP, IP^-1, Funcao Feistel e Processamento de Chave.
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
@@ -6,26 +11,43 @@ entity un_des is
 	port(
 		clk          : IN std_logic;
 		reset        : In std_logic;
+		-- Texto de entrada para decriptacao
 		text64       : IN std_logic_vector(0 TO 63);
+		-- Chave de para decriptacao
 		key          : IN std_logic_vector(0 TO 63);
+		-- Aviso de Termino
 		done         : OUT std_logic;
+		-- Valor resultante
 		textOut64    : OUT std_logic_vector(0 TO 63)
 	);
 end un_des;
 
 architecture un_des_behav of un_des is
+	-- IP
 	component initialPermutation
 		port(
 		ipIn          : IN std_logic_vector(0 TO 63);
 		ipOut         : OUT std_logic_vector(0 TO 63)
 		);
 	end component;
+
+	signal sig_ip_ipIn        : std_logic_vector(0 TO 63);
+	signal sig_ip_ipOut       : std_logic_vector(0 TO 63);
+
+
+	-- IP^-1
 	component initialPermutationFinale
 		port(
 		ipIn          : IN std_logic_vector(0 TO 63);
 		ipOut         : OUT std_logic_vector(0 TO 63)
 		);
 	end component;
+
+	signal sig_ip_ipIn_Finale : std_logic_vector(0 TO 63);
+	signal sig_ip_ipOut_Finale: std_logic_vector(0 TO 63);
+
+
+	-- funcao feistel
 	component f
 		port(
 		clk           : IN std_logic;
@@ -37,6 +59,14 @@ architecture un_des_behav of un_des is
 		);
 	end component;
 
+	signal sig_f_reset        : std_logic;
+	signal sig_f_halfBlock    : std_logic_vector(0 TO 31);
+	signal sig_f_key          : std_logic_vector(0 TO 47);
+	signal sig_f_done         : std_logic;
+	signal sig_f_busFeistelOut: std_logic_vector(0 TO 31);
+
+
+	-- processamento da chave
 	component processKey
 		port(
 		clk           : IN std_logic;
@@ -62,10 +92,27 @@ architecture un_des_behav of un_des is
 		);
 	end component;
 
+	signal sig_k_reset        : std_logic;
+	signal sig_k_done         : std_logic;
+	signal sig_k_key0         : std_logic_vector(0 TO 47);
+	signal sig_k_key1         : std_logic_vector(0 TO 47);
+	signal sig_k_key2         : std_logic_vector(0 TO 47);
+	signal sig_k_key3         : std_logic_vector(0 TO 47);
+	signal sig_k_key4         : std_logic_vector(0 TO 47);
+	signal sig_k_key5         : std_logic_vector(0 TO 47);
+	signal sig_k_key6         : std_logic_vector(0 TO 47);
+	signal sig_k_key7         : std_logic_vector(0 TO 47);
+	signal sig_k_key8         : std_logic_vector(0 TO 47);
+	signal sig_k_key9         : std_logic_vector(0 TO 47);
+	signal sig_k_keya         : std_logic_vector(0 TO 47);
+	signal sig_k_keyb         : std_logic_vector(0 TO 47);
+	signal sig_k_keyc         : std_logic_vector(0 TO 47);
+	signal sig_k_keyd         : std_logic_vector(0 TO 47);
+	signal sig_k_keye         : std_logic_vector(0 TO 47);
+	signal sig_k_keyf         : std_logic_vector(0 TO 47);
 
 
-
-	-- Sinais;
+	-- Sinais para processamento do texto
 	signal l0, r0,
 	       l1, r1,
 	       l2, r2,
@@ -85,56 +132,28 @@ architecture un_des_behav of un_des is
 	       lg, rg : std_logic_vector(0 TO 31);
 
 	signal chavesJaCalculadas : std_logic;
-	signal sig_ip_ipIn        : std_logic_vector(0 TO 63);
-	signal sig_ip_ipOut       : std_logic_vector(0 TO 63);
-	signal sig_ip_ipIn_Finale : std_logic_vector(0 TO 63);
-	signal sig_ip_ipOut_Finale: std_logic_vector(0 TO 63);
-
-	signal sig_f_reset        : std_logic;
-	signal sig_f_halfBlock    : std_logic_vector(0 TO 31);
-	signal sig_f_key          : std_logic_vector(0 TO 47);
-	signal sig_f_done         : std_logic;
-	signal sig_f_busFeistelOut: std_logic_vector(0 TO 31);
-
-	signal sig_k_reset        : std_logic;
-	signal sig_k_done         : std_logic;
-	signal sig_k_key0         : std_logic_vector(0 TO 47);
-	signal sig_k_key1         : std_logic_vector(0 TO 47);
-	signal sig_k_key2         : std_logic_vector(0 TO 47);
-	signal sig_k_key3         : std_logic_vector(0 TO 47);
-	signal sig_k_key4         : std_logic_vector(0 TO 47);
-	signal sig_k_key5         : std_logic_vector(0 TO 47);
-	signal sig_k_key6         : std_logic_vector(0 TO 47);
-	signal sig_k_key7         : std_logic_vector(0 TO 47);
-	signal sig_k_key8         : std_logic_vector(0 TO 47);
-	signal sig_k_key9         : std_logic_vector(0 TO 47);
-	signal sig_k_keya         : std_logic_vector(0 TO 47);
-	signal sig_k_keyb         : std_logic_vector(0 TO 47);
-	signal sig_k_keyc         : std_logic_vector(0 TO 47);
-	signal sig_k_keyd         : std_logic_vector(0 TO 47);
-	signal sig_k_keye         : std_logic_vector(0 TO 47);
-	signal sig_k_keyf         : std_logic_vector(0 TO 47);
 	
 	
 	type state_type is (op_reset_key,
-	 op_process_key, op_ip, op_ip_final,
-	 op_f0_working, op_f0_done, op_f0_clean,
-	 op_f1_working, op_f1_done, op_f1_clean,
-	 op_f2_working, op_f2_done, op_f2_clean,
-	 op_f3_working, op_f3_done, op_f3_clean,
-	 op_f4_working, op_f4_done, op_f4_clean,
-	 op_f5_working, op_f5_done, op_f5_clean,
-	 op_f6_working, op_f6_done, op_f6_clean,
-	 op_f7_working, op_f7_done, op_f7_clean,
-	 op_f8_working, op_f8_done, op_f8_clean,
-	 op_f9_working, op_f9_done, op_f9_clean,
-	 op_fa_working, op_fa_done, op_fa_clean,
-	 op_fb_working, op_fb_done, op_fb_clean,
-	 op_fc_working, op_fc_done, op_fc_clean,
-	 op_fd_working, op_fd_done, op_fd_clean,
-	 op_fe_working, op_fe_done, op_fe_clean,
-	 op_ff_working, op_ff_done, op_ff_clean,
-	 pronto);
+	 	op_process_key, op_ip, op_ip_final,
+	 	op_f0_working, op_f0_done, op_f0_clean,
+	 	op_f1_working, op_f1_done, op_f1_clean,
+	 	op_f2_working, op_f2_done, op_f2_clean,
+	 	op_f3_working, op_f3_done, op_f3_clean,
+	 	op_f4_working, op_f4_done, op_f4_clean,
+	 	op_f5_working, op_f5_done, op_f5_clean,
+	 	op_f6_working, op_f6_done, op_f6_clean,
+	 	op_f7_working, op_f7_done, op_f7_clean,
+	 	op_f8_working, op_f8_done, op_f8_clean,
+	 	op_f9_working, op_f9_done, op_f9_clean,
+	 	op_fa_working, op_fa_done, op_fa_clean,
+	 	op_fb_working, op_fb_done, op_fb_clean,
+	 	op_fc_working, op_fc_done, op_fc_clean,
+	 	op_fd_working, op_fd_done, op_fd_clean,
+	 	op_fe_working, op_fe_done, op_fe_clean,
+	 	op_ff_working, op_ff_done, op_ff_clean,
+	 	pronto
+	 );
 	signal state   : state_type;
 
 begin
@@ -183,25 +202,32 @@ begin
 	-- Logic to advance to the next state
 	process (clk, reset)
 	begin
+		-- Reset
 		if reset =  '1' then
+			-- diz que nao esta pronto
 			done <= '0';
+			-- Reseta o f
 			sig_f_reset <= '1';
 
+			-- verifica se as chaves ja foram calculadas
 			if (chavesJaCalculadas /= '0') then
+				-- Se nao foram, calcula novamente
 				sig_k_reset <= '1';
 				state <= op_reset_key;
 			else
+				-- caso contrario, ja processa o preco
 				state <= op_process_key;
 			end if ;
 
 
 		elsif (rising_edge(clk)) then
 			case state is
+				-- reseta todas as chaves
 				when op_reset_key=>
 					sig_k_reset <= '0';
 					state <= op_process_key;
 
-
+				-- Processa as chaves
 				when op_process_key=>
 					if (sig_k_done = '1') then
 						chavesJaCalculadas <= '1';
@@ -210,6 +236,7 @@ begin
 					end if;
 
 
+				-- Processa a inicial permutation
 				when op_ip=>
 					lg <= sig_ip_ipOut(0 to 31);
 					rg <= sig_ip_ipOut(32 to 63);
@@ -218,27 +245,35 @@ begin
 
 -- Ff-------------------------------
 
+				-- inicia o processamento	
 				when op_ff_working =>
 
+					-- Reseta a funcao f
 					sig_f_reset <= '0';
 
+					-- Realiza o procesamento
 					lf <= rg;
 					sig_f_halfBlock <= rg;
 					sig_f_key <= sig_k_keyf;
 					state <= op_ff_done;
 
+				-- espera o resultado
 				when op_ff_done =>
+					-- quando terminar esta iteracao da funcao f
 					if (sig_f_done = '1') then
 	
+						-- realiza o xor de li com o resultado da funcao
 						rf <= lg xor sig_f_busFeistelOut;
 
 						state <= op_ff_clean;
 
 					end if;
 
+				-- Limpa a funcao para a proxima iteracao
 				when op_ff_clean =>
 					sig_f_reset <= '1';
 					state <= op_fe_working;
+
 
 
 -- Fe-------------------------------
@@ -586,6 +621,7 @@ begin
 					state <= op_ip_final;
 
 
+				-- Realiza a permutacao final
 				when op_ip_final =>
 					sig_ip_ipIn_Finale <= r0 & l0;
 					textOut64 <= sig_ip_ipOut_Finale;
@@ -593,6 +629,7 @@ begin
 					state <= pronto;
 
 
+				-- Informa o termino do processamento
 				when pronto=>
 					done <= '1';
 					textOut64 <= sig_ip_ipOut_Finale;

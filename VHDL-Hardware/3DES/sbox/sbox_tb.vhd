@@ -56,54 +56,33 @@ BEGIN
 			--sig_busIn6 := sig_busIn6 + '1';
 
 
-		sig_bus48In <= x"000000000000";
-		sig_reset <= '1';
-		wait for 2 ns;
-		sig_reset <= '0';
-		wait for 40 ns;
-
-		sig_bus48In <= x"000000000001";
-		sig_reset <= '1';
-		wait for 2 ns;
-		sig_reset <= '0';
-		wait for 40 ns;
-
-		sig_bus48In <= x"100000000000";
-		sig_reset <= '1';
-		wait for 2 ns;
-		sig_reset <= '0';
-		wait for 40 ns;
-
-		sig_bus48In <= x"100000000001";
+		sig_bus48In <= "011000010001011110111010100001100110010100100111";
 		sig_reset <= '1';
 		wait for 2 ns;
 		sig_reset <= '0';
 		wait for 40 ns;
 
 
-		sig_bus48In <= x"000000000010";
-		sig_reset <= '1';
-		wait for 2 ns;
-		sig_reset <= '0';
-		wait for 40 ns;
 
-		sig_bus48In <= x"000000000011";
-		sig_reset <= '1';
-		wait for 2 ns;
-		sig_reset <= '0';
-		wait for 40 ns;
-
-		sig_bus48In <= x"100000000010";
-		sig_reset <= '1';
-		wait for 2 ns;
-		sig_reset <= '0';
-		wait for 40 ns;
-
-		sig_bus48In <= x"100000000011";
-		sig_reset <= '1';
-		wait for 2 ns;
-		sig_reset <= '0';
-		wait for 40 ns;
+--	process_sbox_tb: PROCESS IS 
+--	BEGIN                
+--
+--			sig_bus48In <= x"000000000000";
+--
+--			WHILE sig_bus48In /= x"111111111111" LOOP    
+--
+--				WAIT UNTIL rising_edge(sig_clk);                     	
+--
+--					if (sig_done = '1') then
+--						sig_bus48In <= std_logic_vector(unsigned(sig_bus48In) + 1);
+--						sig_reset <= '1';
+--					else 
+--						sig_reset <= '0';      
+--					end if;
+--
+--			END LOOP;
+--			
+--	END PROCESS process_sbox_tb;
 
 	END PROCESS;
 

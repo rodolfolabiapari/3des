@@ -1,10 +1,16 @@
+
+-- Permutacao da funcao Feistel
+-- Arquivo que realizara a permutacao final dentro da funcao Feistel
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity p_box is
 	port(
+		-- Barramento de entrada
 		bus32In     : IN std_logic_vector(0 TO 31);
+		-- Barramento de saida
 		bus32Out    : OUT std_logic_vector(0 TO 31)
 	);
 end p_box;
@@ -13,6 +19,7 @@ architecture p_box_behav of p_box is
 
 	signal busBuffer32 : std_logic_vector(0 TO 31);
 BEGIN
+	-- Permutacao
 	busBuffer32(00) <= bus32In(15);
 	busBuffer32(01) <= bus32In(06);
 	busBuffer32(02) <= bus32In(19);
