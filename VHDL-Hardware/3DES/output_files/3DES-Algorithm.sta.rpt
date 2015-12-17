@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for 3DES-Algorithm
-Sat Dec 05 08:55:57 2015
+Tue Dec 15 16:06:40 2015
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -2376,7 +2376,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 05 08:55:51 2015
+    Info: Processing started: Tue Dec 15 16:06:34 2015
 Info: Command: quartus_sta 3DES-Algorithm -c 3DES-Algorithm
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -2466,7 +2466,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 501 megabytes
-    Info: Processing ended: Sat Dec 05 08:55:57 2015
+    Info: Processing ended: Tue Dec 15 16:06:40 2015
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:03
 

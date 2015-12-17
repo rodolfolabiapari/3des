@@ -54,7 +54,6 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VHDL_FILE 3des/t_un_des.vhd
 set_global_assignment -name VHDL_FILE 3des/t_des.vhd
 set_global_assignment -name VHDL_FILE ram/ramTexto.vhd
-set_global_assignment -name VHDL_FILE ram/ram_tb.vhd
 set_global_assignment -name VHDL_FILE interface_3des.vhd
 set_global_assignment -name VHDL_FILE 3des/des/un_des.vhd
 set_global_assignment -name VHDL_FILE 3des/des/ip_finale.vhd

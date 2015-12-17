@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 3DES-Algorithm
-Sat Dec 05 08:54:53 2015
+Tue Dec 15 16:05:39 2015
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -71,7 +71,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 05 08:54:53 2015      ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 15 16:05:39 2015      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; 3DES-Algorithm                             ;
 ; Top-level Entity Name              ; interface_3des                             ;
@@ -814,7 +814,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 05 08:54:41 2015
+    Info: Processing started: Tue Dec 15 16:05:28 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 3DES-Algorithm -c 3DES-Algorithm
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file 3des/t_un_des.vhd
@@ -826,9 +826,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file 3des/t_
 Info (12021): Found 2 design units, including 1 entities, in source file ram/ramtexto.vhd
     Info (12022): Found design unit 1: ramTexto-ramTexto_arch
     Info (12023): Found entity 1: ramTexto
-Info (12021): Found 2 design units, including 1 entities, in source file ram/ram_tb.vhd
-    Info (12022): Found design unit 1: Ram_TB-sinais
-    Info (12023): Found entity 1: Ram_TB
 Info (12021): Found 2 design units, including 1 entities, in source file interface_3des.vhd
     Info (12022): Found design unit 1: interface_3des-interface_3des_behav
     Info (12023): Found entity 1: interface_3des
@@ -982,9 +979,9 @@ Info (21057): Implemented 494 device resources after synthesis - the final resou
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 426 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 502 megabytes
-    Info: Processing ended: Sat Dec 05 08:54:53 2015
-    Info: Elapsed time: 00:00:12
+    Info: Peak virtual memory: 491 megabytes
+    Info: Processing ended: Tue Dec 15 16:05:39 2015
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:05
 
 

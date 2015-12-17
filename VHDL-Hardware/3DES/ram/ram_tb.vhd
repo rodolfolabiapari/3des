@@ -1,10 +1,8 @@
-LIBRARY IEEE;
-USE IEEE.Std_logic_1164.all;
-USE IEEE.Numeric_std.all;
+LIBRARY IEEE;	
 
 ENTITY Ram_TB IS
 	generic(
-		bits_endereco	: integer := 10; -- 32
+		bits_endereco	: integer := 10; 
 		bits_dado		: integer := 64
 	);
 END ENTITY Ram_TB;

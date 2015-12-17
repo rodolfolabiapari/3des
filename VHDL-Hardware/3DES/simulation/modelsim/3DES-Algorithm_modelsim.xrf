@@ -2,7 +2,6 @@ vendor_name = ModelSim
 source_file = 1, E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_un_des.vhd
 source_file = 1, E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/t_des.vhd
 source_file = 1, E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ramTexto.vhd
-source_file = 1, E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/ram/ram_tb.vhd
 source_file = 1, E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/interface_3des.vhd
 source_file = 1, E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/un_des.vhd
 source_file = 1, E:/Crypto/Codigos/Crypto/VHDL-Hardware/3DES/3des/des/ip_finale.vhd

@@ -1,10 +1,17 @@
+
+-- Expansão
+-- Arquivo responsavel por duplicar alguns bits do vetor de 32 bits
+-- que acabara de entrar na função Feistel
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity expansion is
 	port(
+		-- Dado de entrada
 		bus32In 	: IN std_logic_vector(0 TO 31);
+		-- Dado de saida expandido
 		bus48Out    : OUT std_logic_vector(0 TO 47)
 	);
 end expansion;
@@ -13,6 +20,7 @@ architecture expansion_behav of expansion is
 
 	signal busBuffer48 : std_logic_vector(0 TO 47);
 BEGIN
+	-- Permutacao
 	busBuffer48(00) <= bus32In(31);
 	busBuffer48(01) <= bus32In(00);
 	busBuffer48(02) <= bus32In(01);

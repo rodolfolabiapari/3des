@@ -1,3 +1,8 @@
+
+-- Expansão
+-- Arquivo responsavel por duplicar alguns bits do vetor de 32 bits
+-- que acabara de entrar na função Feistel
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
@@ -6,9 +11,13 @@ entity f is
 	port(
 		clk          : IN std_logic;
 		reset        : In std_logic;
+		-- Parametro L_i
 		halfBlock    : IN std_logic_vector(0 TO 31);
+		-- Chave K_i
 		key          : IN std_logic_vector(0 TO 47);
+		-- Sinal de confirmamento de exeucao
 		done         : OUT std_logic;
+		-- barramento de saida
 		busFeistelOut : OUT std_logic_vector(0 TO 31)
 	);
 end f;
@@ -83,13 +92,14 @@ begin
 
 		elsif (rising_edge(clk)) then
 			case state is
+				-- Realiza a operacao xor com o resultado da expansao
 				when op_xor=>
 					sig_reset_sbox <= '0';
 					sig_bus_xor <= sig_result_expansion xor key;
 
 					state <= op_sbox;
 
-
+				-- Substitui o valor da operacao xor usando as s-boxs
 				when op_sbox=>
 					if (sig_done_sbox = '1') then
 						sig_result_sbox_buffer <= sig_result_sbox;
@@ -98,12 +108,13 @@ begin
 					end if;
 
 
+				-- Realiza a permutacao final depois da substituicao
 				when op_p_box=>
 					sig_bus_sbox <= sig_result_sbox_buffer;
 
 					state <= pronto;
 
-
+				-- Informa sucesso
 				when pronto=>
 					busFeistelOut <= sig_result_p_box;
 					done <= '1';
